@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Updates dwmbar
+
+ pgrep -x sleep > /dev/null && pkill -x sleep 

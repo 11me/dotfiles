@@ -1,0 +1,4 @@
+#!/bin/sh
+
+
+printf "vol:%s" "$(amixer get Master |awk '/Mono/ {print $4}' | sed 's/\[//; s/\]//' | tr -d '\n')"

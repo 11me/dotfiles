@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Shows free memory avaliable
+
+FREE=$(awk '/MemFree/ {print $2}' /proc/meminfo)
+printf "%sMB" "$(($FREE/1024))"

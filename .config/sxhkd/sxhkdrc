@@ -1,0 +1,26 @@
+# If you dont know some keycode just run in terminal 'xev' command
+
+# Increase volume
+XF86AudioRaiseVolume
+    amixer sset Master 5%+ && dwmref
+
+# Decrease volume
+XF86AudioLowerVolume
+    amixer sset Master 5%- > /dev/null && dwmref
+
+# Mute/Unmute
+XF86AudioMute
+    amixer sset Master toggle > /dev/null && dwmref
+
+# Mic mute/unmute
+XF86AudioMicMute
+    amixer sset Speaker toggle /dev/null && dwmref
+
+# Touchpad toggle
+XF86WakeUp + F8
+    touchpad_toggle
+
+
+# Screenshots
+Print
+    maim -s | xclip -selection clipboard -t image/png

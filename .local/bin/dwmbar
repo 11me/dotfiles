@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Description
+
+
+while :
+do
+	xsetroot -name "$(getvol) $(meminfo) $(cputemp) $(datetime) $(battery)" 
+  sleep 1m
+done
