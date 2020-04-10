@@ -26,7 +26,9 @@ alias vi='$EDITOR'
 
 # Local folders
 alias hc='cd $HOME/.config'
+alias hl='cd $HOME/.local'
 alias hlb='cd $HOME/.local/bin'
+alias hlsrc='cd $HOME/.local/src'
 alias hp='cd $HOME/pix'
 alias hd='cd $HOME/dox'
 alias hdw='cd $HOME/dwns'
