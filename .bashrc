@@ -19,8 +19,4 @@ bind '"\e[B": history-search-forward'
 #Auto cd
 shopt -s autocd
 
-#Aliases
 alias ls='ls --color=auto'
-alias la="ls -a"
-alias ll="ls -l"
-alias lal="ls -al"

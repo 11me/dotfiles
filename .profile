@@ -1,8 +1,13 @@
 #This file runs on login
 
+#Default programms
+export EDITOR="nvim"
+export TERMINAL="st"
+export BROWSER="firefox"
+export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 
+export PATH="$PATH:~/.local/bin"
 
-#[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"
 
 
 # Fast listing
@@ -32,14 +37,6 @@ alias hp='cd $HOME/pix'
 alias hd='cd $HOME/dox'
 alias hdw='cd $HOME/dwns'
 
-#Default programms
-export EDITOR="$EDITOR"
-export TERMINAL="st"
-export BROWSER="firefox"
-
-export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
-
-export PATH="$PATH:~/.local/bin"
 
 
 # Start graphical server on tty1 if not already running.
