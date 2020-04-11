@@ -1,8 +1,6 @@
 #This file runs on login
 
 
-# Start graphical server on tty1 if not already running.
-[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx
 
 #[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"
 
@@ -44,3 +42,5 @@ export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export PATH="$PATH:~/.local/bin"
 
 
+# Start graphical server on tty1 if not already running.
+[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx
