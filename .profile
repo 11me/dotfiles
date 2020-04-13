@@ -16,9 +16,9 @@ alias ll="ls -l"
 alias lal="ls -al"
 
 # Make config changes easy in suckless programs
-alias dwmrc='cd $HOME/.local/src/dwm && $EDITOR config.h'
+alias dwmrc='cd $HOME/.local/src/dwm && $EDITOR config.def.h'
 alias strc='cd $HOME/.local/src/st && $EDITOR config.h'
-alias dmenurc='cd $HOME/.local/src/dmenu && $EDITOR config.h'
+alias dmenurc='cd $HOME/.local/src/dmenu && $EDITOR config.def.h'
 alias smci='sudo -A make clean install'
 alias prc='$EDITOR $HOME/.profile'
 alias brc='$EDITOR $HOME/.bashrc' 
