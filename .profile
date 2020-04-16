@@ -5,7 +5,6 @@ export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="firefox"
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
-
 export PATH="$PATH:~/.local/bin"
 
 
@@ -20,9 +19,12 @@ alias dwmrc='cd $HOME/.local/src/dwm && $EDITOR config.def.h'
 alias strc='cd $HOME/.local/src/st && $EDITOR config.h'
 alias dmenurc='cd $HOME/.local/src/dmenu && $EDITOR config.def.h'
 alias smci='sudo -A make clean install'
+
+# Some useful aliases
 alias prc='$EDITOR $HOME/.profile'
 alias brc='$EDITOR $HOME/.bashrc' 
 alias ignore='$EDITOR $HOME/.gitignore'
+alias vimrc='$EDITOR $HOME/.config/nvim/init.vim'
 
 # Actions
 alias todo='$EDITOR $HOME/dox/personal/todo'
