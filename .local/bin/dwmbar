@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
 # Description
 
 
 while :
 do
-	xsetroot -name "$(meminfo) $(cputemp) $(datetime) $(battery)" 
+	xsetroot -name "$(meminfo) $(cputemp) $(datetime) $(battery)"
   sleep 5
 done
