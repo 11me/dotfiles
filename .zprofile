@@ -13,6 +13,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export ZDOTDIR="$HOME/.config/zsh"
 
 # Fast listing
+alias ls="ls --color=auto"
 alias la="ls -a"
 alias ll="ls -l"
 alias lal="ls -al"
