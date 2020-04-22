@@ -20,7 +20,6 @@ map <c-n> :NERDTreeToggle<cr>
 so ~/.config/nvim/coc-maps.vim
 
 " Basics
-echom "Let's write some code"
 syntax on
 filetype indent on
 highlight Normal ctermbg=Black
