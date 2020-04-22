@@ -34,6 +34,13 @@ alias vimrc='$EDITOR $HOME/.config/nvim/init.vim'
 alias todo='$EDITOR $HOME/dox/personal/todo'
 alias vi='$EDITOR'
 
+# Git cmds
+alias gs='git status'
+alias gc='git commit -m'
+alias gck='git checkout'
+alias ga='git add'
+alias gp='git push'
+
 # Local folders
 alias hc='cd $HOME/.config'
 alias hl='cd $HOME/.local'
@@ -42,6 +49,7 @@ alias hlsrc='cd $HOME/.local/src'
 alias hp='cd $HOME/pix'
 alias hd='cd $HOME/dox'
 alias hdw='cd $HOME/dwns'
+alias zd='cd $HOME/.config/zsh'
 
 
 
