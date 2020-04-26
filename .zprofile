@@ -14,9 +14,8 @@ export ZDOTDIR="$HOME/.config/zsh"
 
 # Fast listing
 alias ls="ls --color=auto"
-alias la="ls -a"
-alias ll="ls -l"
-alias lal="ls -al"
+alias la="ls -al"
+alias l="ls -l"
 
 # Make config changes easy in suckless programs
 alias dwmrc='cd $HOME/.local/src/dwm && $EDITOR config.def.h'
@@ -31,8 +30,12 @@ alias ignore='$EDITOR $HOME/.gitignore'
 alias vimrc='$EDITOR $HOME/.config/nvim/init.vim'
 
 # Actions
+alias ss='source ~/.config/zsh/.zshrc'
 alias todo='$EDITOR $HOME/dox/personal/todo'
 alias vi='$EDITOR'
+alias drmi='docker rmi $(docker images -qa) -f'
+alias drm='docker rm $(docker ps -qa)'
+alias drma='docker rm $(docker ps -qa) && docker rmi $(docker images -qa) -f'
 
 # Git cmds
 alias gs='git status'

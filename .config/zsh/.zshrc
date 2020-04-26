@@ -97,11 +97,13 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 
-# Load zsh-syntax-highlighting; should be last.
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 # Load plugins
-#source ~/.config/zsh/plugins/git.plugin.zsh
+source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#
 # Load theme
-#source ~/.config/zsh/themes/agnoster.zsh-theme
+#source ~/.config/zsh/themes/avit.zsh-theme
+
+
 
 ####################################################################################################
