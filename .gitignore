@@ -1,5 +1,6 @@
 .local/share
 .config/dconf
+.config/libreoffice
 .config/zsh/.zcompdump
 .config/coc
 .config/nvim/.netrwhist
