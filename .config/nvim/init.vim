@@ -11,12 +11,14 @@ let mapleader = ","
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
     Plug 'vim-airline/vim-airline'
+    Plug 'chrisbra/Colorizer'
     Plug 'scrooloose/nerdtree'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Plugin mappings
 map <c-n> :NERDTreeToggle<cr>
+map <leader><f3> :ColorToggle<cr>
 so ~/.config/nvim/coc-maps.vim
 
 " Basics
