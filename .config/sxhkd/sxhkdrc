@@ -1,5 +1,13 @@
 # If you dont know some keycode just run in terminal 'xev' command
 
+# Open browser
+#Super_L + w
+#    st -e $BROWSER
+#
+## Open file manager
+#Super_L + r
+#    st -e $FILEMANAGER
+
 # Increase volume
 XF86AudioRaiseVolume
     amixer sset Master 5%+ && dwmref

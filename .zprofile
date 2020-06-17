@@ -7,6 +7,7 @@ source ~/.config/alias
 # Default programms
 export EDITOR="nvim"
 export TERMINAL="st"
+export FILEMANAGER='ranger'
 export BROWSER="firefox"
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 

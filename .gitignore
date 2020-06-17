@@ -1,4 +1,5 @@
 .local/share
+.config/dconf
 .config/zsh/.zcompdump
 .config/coc
 .config/nvim/.netrwhist
