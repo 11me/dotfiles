@@ -1,0 +1,6 @@
+.local/share
+.config/zsh/.zcompdump
+.config/nvim/.netrwhist
+.config/nvim/plugged
+.config/pavucontrol.ini
+.config/pulse

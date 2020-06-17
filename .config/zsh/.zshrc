@@ -98,8 +98,8 @@ bindkey '^e' edit-command-line
 
 
 # Load plugins
-source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh >/dev/null 2>&1
+source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh >/dev/null 2>&1
 #
 # Load theme
 #source ~/.config/zsh/themes/avit.zsh-theme
