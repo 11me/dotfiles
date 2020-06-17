@@ -4,6 +4,9 @@ declare -i ID
 ID=`xinput list | grep -Eio '(touchpad|glidepoint)\s*id\=[0-9]{1,2}' | grep -Eo '[0-9]{1,2}'`
 declare -i STATE
 STATE=`xinput list-props $ID|grep 'Device Enabled'|awk '{print $4}'`
+declare -i TAP_PROP_ID
+TAP_PROP_ID=`xinput list-props $ID | grep 'libinput Tapping Enabled' | awk '{print $4}' | grep -Eo '[0-9]{3}'`
+
 if [ $STATE -eq 1 ]
 then
     xinput disable $ID
@@ -11,6 +14,8 @@ then
     # notify-send -a 'Touchpad' 'Disabled' -i /usr/share/icons/Adwaita/48x48/devices/input-touchpad.png
 else
     xinput enable $ID
+    xinput set-prop $ID $TAP_PROP_ID 1
+
     # echo "Touchpad enabled."
     # notify-send -a 'Touchpad' 'Enabled' -i /usr/share/icons/Adwaita/48x48/devices/input-touchpad.png
 fi
