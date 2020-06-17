@@ -12,7 +12,7 @@ export BROWSER="firefox"
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 
 # Clean up
-export PATH="$PATH:~/.local/bin"
+export PATH="$PATH:/home/$USER/.local/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export ZDOTDIR="$HOME/.config/zsh"
