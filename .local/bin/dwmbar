@@ -5,6 +5,6 @@
 
 while :
 do
-	xsetroot -name "$(meminfo) $(cputemp) $(datetime) $(battery)"
+    xsetroot -name "$(meminfo) $(cputemp) $(getvol) $(datetime) $(battery)"
   sleep 5
 done

@@ -14,7 +14,7 @@ XF86AudioMute
 
 # Mic mute/unmute
 XF86AudioMicMute
-    amixer sset Speaker toggle /dev/null && dwmref
+    pactl set-source-mute 1 toggle > /dev/null && dwmref
 
 # Touchpad toggle
 XF86WakeUp + F8

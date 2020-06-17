@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #This runs when you log into graphical session
 
 #dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRES DISPLAY XAUTHORITY

@@ -4,13 +4,13 @@ alias la="ls -al"
 alias l="ls -l"
 
 # Make config changes easy in suckless programs
-alias dwmrc='cd $HOME/.local/src/dwm && $EDITOR config.def.h'
-alias strc='cd $HOME/.local/src/st && $EDITOR config.h'
-alias dmenurc='cd $HOME/.local/src/dmenu && $EDITOR config.def.h'
+alias dwmrc='cd $HOME/.local/share/dwm && $EDITOR config.def.h'
+alias strc='cd $HOME/.local/share/st && $EDITOR config.h'
+alias dmenurc='cd $HOME/.local/share/dmenu && $EDITOR config.def.h'
 alias smci='sudo -A make clean install'
 
 # Some useful aliases
-alias prc='$EDITOR $HOME/.zprofile'
+alias prc='$EDITOR $HOME/.profile'
 alias zrc='$EDITOR $HOME/.config/zsh/.zshrc'
 alias ignore='$EDITOR $HOME/.gitignore'
 alias vimrc='$EDITOR $HOME/.config/nvim/init.vim'

@@ -4,7 +4,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-[ -f $HOME/.zprofile ] && source $HOME/.zprofile
+[ -f $HOME/.profile ] && source $HOME/.profile
 
 autoload -U colors && colors	# Load colors
 setopt autocd		            # Automatically cd into typed directory
