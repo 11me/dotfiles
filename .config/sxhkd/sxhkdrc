@@ -5,8 +5,8 @@
 #    st -e $BROWSER
 #
 ## Open file manager
-#Super_L + r
-#    st -e $FILEMANAGER
+#super + r
+    #st -e lfcd
 
 # Increase volume
 XF86AudioRaiseVolume
@@ -28,6 +28,9 @@ XF86AudioMicMute
 XF86WakeUp + F8
     touchpad_toggle
 
+# Dmenu emoji
+super + grave
+    dmenuemoji
 
 # Screenshots
 Print

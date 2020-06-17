@@ -2,4 +2,4 @@
 
 # Show battery %
 
-[ -f /sys/class/power_supply/BAT0/capacity ] && printf "%s" $(cat /sys/class/power_supply/BAT0/capacity)%
+[ -f /sys/class/power_supply/BAT0/capacity ] && printf "🔋%s" $(cat /sys/class/power_supply/BAT0/capacity)%
