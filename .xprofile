@@ -7,5 +7,5 @@ sxhkd &		#keybindings
 dunst &		#notifications
 setbg &		#sets the background
 touchpad_toggle #turn on/off touchpad
-xcompmgr -c &	#transparency
+picom -b &	#composite manager
 dwmbar &  	#adds date to statusbar
