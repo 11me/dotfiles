@@ -7,6 +7,8 @@
 "
 
 let mapleader = ","
+set nohlsearch
+set clipboard+=unnamedplus
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')

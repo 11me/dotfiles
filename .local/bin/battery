@@ -1,5 +1,12 @@
 #!/bin/sh
 
 # Show battery %
+ICON="🔋"
+STATUS="$(cat /sys/class/power_supply/BAT0/status)"
 
-[ -f /sys/class/power_supply/BAT0/capacity ] && printf "🔋%s" $(cat /sys/class/power_supply/BAT0/capacity)%
+if [ $STATUS == "Charging" ]
+then
+   ICON="🔌"
+fi
+
+[ -f /sys/class/power_supply/BAT0/capacity ] && printf "$ICON%s" $(cat /sys/class/power_supply/BAT0/capacity)%

@@ -1,5 +1,5 @@
 #!/bin/sh
 
 # Show the CPU temperature
-
-printf "%s" "$(sensors | awk '/Core ./ {print $3}' | tr -s '\n' ' ')"
+ICON="🌡"
+printf "$ICON %s" "$(sensors | awk '/Core ./ {print $3}' | tr -s '\n' ' ')"
