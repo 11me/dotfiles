@@ -9,6 +9,12 @@
 let mapleader = ","
 set nohlsearch
 set clipboard+=unnamedplus
+set smartindent
+set nu
+set nowrap
+set smartcase
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')

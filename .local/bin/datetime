@@ -4,5 +4,6 @@
 #    xsetroot -name "$(date +"%R %d-%m-%Y %a")"
 #    sleep 1m
 #done
-
-printf "📅%s" "$(date +"%a %d-%m-%Y %R")"
+ICON="📅"
+CLOCK="🕛"
+printf "$ICON%s" "$(date +"%a %d-%m-%Y $CLOCK%R")"

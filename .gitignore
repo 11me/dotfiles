@@ -1,4 +1,5 @@
 .local/share
+.config/torbrowser
 .config/dconf
 .config/libreoffice
 .config/zsh/.zcompdump
