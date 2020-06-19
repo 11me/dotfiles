@@ -1,4 +1,5 @@
 .local/share
+.config/qBittorrent
 .config/torbrowser
 .config/dconf
 .config/libreoffice
