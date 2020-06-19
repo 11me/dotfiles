@@ -5,8 +5,8 @@
 #    st -e $BROWSER
 #
 ## Open file manager
-#super + r
-    #st -e lfcd
+super + F5
+    wifi > /dev/null && dwmref
 
 # Increase volume
 XF86AudioRaiseVolume
@@ -18,7 +18,7 @@ XF86AudioLowerVolume
 
 # Mute/Unmute
 XF86AudioMute
-    amixer sset Master toggle > /dev/null && dwmref
+    amixer sset Master toggle > /dev/null && amixer sset Speaker toggle > /dev/null && dwmref
 
 # Mic mute/unmute
 XF86AudioMicMute

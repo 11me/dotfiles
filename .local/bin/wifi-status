@@ -1,0 +1,13 @@
+#!/bin/sh
+
+conn_status=$(cat /sys/class/net/wlp3s0/operstate)
+icon=""
+
+case "$conn_status" in
+    "up") icon="🌐"
+    ;;
+    "down") icon="🛑"
+    ;;
+esac
+
+printf "%s" "$icon"

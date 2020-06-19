@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# To Connect/disconnect existing-connected wifi:
+# nmcli con up "wifi name"; nmcli con down "wifi name";
+
+
+notify-send -t 3000 " Searching for Wi-Fi..."
+
+name=$(nmcli device wifi list | awk 'NR > 1 {print $2 }' | \
+     sed '/.*:.*:.*:.*:.*:.*/d;/--/d' | dmenu -i -l 20 -p "Choose a wifi")
+# If wifi not chosen exit
+[ -z "$name" ] && exit
+
+pass=$(dmenu -p "Password 🔑" <&-)
+
+# If password is empty exit
+[ -z "$pass" ] && exit
+
+# connect to wifi and save the result
+result=$(nmcli device wifi connect "$name" password "$pass")
+
+notify-send "$result"

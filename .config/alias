@@ -1,3 +1,6 @@
+
+aliasrc='$EDITOR $HOME/.config/alias'
+
 # Fast listing
 alias ls="ls --color=auto"
 alias la="ls -al"
