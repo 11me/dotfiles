@@ -32,6 +32,10 @@ XF86WakeUp + F8
 super + grave
     dmenuemoji
 
+# Mount a USB drive or Android device
+super + {F9,F10}
+	{dmenumount,dmenuumount}
+
 # Screenshots
 Print
-    maim -s | xclip -selection clipboard -t image/png
+    maim -s | xclip -selection clipboard -t image/png && notify-send -t 2000 "🖼screenshot copied to clipboard"

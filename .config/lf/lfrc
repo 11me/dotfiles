@@ -9,6 +9,7 @@ set color256
 set icons
 set period 1
 
+map - $/home/lime/.config/lf/draw_img.sh $f
 
 ## Vars that depend on environmental variables
 #$lf -remote "send $id set previewer ${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope"
