@@ -1,4 +1,5 @@
 .local/share
+.config/systemd
 .config/chromium
 .config/zsh/.zcompdump
 .config/newsboat/urls
