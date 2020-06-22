@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=RSS reader
+Exec=/usr/bin/newsboat %U
