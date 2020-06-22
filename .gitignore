@@ -1,5 +1,6 @@
 .local/share
 .config/chromium
+.config/zsh/.zcompdump
 .config/newsboat/urls
 .config/QtProject.conf
 .config/qBittorrent
