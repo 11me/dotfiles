@@ -1,5 +1,6 @@
 .local/share
 .config/systemd
+.config/GIMP
 .config/chromium
 .config/zsh/.zcompdump
 .config/newsboat/urls

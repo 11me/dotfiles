@@ -1,5 +1,5 @@
 
-aliasrc='$EDITOR $HOME/.config/alias'
+alias aliasrc='$EDITOR $HOME/.config/alias'
 
 # Fast listing
 alias ls="ls --color=auto"
@@ -44,3 +44,6 @@ alias hp='cd $HOME/pix'
 alias hd='cd $HOME/dox'
 alias hdw='cd $HOME/dwns'
 alias zd='cd $HOME/.config/zsh'
+
+# YouTube-DL
+alias ydla='youtube-dl  --extract-audio --audio-format mp3 --output "%(title)s.%(ext)s"'
