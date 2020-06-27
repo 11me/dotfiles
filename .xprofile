@@ -12,4 +12,5 @@ xset r rate 300 50 &    # Speed xrate up
 xset -b &               # Turn off awful beep sound
 picom -b &              # composite manager
 dwmbar &                # adds date to statusbar
+unclutter &             # hides mouse
 xrdb /home/$USER/.config/.Xresources &
