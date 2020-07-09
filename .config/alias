@@ -27,6 +27,7 @@ alias vi='$EDITOR'
 alias drmi='docker rmi $(docker images -qa) -f'
 alias drm='docker rm $(docker ps -qa)'
 alias drma='docker rm $(docker ps -qa) && docker rmi $(docker images -qa) -f'
+alias rmtex='rm -rf *.out *.aux *.log'
 
 # Git cmds
 alias gs='git status'
