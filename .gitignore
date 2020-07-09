@@ -1,5 +1,12 @@
 .local/share
+.local/bin/pipenv
+.local/bin/pipenv-*
+.local/bin/virtualenv
+.local/bin/virtualenv-*
+.local/lib
 .config/systemd
+.config/xfce4
+.config/Thunar
 .config/GIMP
 .config/chromium
 .config/zsh/.zcompdump
