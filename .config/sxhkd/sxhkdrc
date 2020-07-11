@@ -3,8 +3,13 @@
 # Open browser
 #Super_L + w
 #    st -e $BROWSER
-#
-## Open file manager
+
+
+# Lock screen
+super + shift + grave
+    slock
+
+# Search for wi-fi
 super + F5
     wifi > /dev/null && dwmref
 
