@@ -1,0 +1,71 @@
+TAG, NAME, DESCRIPTION
+V, alsa-utils, utils for alsa
+V, arandr, UI for xrandr for setup a monitor
+V, blueman, UI for bluetooth (BT) manager
+V, bluez, daemon for BT protocol
+V, bluez-utils
+V, chromium, browser
+V, cups, printing system
+V, cups-pdf
+V, dunst, sends notification
+V, figlet, makes large letters in terminal
+V, firefox, browser
+V, fzf, fuzzy finder
+V, gimp, GIMP
+V, git, git
+V, gzip, GNU compression
+V, hplip, drivers for HP
+A, hplip-plugin
+V, htop, process viewer
+V, ipython, interactive python shell
+A, lf, file manager
+V, libreoffice-fresh, office
+V, libxft-bgra, lib for colored emoji
+V, lxappearance, theme manager
+V, maim, screenshot tool
+V, mpc, music player
+V, mpd, music player daemon
+V, mpv, media player
+V, ncmpcpp, terminal music player
+V, neofetch, sys info tool
+V, neovim, powerful text editor
+V, newsboat, terminal RSS
+V, noto-fonts, fonts
+V, noto-fonts-emoji, fonts
+V, ttf-dejavu,
+V, ttf-font-awesome,
+V, ttf-inconsolata,
+V, ttf-jetbrains-mono,
+V, ttf-joypixels,
+V, ttf-linux-libertine,
+V, pavucontrol, UI audiocontrol for pulse
+V, picom, composite manager
+V, pulseaudio,
+V, python-pywal, generates colors for X
+V, qbittorrent, torrent UI
+V, ranger, file manager wirtten in python
+V, sxhkd, simple X htokey daemon
+V, sxiv, image viewer
+V, simple-scan, scanner gui for sane
+A, simple-mtpfs, android mount
+V, system-config-printer, printer config
+V, thunderbird, email client
+V, torbrowser-launcher, TOR
+V, transmission-cli, torrent cli
+V, unrar,
+V, unzip,
+V, unclutter, hides mouse
+V, w3m, terminal web-browser
+V, wget,
+V, sane, program for scanner
+V, xclip, clipboard tool
+V, xorg, X11
+V, xorg-xinit,
+V, xdg-utils,
+V, xwallpaper, walls for X
+G, yay, AUR
+V, youtube-dl, download vids and audio from YT
+V, zathura, minimalist pdf viewer
+V, zathura-djvu,
+V, zathura-pdf-mupdf,
+V, zsh, cool shell
