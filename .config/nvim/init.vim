@@ -16,6 +16,13 @@ set smartcase
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
+" Automatically install plugin manager and its plugins
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $VIMRC
+endif
+
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
     Plug 'vim-airline/vim-airline'
