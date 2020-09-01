@@ -6,6 +6,7 @@ source ~/.config/alias
 
 # Default programms
 export EDITOR="nvim"
+export VIMRC="$HOME/.config/nvim/init.vim"
 export TERMINAL="st"
 export FILEMANAGER="lf"
 export BROWSER="firefox"
