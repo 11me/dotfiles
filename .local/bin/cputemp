@@ -2,4 +2,4 @@
 
 # Show the CPU temperature
 ICON="🌡"
-printf "$ICON %s" "$(sensors | awk '/Core ./ {print $3}' | tr -s '\n' ' ')"
+printf "[$ICON %s]" "$(sensors | awk '/Core ./ {print $3}' | tr -s '\n' ' ')"

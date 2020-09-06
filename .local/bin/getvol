@@ -1,4 +1,4 @@
 #!/bin/sh
 
 
-printf "🔉 %s" "$(amixer get Master |awk '/Mono/ {print $4}' | sed 's/\[//; s/\]//' | tr -d '\n')"
+printf "[🔉 %s]" "$(amixer get Master |awk '/Mono/ {print $4}' | sed 's/\[//; s/\]//' | tr -d '\n')"

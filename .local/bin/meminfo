@@ -6,4 +6,4 @@
 #printf "%sMB" "$(($FREE/1024))"
 
 MEM=$(free -h | awk '/Mem:/ {print $7}')
-printf "🆓%s" "$MEM"
+printf "[🆓%s]" "$MEM"
