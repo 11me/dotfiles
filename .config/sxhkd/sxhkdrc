@@ -13,17 +13,17 @@ super + shift + grave
 super + F5
     wifi > /dev/null && dwmref
 
-# Increase volume
-XF86AudioRaiseVolume
-    amixer sset Master 5%+ && dwmref
-
-# Decrease volume
-XF86AudioLowerVolume
-    amixer sset Master 5%- > /dev/null && dwmref
-
-# Mute/Unmute
-XF86AudioMute
-    amixer sset Master toggle > /dev/null && amixer sset Speaker toggle > /dev/null && dwmref
+## Increase volume
+#XF86AudioRaiseVolume
+#    amixer sset Master 5%+ && dwmref
+#
+## Decrease volume
+#XF86AudioLowerVolume
+#    amixer sset Master 5%- > /dev/null && dwmref
+#
+## Mute/Unmute
+#XF86AudioMute
+#    amixer sset Master toggle > /dev/null && amixer sset Speaker toggle > /dev/null && dwmref
 
 # Mic mute/unmute
 XF86AudioMicMute
