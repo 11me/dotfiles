@@ -9,4 +9,5 @@ then
    ICON="🔌"
 fi
 
-[ -f /sys/class/power_supply/BAT0/capacity ] && printf "$ICON%s" $(cat /sys/class/power_supply/BAT0/capacity)%
+#[ -f /sys/class/power_supply/BAT0/capacity ] && printf "$ICON%s" $(cat /sys/class/power_supply/BAT0/capacity)%
+[ -f /sys/class/power_supply/BAT0/capacity ] && echo "$ICON$(cat /sys/class/power_supply/BAT0/capacity)%"

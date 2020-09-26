@@ -6,4 +6,5 @@
 #done
 ICON="📅"
 CLOCK="🕛"
-printf "[$ICON %s" "$(date +"(%a) %d-%m-%Y $CLOCK%R]")"
+#printf "[$ICON %s" "$(date +"(%a) %d-%m-%Y $CLOCK%R]")"
+echo "$ICON$(date +"(%a) %d-%m-%Y $CLOCK%R")"

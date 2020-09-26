@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Shows archlinux updates
+main_repo=`pacman -Sup 2> /dev/null`
+aur_repo=`yay -Sup 2> /dev/null`
+
+if [ "$main_repo" == "" ]; then
+    main_count=0
+else
+    main_count=`echo "$main_repo" | wc -l`
+fi
+
+if [ "$aur_repo" == "" ]; then
+    aur_count=0
+else
+    aur_count=`echo "$aur_repo" | wc -l`
+fi
+
+echo "📦$main_count 🐧$aur_count"
