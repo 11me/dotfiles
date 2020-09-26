@@ -1,0 +1,40 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+
+[updates]
+command=updates
+interval=3600
+
+[volume]
+command=volume
+LABEL=🔊
+#LABEL=VOL
+interval=once
+signal=10
+STEP=5%
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+
+[battery]
+command=battery
+interval=10
+
+[time]
+command=datetime
+interval=1
+
+[xkb_layout]
+command=xkb_layout
+font=monospace
+font_weight=bold
+interval=persist
+markup=pango
