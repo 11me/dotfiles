@@ -7,6 +7,8 @@ font pango:monospace 10
 for_window [class="TelegramDesktop"] floating enable
 for_window [class="Pavucontrol"] floating enable
 
+bindsym $mod+w exec firefox
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -27,7 +29,6 @@ exec --no-startup-id nm-applet
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 #bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -51,23 +52,11 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 bindsym $mod+h focus left
 
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 bindsym $mod+Shift+h move left
-
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+bracketright split h
@@ -80,8 +69,11 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
+
+# Sticky window
+bindsym $mod+Shift+s sticky toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -172,6 +164,27 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Colors
+set $bg-color 	         #343a40
+set $inactive-bg-color   #212529
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+set $id-color            #7400b8
+
+# Bar colors
+
+set $bar-bg-color        #0d1b2a
+set $bar-border-color    #252422
+set $bar-text-color      #e0e1dd
+
+# window colors
+#                       border              background            text                 indicator
+client.focused          $bg-color           $bg-color           $text-color            $id-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color  $inactive-text-color   $id-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color  $inactive-text-color   $id-color
+client.urgent           $urgent-bg-color    $urgent-bg-color    $text-color            $id-color
+
 # Toggle between hide state and show state
 bindsym $mod+b bar mode toggle
 
@@ -179,6 +192,7 @@ bindsym $mod+b bar mode toggle
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -186,4 +200,9 @@ bar {
         status_command i3blocks
         position top
         font pango:DejaVu Sans Mono 10
+
+        colors {
+                #background $bar-bg-color
+                focused_workspace  $bar-border-color $bar-bg-color $bar-text-color
+            }
 }
