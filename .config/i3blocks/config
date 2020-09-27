@@ -24,6 +24,11 @@ STEP=5%
 #MIXER=[determined automatically]
 #SCONTROL=[determined automatically]
 
+[internet]
+LABEL=
+command=internet
+interval=10
+
 [battery]
 command=battery
 interval=10
