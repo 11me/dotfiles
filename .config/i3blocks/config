@@ -10,9 +10,18 @@
 separator=true
 separator_block_width=15
 
+[weather]
+command=weather
+interval=1800
+
 [updates]
 command=updates
 interval=3600
+
+[battery]
+LABEL=
+command=battery
+interval=10
 
 [volume]
 command=volume
@@ -27,10 +36,6 @@ STEP=5%
 [internet]
 LABEL=
 command=internet
-interval=10
-
-[battery]
-command=battery
 interval=10
 
 [time]
