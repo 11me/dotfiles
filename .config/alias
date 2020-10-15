@@ -1,4 +1,3 @@
-
 alias aliasrc='$EDITOR $HOME/.config/alias'
 
 # Fast listing
@@ -8,6 +7,8 @@ alias l="ls -l"
 
 # Make config changes easy in suckless programs
 alias dwmrc='cd $HOME/.local/share/dwm && $EDITOR config.def.h'
+alias i3rc='cd $HOME/.config/i3/ && $EDITOR config'
+alias i3brc='cd $HOME/.config/i3blocks/ && $EDITOR config'
 alias strc='cd $HOME/.local/share/st && $EDITOR config.h'
 alias dmenurc='cd $HOME/.local/share/dmenu && $EDITOR config.def.h'
 alias smci='sudo -A make clean install'
