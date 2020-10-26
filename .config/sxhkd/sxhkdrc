@@ -10,7 +10,7 @@ super + shift + grave
     slock
 
 # Search for wi-fi
-super + F5
+super + F8
     wifi > /dev/null && dwmref
 
 ## Increase volume
@@ -30,7 +30,7 @@ XF86AudioMicMute
     pactl set-source-mute 1 toggle > /dev/null && dwmref
 
 # Touchpad toggle
-XF86WakeUp + F8
+super + F12
     touchpad_toggle
 
 # Dmenu emoji
@@ -40,6 +40,13 @@ super + grave
 # Mount a USB drive or Android device
 super + {F9,F10}
 	{dmenumount,dmenuumount}
+
+#brightness
+XF86MonBrightnessDown
+    xbacklight -dec 20
+
+XF86MonBrightnessUp
+    xbacklight -inc 20
 
 # Screenshots
 Print
