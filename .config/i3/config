@@ -6,6 +6,7 @@ font pango:monospace 10
 
 for_window [class="TelegramDesktop"] floating enable
 for_window [class="Pavucontrol"] floating enable
+for_window [class="Thunar"] floating enable
 
 bindsym $mod+w exec $BROWSER
 bindsym $mod+n exec $TERMINAL -e newsboat
