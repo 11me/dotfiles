@@ -43,10 +43,10 @@ super + {F9,F10}
 
 #brightness
 XF86MonBrightnessDown
-    xbacklight -dec 20
+    xbacklight -dec 5
 
 XF86MonBrightnessUp
-    xbacklight -inc 20
+    xbacklight -inc 5
 
 # Screenshots
 Print
