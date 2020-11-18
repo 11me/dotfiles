@@ -14,9 +14,9 @@ separator_block_width=15
 command=weather
 interval=1800
 
-[updates]
-command=updates
-interval=3600
+#[updates]
+#command=updates
+#interval=3600
 
 [battery]
 LABEL=
