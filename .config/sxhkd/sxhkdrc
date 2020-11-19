@@ -48,6 +48,16 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
     xbacklight -inc 5
 
+# Volume control
+super + minus
+    amixer -q sset Master 5%- && pkill -RTMIN+10 i3blocks
+
+super + equal
+   amixer -q sset Master 5%+ && pkill -RTMIN+10 i3blocks
+
+super + shift + minus
+    pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
+
 # Screenshots
 Print
     maim -s | xclip -selection clipboard -t image/png && notify-send -t 2000 "🖼screenshot copied to clipboard"
