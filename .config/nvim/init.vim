@@ -16,6 +16,12 @@ set nowrap
 set smartcase
 set colorcolumn=80
 
+" allows easily editing russian texts by switching to RU via ctrl+^
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
+
 if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
 	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
@@ -61,6 +67,7 @@ iabbrev shb #!/bin/sh
 
 " Normal mode
 nnoremap <leader><f2> :set list!<cr>
+nnoremap <leader>s :setlocal spell! spelllang=ru_yo,en_us<cr>
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
 autocmd BufWritePre * %s/\s\+$//e
