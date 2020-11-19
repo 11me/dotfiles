@@ -20,8 +20,8 @@ alias ignore='$EDITOR $HOME/dotfiles/.gitignore'
 alias vimrc='$EDITOR $HOME/.config/nvim/init.vim'
 
 # Actions
-alias p='sudo pacman -S'
-alias ps='pacman -Ss'
+alias ps='sudo pacman -S'
+alias pss='pacman -Ss'
 alias ss='source ~/.config/zsh/.zshrc'
 alias todo='$EDITOR $HOME/dox/personal/todo'
 alias vi='$EDITOR'
