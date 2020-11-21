@@ -77,3 +77,6 @@ map <C-l> <C-w>l
 
 " Open corresponding .pdf/.html or preview
 map <leader>p :!opout <c-r>%<CR><CR>
+
+" Compile document, be it groff/LaTeX/markdown/etc.
+map <leader>c :w! \| !compiler "<c-r>%"<CR>
