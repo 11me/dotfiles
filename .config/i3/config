@@ -18,6 +18,8 @@ for_window [instance="quick_st"] floating enable;
 for_window [instance="quick_st"] move scratchpad; [instance="quick_st"] scratchpad show; move position 0px 22px; resize shrink height 300px; resize grow width 683px; move scratchpad
 bindsym $mod+semicolon [instance="quick_st"] scratchpad show
 
+default_border pixel 2
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
