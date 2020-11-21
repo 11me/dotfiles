@@ -10,6 +10,11 @@
 separator=true
 separator_block_width=15
 
+[currency]
+LABEL=💰
+command=currency
+interval=1800
+
 [weather]
 command=weather
 interval=1800

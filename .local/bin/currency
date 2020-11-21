@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Get currency from CBRF
+link="http://www.cbr.ru/scripts/XML_daily_eng.asp"
+path="/tmp/currency.xml"
+pattern_USD="<Name>US Dollar</Name><Value>[0-9]+,[0-9]+</Value>"
+pattern_EUR="<Name>Euro</Name><Value>[0-9]+,[0-9]+</Value>"
+pattern2="[0-9]+,[0-9]+"
+
+# Download the XML file
+curl -so "$path" "$link"
+
+USD="$(egrep -o "$pattern_USD" "$path" | egrep -o "$pattern2")"
+EUR="$(egrep -o "$pattern_EUR" "$path" | egrep -o "$pattern2")"
+
+echo "$EUR $USD"
