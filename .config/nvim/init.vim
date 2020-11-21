@@ -38,6 +38,7 @@ call plug#end()
 map <c-n> :NERDTreeToggle<cr>
 map <leader><f3> :ColorToggle<cr>
 so ~/.config/nvim/coc-maps.vim
+so ~/.config/nvim/shortcuts.vim
 
 " Basics
 syntax on
@@ -58,11 +59,13 @@ inoremap " ""<esc>i
 inoremap { {}<esc>i
 inoremap < <><esc>i
 inoremap [ []<esc>i
-iabbrev shb #!/bin/sh
 
 " Normal mode
 nnoremap <leader><f2> :set list!<cr>
 nnoremap <leader>s :setlocal spell! spelllang=ru_yo,en_us<cr>
+nnoremap <space><space> <esc>/<++><cr>"_c4l
+nnoremap <space>j o<++><esc>0
+nnoremap <space>J O<++><esc>0
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
 autocmd BufWritePre * %s/\s\+$//e
