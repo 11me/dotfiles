@@ -8,6 +8,8 @@
 
 let mapleader = ","
 let g:airline_powerline_fonts=1
+set title
+set noshowcmd
 set nohlsearch
 set clipboard+=unnamedplus
 set smartindent
@@ -15,6 +17,7 @@ set number
 set nowrap
 set smartcase
 set colorcolumn=80
+set splitbelow splitright
 
 " allows easily editing russian texts by switching to RU via ctrl+^
 set keymap=russian-jcukenwin
@@ -72,3 +75,14 @@ nnoremap <leader>s :setlocal spell! spelllang=ru_yo,en_us<cr>
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWritepre * %s/\n\+\%$//e
+
+" Shortcutting split navigation, saving a keypress:
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+autocmd VimLeave *.tex !cleartex %
+
+" Open corresponding .pdf/.html or preview
+map <leader>p :!opout <c-r>%<CR><CR>
