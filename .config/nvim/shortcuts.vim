@@ -1,5 +1,7 @@
 " SHELL
 autocmd FileType sh inoremap ;sh #!/bin/sh<cr><cr>
+autocmd FileType sh inoremap ;case case<space><++><space>in<cr><++>)<cr><++><cr>;;<cr>esac<esc>4k0
+
 
 " HTML
 autocmd FileType html inoremap ;i <em></em><Space><++><Esc>FeT>i
