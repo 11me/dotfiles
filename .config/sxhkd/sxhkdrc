@@ -59,5 +59,7 @@ super + shift + minus
     pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
 
 # Screenshots
+shift + Print
+    mkst copy
 Print
-    maim -s | xclip -selection clipboard -t image/png && notify-send -t 2000 "🖼screenshot copied to clipboard"
+    mkst save
