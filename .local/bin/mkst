@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# A little script for making a screenshot by selecting an area.
+
+path="/home/$USER/pix/$(date +%s).png"
+msg_copy="🖼screenshot copied to clipboard"
+msg_save="🖼Screenshot is saved as $path"
+
+case $1 in
+    copy)
+        maim -s | xclip -selection clipboard -t image/png && notify-send -t 2000 "$msg_copy"
+        ;;
+    save)
+        maim -s "$path" && notify-send -t 2000 "$msg_save"
+        ;;
+esac
