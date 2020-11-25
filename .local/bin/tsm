@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# A small script for controlling transmission-remote
+
+case $1 in
+    add)
+        transmission-remote -a $2
+        ;;
+    stop)
+        transmission-remote -t $2 --stop
+        ;;
+    start)
+        transmission-remote -t $2 --start
+        ;;
+    purge)
+        transmission-remote -t $2 --remove-and-delete
+        ;;
+    remove)
+        transmission-remote -t $2 --remove
+        ;;
+    info)
+        transmission-remote -t $2 --info
+        ;;
+    *)
+        transmission-remote -l
+        ;;
+
+esac
