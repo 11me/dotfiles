@@ -3,6 +3,8 @@
 # Get currency from CBRF
 arrow_up=""
 arrow_down=""
+usd_color="green"
+eur_color="green"
 current_day=$(date +%d/%m/%Y)
 past_day=$(date --date="yesterday" +%d/%m/%Y)
 current_day_=$(date +%d_%m_%Y)
@@ -46,7 +48,17 @@ currency_compare() {
 
 }
 
+# Output format
+format_output() {
+
+    [ $USD_SIGN = $arrow_up ] || usd_color="red"
+    [ $EUR_SIGN = $arrow_up ] || eur_color="red"
+
+}
+
 get_currency
 parse_xml
 currency_compare
-echo "$EUR_CURRENT$EUR_SIGN $USD_CURRENT$USD_SIGN"
+format_output
+
+echo "$EUR_CURRENT<span foreground='$eur_color'>$EUR_SIGN</span> $USD_CURRENT<span foreground='$usd_color'>$USD_SIGN</span>"
