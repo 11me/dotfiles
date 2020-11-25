@@ -1,16 +1,52 @@
 #!/bin/sh
 
 # Get currency from CBRF
-link="http://www.cbr.ru/scripts/XML_daily_eng.asp"
-path="/tmp/currency.xml"
+arrow_up=""
+arrow_down=""
+current_day=$(date +%d/%m/%Y)
+past_day=$(date --date="yesterday" +%d/%m/%Y)
+current_day_=$(date +%d_%m_%Y)
+past_day_=$(date --date="yesterday" +%d_%m_%Y)
+link="http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req="
+path="/tmp/currency"
 pattern_USD="<Name>US Dollar</Name><Value>[0-9]+,[0-9]+</Value>"
 pattern_EUR="<Name>Euro</Name><Value>[0-9]+,[0-9]+</Value>"
 pattern2="[0-9]+,[0-9]+"
 
-# Download the XML file
-curl -so "$path" "$link"
+# Gets XML from cbr.ru
+get_currency() {
 
-USD="$(egrep -o "$pattern_USD" "$path" | egrep -o "$pattern2")"
-EUR="$(egrep -o "$pattern_EUR" "$path" | egrep -o "$pattern2")"
+    # Creaty directory if does not exist
+    [ -d "$path" ] || mkdir -p $path
 
-echo "$EUR $USD"
+    # Change date format from / to _
+    [ -e "$path/${current_day_}.xml" ] || curl -so "$path/${current_day_}.xml" "$link${current_day}"
+    [ -e "$path/${past_day_}.xml" ] || curl -so "$path/${past_day_}.xml" "$link${past_day}"
+
+}
+
+# Parse currency from XML file
+parse_xml() {
+
+    USD_CURRENT="$(egrep -o "$pattern_USD" "$path/$current_day_.xml" | egrep -o "$pattern2" | sed 's/,/./g')"
+    EUR_CURRENT="$(egrep -o "$pattern_EUR" "$path/$current_day_.xml" | egrep -o "$pattern2" | sed 's/,/./g')"
+
+    USD_PAST="$(egrep -o "$pattern_USD" "$path/$past_day_.xml" | egrep -o "$pattern2" | sed 's/,/./g')"
+    EUR_PAST="$(egrep -o "$pattern_EUR" "$path/$past_day_.xml" | egrep -o "$pattern2" | sed 's/,/./g')"
+
+
+}
+
+# Compare currency
+currency_compare() {
+
+    # Compare usd
+    USD_SIGN=$(echo "$USD_CURRENT > $USD_PAST" | bc -l | sed -e "s/1/$arrow_up/g;s/0/$arrow_down/g")
+    EUR_SIGN=$(echo "$EUR_CURRENT > $EUR_PAST" | bc -l | sed -e "s/1/$arrow_up/g;s/0/$arrow_down/g")
+
+}
+
+get_currency
+parse_xml
+currency_compare
+echo "$EUR_CURRENT$EUR_SIGN $USD_CURRENT$USD_SIGN"
