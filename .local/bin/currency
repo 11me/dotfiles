@@ -27,6 +27,13 @@ get_currency() {
 
 }
 
+remove_old() {
+
+    old_file="$path/$(date --date='2 days ago' +%d_%m_%Y).xml"
+    [ -e "$old_file" ] && rm "$old_file"
+
+}
+
 # Parse currency from XML file
 parse_xml() {
 
@@ -62,3 +69,4 @@ currency_compare
 format_output
 
 echo "$EUR_CURRENT<span foreground='$eur_color'>$EUR_SIGN</span> $USD_CURRENT<span foreground='$usd_color'>$USD_SIGN</span>"
+remove_old
