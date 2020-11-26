@@ -30,11 +30,11 @@ get_currency() {
 # Parse currency from XML file
 parse_xml() {
 
-    USD_CURRENT="$(egrep -o "$pattern_USD" "$path/$current_day_.xml" | egrep -o "$pattern2" | sed 's/,/./g')"
-    EUR_CURRENT="$(egrep -o "$pattern_EUR" "$path/$current_day_.xml" | egrep -o "$pattern2" | sed 's/,/./g')"
+    USD_CURRENT="$( grep -Eo "$pattern_USD" "$path/$current_day_.xml" |  grep -Eo "$pattern2" | sed 's/,/./g')"
+    EUR_CURRENT="$( grep -Eo "$pattern_EUR" "$path/$current_day_.xml" |  grep -Eo "$pattern2" | sed 's/,/./g')"
 
-    USD_PAST="$(egrep -o "$pattern_USD" "$path/$past_day_.xml" | egrep -o "$pattern2" | sed 's/,/./g')"
-    EUR_PAST="$(egrep -o "$pattern_EUR" "$path/$past_day_.xml" | egrep -o "$pattern2" | sed 's/,/./g')"
+    USD_PAST="$( grep -Eo "$pattern_USD" "$path/$past_day_.xml" |  grep -Eo "$pattern2" | sed 's/,/./g')"
+    EUR_PAST="$( grep -Eo "$pattern_EUR" "$path/$past_day_.xml" |  grep -Eo "$pattern2" | sed 's/,/./g')"
 
 
 }
@@ -51,8 +51,8 @@ currency_compare() {
 # Output format
 format_output() {
 
-    [ $USD_SIGN = $arrow_up ] || usd_color="red"
-    [ $EUR_SIGN = $arrow_up ] || eur_color="red"
+    [ "$USD_SIGN" = $arrow_up ] || usd_color="red"
+    [ "$EUR_SIGN" = $arrow_up ] || eur_color="red"
 
 }
 
