@@ -13,7 +13,7 @@ separator_block_width=15
 [currency]
 LABEL=💰
 command=currency
-interval=43200
+interval=7200
 markup=pango
 
 [weather]
