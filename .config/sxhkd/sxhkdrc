@@ -63,3 +63,7 @@ shift + Print
     mkst copy
 Print
     mkst save
+
+# Pass manager
+super + Tab
+    passmenu
