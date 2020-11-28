@@ -10,6 +10,11 @@
 separator=true
 separator_block_width=15
 
+[recording]
+command=echo "$(cat /tmp/recordingicon)" || exit
+interval=once
+signal=9
+
 [currency]
 LABEL=💰
 command=currency

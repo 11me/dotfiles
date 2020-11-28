@@ -11,6 +11,7 @@ export TERMINAL="st"
 export FILEMANAGER="lf"
 export BROWSER="firefox"
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
+export STATUSBAR="i3blocks"
 
 # Clean up
 export PATH="$PATH:/home/$USER/.local/bin"

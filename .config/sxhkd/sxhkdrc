@@ -67,3 +67,9 @@ Print
 # Pass manager
 super + Tab
     passmenu
+
+# Recording
+super + Print
+    dmenurecord
+super + Delete
+    dmenurecord kill
