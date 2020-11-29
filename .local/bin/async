@@ -16,7 +16,7 @@ error_msg="❌ $dox does not exist"
 case "$1" in
     push)
         if [ "$(ls -A "$dox")" ]; then
-            (rsync -rpaq "$dox" "$push_path") || (notify-send -t 5000 "$random_error" && exit 0)
+            (rsync -rpa --progress "$dox" "$push_path") || (notify-send -t 5000 "$random_error" && exit 0)
             notify-send "$success_msg"
         else
             notify-send -t 5000 "$error_msg"
@@ -24,7 +24,7 @@ case "$1" in
         ;;
 
     pull)
-        (rsync -rpaq "$pull_path" "$dox" && notify-send "$success_msg") || (notify-send -t 5000 "$random_error" && exit 0)
+        (rsync -rpa --progress "$pull_path" "$dox" && notify-send "$success_msg") || (notify-send -t 5000 "$random_error" && exit 0)
         ;;
     *)
         echo "async pushes data to local server or pulls from it"
