@@ -214,7 +214,7 @@ bar {
         #font pango:DejaVu Sans Mono 10
 
         colors {
-                #background $bar-bg-color
+                background $bar-bg-color
                 focused_workspace  $bar-border-color $bar-bg-color $bar-text-color
             }
 }
