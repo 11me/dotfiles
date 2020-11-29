@@ -19,6 +19,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export ZDOTDIR="$HOME/.config/zsh"
 
+# Server name for rsync
+export SERVER="server"
+
 
 export LF_ICONS="di=📁:\
 fi=📃:\

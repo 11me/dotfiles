@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Backups my data to my local server
+# To get it to you have to specyfy ip of backup server in /etc/hosts file
+
+# Example /etc/hosts
+# 192.168.0.100    server
+
+dox="/home/$USER/dox"
+success_msg="💫 Successfully synced!"
+random_error="☠ Some error occured..."
+error_msg="❌ $dox does not exist"
+
+if [ "$(ls -A "$dox")" ]; then
+    rsync -rpaq "$dox" "$SERVER:/home/$USER/backups" || (notify-send "$random_error" && exit 0)
+    notify-send "$success_msg" && exit 0
+else
+    notify-send -t 5000 "$error_msg"
+    exit 0
+fi
