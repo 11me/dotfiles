@@ -145,6 +145,7 @@ mode "$mode_gaps_left" {
 }
 
 bindsym $mod+f gaps inner all set 0
+bindsym $mod+i gaps inner all set 20
 
 #default_border pixel 2
 
