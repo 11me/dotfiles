@@ -7,14 +7,26 @@
 # 192.168.0.100    server
 
 dox="/home/$USER/dox"
+push_path="$SERVER:/home/$USER/backups"
+pull_path="$SERVER:/home/$USER/backups/dox/"
 success_msg="💫 Successfully synced!"
 random_error="☠ Some error occured..."
 error_msg="❌ $dox does not exist"
 
-if [ "$(ls -A "$dox")" ]; then
-    rsync -rpaq "$dox" "$SERVER:/home/$USER/backups" || (notify-send "$random_error" && exit 0)
-    notify-send "$success_msg" && exit 0
-else
-    notify-send -t 5000 "$error_msg"
-    exit 0
-fi
+case "$1" in
+    push)
+        if [ "$(ls -A "$dox")" ]; then
+            (rsync -rpaq "$dox" "$push_path") || (notify-send -t 5000 "$random_error" && exit 0)
+            notify-send "$success_msg"
+        else
+            notify-send -t 5000 "$error_msg"
+        fi
+        ;;
+
+    pull)
+        (rsync -rpaq "$pull_path" "$dox" && notify-send "$success_msg") || (notify-send -t 5000 "$random_error" && exit 0)
+        ;;
+    *)
+        echo "async pushes data to local server or pulls from it"
+        echo "USAGE: async push | pull"
+esac
