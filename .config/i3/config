@@ -144,8 +144,8 @@ mode "$mode_gaps_left" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+f gaps inner all set 0
-bindsym $mod+i gaps inner all set 20
+bindsym $mod+shift+f gaps inner all set 0
+bindsym $mod+f gaps inner all set 20
 
 #default_border pixel 2
 
@@ -205,7 +205,7 @@ bindsym $mod+bracketright split h
 bindsym $mod+bracketleft split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+shift+f fullscreen toggle
+bindsym $mod+shift+y fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
