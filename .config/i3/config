@@ -5,9 +5,13 @@ set $mod Mod4
 #font pango:monospace 10
 font pango:DejaVu Sans Mono 10
 
+gaps inner 20
+
+
 for_window [class="TelegramDesktop"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Thunar"] floating enable
+for_window [class=".*"] border pixel 2
 
 bindsym $mod+w exec $BROWSER
 bindsym $mod+n exec $TERMINAL -e newsboat
@@ -28,6 +32,7 @@ set $mode_gaps_right Right Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_bottom Bottom Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_left Left Gaps: +|-|0 (local), Shift + +|-|0 (global)
 bindsym $mod+Shift+g mode "$mode_gaps"
+
 
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"
@@ -139,8 +144,9 @@ mode "$mode_gaps_left" {
         bindsym Escape mode "default"
 }
 
+bindsym $mod+f gaps inner all set 0
 
-default_border pixel 2
+#default_border pixel 2
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -198,7 +204,7 @@ bindsym $mod+bracketright split h
 bindsym $mod+bracketleft split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
