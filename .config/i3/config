@@ -176,7 +176,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Colors
-set $bg-color 	         #343a40
+set $bg-color 	         #ff0000
 set $border-color        #3399ff
 set $inactive-bg-color   #212529
 set $text-color          #f3f4f5
@@ -187,8 +187,9 @@ set $id-color            #7400b8
 # Bar colors
 
 set $bar-bg-color        #0d1b2a
-set $bar-border-color    #252422
-set $bar-text-color      #e0e1dd
+set $bar-bg-active       #3399ff
+set $bar-border-color    #ccccff
+set $bar-text-color      #ffffff
 
 # window colors
 #                       border              background            text                 indicator
@@ -215,6 +216,6 @@ bar {
 
         colors {
                 background $bar-bg-color
-                focused_workspace  $bar-border-color $bar-bg-color $bar-text-color
+                focused_workspace  $bar-border-color $bar-bg-active $bar-text-color
             }
 }
