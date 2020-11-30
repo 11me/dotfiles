@@ -2,7 +2,7 @@ alias aliasrc='$EDITOR $HOME/.config/alias'
 
 # Fast listing
 alias ls="ls --color=auto"
-alias la="ls -alh"
+alias la="ls -Alh"
 alias l="ls -l"
 
 # Make config changes easy in suckless programs

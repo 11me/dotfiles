@@ -14,7 +14,7 @@ for_window [class="Thunar"] floating enable
 for_window [class=".*"] border pixel 2
 
 bindsym $mod+w exec $BROWSER
-bindsym $mod+n exec $TERMINAL -e newsboat
+bindsym $mod+n exec $TERMINAL -e newsboat -u ~/dox/personal/urls
 
 # Quick terminal
 exec --no-startup-id $TERMINAL -name quick_st
