@@ -18,7 +18,7 @@ signal=9
 [currency]
 LABEL=💰
 command=currency
-interval=7200
+interval=1800
 markup=pango
 
 [weather]
