@@ -29,6 +29,7 @@ alias drmi='docker rmi $(docker images -qa) -f'
 alias drm='docker rm $(docker ps -qa)'
 alias drma='docker rm $(docker ps -qa) && docker rmi $(docker images -qa) -f'
 alias rmtex='rm -rf *.out *.aux *.log'
+alias sts='$EDITOR ~/.config/nvim/shortcuts.vim'
 
 # sxiv in thumbnail mode
 alias iv='sxiv -t'
