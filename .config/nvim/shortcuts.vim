@@ -7,6 +7,8 @@ autocmd FileType sh inoremap :case case<space><++><space>in<cr><++>)<cr><++><cr>
 autocmd FileType html inoremap :i <em></em><Space><++><Esc>FeT>i
 
 " LaTeX
+autocmd FileType tex inoremap :doc \begin{document}<esc>o<cr><++><cr><esc>o\end{document}<esc>4k
+
 
 
 " Python

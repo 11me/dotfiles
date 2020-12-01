@@ -1,4 +1,3 @@
-
 let mapleader = ","
 let g:airline_powerline_fonts=1
 set title
@@ -11,6 +10,7 @@ set nowrap
 set smartcase
 set colorcolumn=80
 set splitbelow splitright
+set lz
 
 " Allows easily editing russian texts by switching to RU via ctrl+^
 set keymap=russian-jcukenwin
