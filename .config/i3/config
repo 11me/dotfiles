@@ -144,8 +144,8 @@ mode "$mode_gaps_left" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+shift+f gaps inner all set 0
-bindsym $mod+f gaps inner all set 20
+bindsym $mod+f gaps inner all set 0
+bindsym $mod+shift+f gaps inner all set 20
 
 #default_border pixel 2
 
