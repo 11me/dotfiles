@@ -28,9 +28,20 @@ zstyle ':vcs_info:*' enable git
 fi
 }
 precmd () { vcs_info }
-#PROMPT='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_} %f%# '
+
+
+# Gives exit code in promtp
+#exit_code() {
+#
+#    if [ "$?" -eq 0 ]; then
+#        exit_code=""
+#    else
+#        exit_code="$?"
+#    fi
+#}
+#precmd() { eval exit_code }
+
 PROMPT='%F{5}[%F{2}%n@%m%F{5}]%F{3}%3~>${vcs_info_msg_0_} %f%> '
-#PROMPT='%F{033}[%f%F{039}%n%f%F{045}@%f%F{051}%m%f%F{033}]%f %F{075}%~>%f ${vcs_info_msg_0_} '
 
 # History in cache directory:
 HISTSIZE=10000

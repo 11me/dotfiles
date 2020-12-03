@@ -71,6 +71,8 @@ nnoremap <space>J O<++><esc>0
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWritepre * %s/\n\+\%$//e
 autocmd VimLeave *.tex !cleartex %
+autocmd VimLeave * mkview
+autocmd VimEnter * loadview
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
