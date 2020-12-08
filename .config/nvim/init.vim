@@ -11,6 +11,8 @@ set smartcase
 set colorcolumn=80
 set splitbelow splitright
 set lz
+set termguicolors
+
 
 " Allows easily editing russian texts by switching to RU via ctrl+^
 set keymap=russian-jcukenwin
@@ -31,18 +33,22 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'scrooloose/nerdtree'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'joshdick/onedark.vim'
+    Plug 'morhetz/gruvbox'
     Plug 'sheerun/vim-polyglot'
+    Plug 'junegunn/fzf.vim'
 call plug#end()
+
+colorscheme gruvbox
 
 " Plugin mappings
 map <c-n> :NERDTreeToggle<cr>
 map <leader><f3> :ColorToggle<cr>
 so ~/.config/nvim/coc-maps.vim
 so ~/.config/nvim/shortcuts.vim
+so ~/.config/nvim/fzf-maps.vim
 
 " Basics
 syntax on
-colorscheme onedark
 filetype indent on
 "highlight Normal ctermbg=Black
 "highlight NonText ctermbg=Black
@@ -69,10 +75,12 @@ nnoremap <space>J O<++><esc>0
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
 autocmd BufWritePre * %s/\s\+$//e
-autocmd BufWritepre * %s/\n\+\%$//e
+autocmd BufWritePre * %s/\n\+\%$//e
 autocmd VimLeave *.tex !cleartex %
-autocmd VimLeave * mkview
-autocmd VimEnter * loadview
+
+" Save folded text
+autocmd BufWritePost * mkview
+autocmd BufWinEnter * silent! loadview
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
@@ -85,3 +93,7 @@ map <leader>p :!opout <c-r>%<CR><CR>
 
 " Compile document, be it groff/LaTeX/markdown/etc.
 map <leader>c :w! \| !compiler "<c-r>%"<CR>
+
+" Filetypes
+autocmd BufNewFile,BufRead Dockerfile* set filetype=dockerfile
+autocmd BufNewFile,BufRead *.tex set filetype=tex
