@@ -347,4 +347,6 @@ bar {
                 background $bar-bg-color
                 focused_workspace  $bar-border-color $bar-bg-active $bar-text-color
             }
+        hidden_state hide
+        modifier none
 }
