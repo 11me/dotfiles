@@ -41,7 +41,8 @@ precmd () { vcs_info }
 #}
 #precmd() { eval exit_code }
 
-PROMPT='%F{5}[%F{2}%n@%m%F{5}]%F{3}%3~>${vcs_info_msg_0_} %f%> '
+#PROMPT='%F{5}[%F{2}%n@%m%F{5}]%F{3}%3~>${vcs_info_msg_0_} %f%> '
+PROMPT='%(?.%F{green}😎.%F{red}😈%?)%f %B%F{blue}%1~%f%b %# '
 
 # History in cache directory:
 HISTSIZE=10000
