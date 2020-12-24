@@ -17,6 +17,9 @@ autocmd FileType tex inoremap :doc
 
 autocmd FileType tex inoremap :... \ldots
 
+autocmd FileType tex inoremap :env
+            \ \begin{<++>}<cr>\end{<++>}<esc>O<++><esc>k0
+
 
 " Python
 autocmd FileType python inoremap :fin
@@ -27,3 +30,7 @@ autocmd FileType python inoremap :_m
 
 autocmd FileType python inoremap :fun
             \ def<space><++>(<++>):<cr><++><esc>k0
+
+" JavaScript
+autocmd FileType javascript inoremap :fun
+            \ function <++>(<++>){<cr><++><cr>}<esc>O<esc>2k0
