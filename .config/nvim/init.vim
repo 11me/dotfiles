@@ -1,4 +1,4 @@
-let mapleader = ","
+let mapleader = " "
 let g:airline_powerline_fonts=1
 set title
 set noshowcmd
@@ -6,11 +6,10 @@ set nohlsearch
 set clipboard+=unnamedplus
 set smartindent
 set number
-set nowrap
+set wrap
 set smartcase
 set colorcolumn=80
 set splitbelow splitright
-set lz
 set termguicolors
 
 
@@ -57,14 +56,6 @@ set encoding=utf-8
 set hidden
 set tabstop=4 softtabstop=0 shiftwidth=4 expandtab
 set listchars=tab:→\ ,eol:↲,space:␣
-
-" Insert mode
-inoremap ( ()<esc>i
-inoremap ' ''<esc>i
-inoremap " ""<esc>i
-inoremap { {}<esc>i
-inoremap < <><esc>i
-inoremap [ []<esc>i
 
 " Normal mode
 nnoremap <leader><f2> :set list!<cr>

@@ -15,6 +15,7 @@ autocmd FileType html inoremap :i
 autocmd FileType tex inoremap :doc
             \ \begin{document}<esc>o<cr><++><cr><esc>o\end{document}<esc>4k
 
+autocmd FileType tex inoremap :... \ldots
 
 
 " Python
