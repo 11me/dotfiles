@@ -11,7 +11,6 @@
 
 updateicon() { \
 	echo "$1" > /tmp/recordingicon
-    echo "$(cat /tmp/recordingicon)"
 	pkill -RTMIN+9 "${STATUSBAR:-dwmblocks}"
 	}
 
@@ -20,7 +19,7 @@ killrecording() {
 	# kill with SIGTERM, allowing finishing touches.
 	kill -15 "$recpid"
 	rm -f /tmp/recordingpid
-	updateicon ""
+    rm -f /tmp/recordingicon
 	pkill -RTMIN+9 "${STATUSBAR:-dwmblocks}"
 	# even after SIGTERM, ffmpeg may still run, so SIGKILL it.
 	sleep 3

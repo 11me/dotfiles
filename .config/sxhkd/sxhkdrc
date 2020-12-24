@@ -50,13 +50,13 @@ XF86MonBrightnessUp
 
 # Volume control
 super + minus
-    amixer -q sset Master 5%- && pkill -RTMIN+10 i3blocks
+    amixer -q sset Master 5%- && pkill -RTMIN+10 $STATUSBAR
 
 super + equal
-   amixer -q sset Master 5%+ && pkill -RTMIN+10 i3blocks
+   amixer -q sset Master 5%+ && pkill -RTMIN+10 $STATUSBAR
 
 super + shift + minus
-    pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
+    pactl set-sink-mute 0 toggle && pkill -RTMIN+10 $STATUSBAR
 
 # Screenshots
 shift + Print

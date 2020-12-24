@@ -17,6 +17,8 @@
 
 #------------------------------------------------------------------------
 
+LABEL="🔊"
+
 # The second parameter overrides the mixer selection
 # For PulseAudio users, eventually use "pulse"
 # For Jack/Jack2 users, use "jackplug"
