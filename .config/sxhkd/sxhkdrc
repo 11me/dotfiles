@@ -25,9 +25,6 @@ super + F8
 #XF86AudioMute
 #    amixer sset Master toggle > /dev/null && amixer sset Speaker toggle > /dev/null && dwmref
 
-# Mic mute/unmute
-XF86AudioMicMute
-    pactl set-source-mute 1 toggle > /dev/null && dwmref
 
 # Touchpad toggle
 super + F12
@@ -57,6 +54,12 @@ super + equal
 
 super + shift + minus
     pactl set-sink-mute 0 toggle && pkill -RTMIN+10 $STATUSBAR
+
+XF86AudioMute
+    pactl set-sink-mute 0 toggle && pkill -RTMIN+10 $STATUSBAR
+
+XF86AudioMicMute
+    pactl set-source-mute 1 toggle > /dev/null && dwmref
 
 # Screenshots
 shift + Print
