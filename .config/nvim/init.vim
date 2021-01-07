@@ -54,7 +54,7 @@ filetype indent on
 set number relativenumber
 set encoding=utf-8
 set hidden
-set tabstop=4 softtabstop=0 shiftwidth=4 expandtab
+set tabstop=2 softtabstop=0 shiftwidth=2 expandtab
 set listchars=tab:→\ ,eol:↲,space:␣
 
 " Normal mode
@@ -63,6 +63,7 @@ nnoremap <leader>s :setlocal spell! spelllang=ru_yo,en_us<cr>
 nnoremap <space><space> <esc>/<++><cr>"_c4l
 nnoremap <space>j o<++><esc>0
 nnoremap <space>J O<++><esc>0
+nnoremap <c-s> :w<cr>
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
 autocmd BufWritePre * %s/\s\+$//e
