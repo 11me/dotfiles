@@ -1,84 +1,36 @@
 let mapleader = " "
-let g:airline_powerline_fonts=1
-set title
-set noshowcmd
-set nohlsearch
-set clipboard+=unnamedplus
-set smartindent
-set number
-set wrap
-set smartcase
-set colorcolumn=80
-set splitbelow splitright
-set termguicolors
-
-
-" Allows easily editing russian texts by switching to RU via ctrl+^
-set keymap=russian-jcukenwin
-set iminsert=0
-set imsearch=0
-highlight lCursor guifg=NONE guibg=Cyan
-
-if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
-	echo "Downloading junegunn/vim-plug to manage plugins..."
-	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
-	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
-	autocmd VimEnter * PlugInstall
-endif
+syntax on
+filetype indent on
 
 call plug#begin('~/.config/nvim/plugged')
-    Plug 'vim-airline/vim-airline'
-    Plug 'chrisbra/Colorizer'
-    Plug 'scrooloose/nerdtree'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'joshdick/onedark.vim'
-    Plug 'morhetz/gruvbox'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'junegunn/fzf.vim'
+Plug 'gruvbox-community/gruvbox'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'chrisbra/Colorizer'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 colorscheme gruvbox
-
-" Plugin mappings
-map <c-n> :NERDTreeToggle<cr>
-map <leader><f3> :ColorToggle<cr>
-so ~/.config/nvim/coc-maps.vim
-so ~/.config/nvim/shortcuts.vim
-so ~/.config/nvim/fzf-maps.vim
-
-" Basics
-syntax on
-filetype indent on
-"highlight Normal ctermbg=Black
-"highlight NonText ctermbg=Black
-set number relativenumber
-set encoding=utf-8
-set hidden
-set tabstop=2 softtabstop=0 shiftwidth=2 expandtab
-set listchars=tab:→\ ,eol:↲,space:␣
-
-" Normal mode
-nnoremap <leader><f2> :set list!<cr>
-nnoremap <leader>s :setlocal spell! spelllang=ru_yo,en_us<cr>
-nnoremap <space><space> <esc>/<++><cr>"_c4l
-nnoremap <space>j o<++><esc>0
-nnoremap <space>J O<++><esc>0
-nnoremap <c-s> :w<cr>
+highlight Normal guibg=none
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWritePre * %s/\n\+\%$//e
 autocmd VimLeave *.tex !cleartex %
 
-" Save folded text
-autocmd BufWritePost * mkview
-autocmd BufWinEnter * silent! loadview
-
+nnoremap <leader><f2> :set list!<cr>
+nnoremap <leader>s :setlocal spell! spelllang=ru_yo,en_us<cr>
+nnoremap <space><space> <esc>/<++><cr>"_c4l
+nnoremap <space>j o<++><esc>0
+nnoremap <space>J O<++><esc>0
+nnoremap <c-s> :w<cr>
+"
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+map <leader><f3> :ColorToggle<cr>
 
 " Open corresponding .pdf/.html or preview
 map <leader>p :!opout <c-r>%<CR><CR>
