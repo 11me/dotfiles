@@ -7,7 +7,7 @@ source ~/.config/alias
 # Default programms
 export EDITOR="nvim"
 export VIMRC="$HOME/.config/nvim/init.vim"
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export FILEMANAGER="lf"
 export BROWSER="firefox"
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
