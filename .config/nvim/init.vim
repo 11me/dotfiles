@@ -3,13 +3,18 @@ syntax on
 filetype indent on
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'gruvbox-community/gruvbox'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'chrisbra/Colorizer'
-Plug 'junegunn/fzf.vim'
+  Plug 'gruvbox-community/gruvbox'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'chrisbra/Colorizer'
+  Plug 'junegunn/fzf.vim'
+  Plug 'honza/vim-snippets'
+  Plug 'joshdick/onedark.vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-colorscheme gruvbox
+colorscheme onedark
+let g:airline_theme='onedark'
 highlight Normal guibg=none
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
@@ -23,7 +28,10 @@ nnoremap <space><space> <esc>/<++><cr>"_c4l
 nnoremap <space>j o<++><esc>0
 nnoremap <space>J O<++><esc>0
 nnoremap <c-s> :w<cr>
-"
+nnoremap <tab> :bnext<cr>
+nnoremap <s-tab> :bprevious<cr>
+nnoremap <leader>v :set cursorline!<cr>
+
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
 map <C-j> <C-w>j
