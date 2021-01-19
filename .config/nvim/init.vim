@@ -15,7 +15,17 @@ call plug#end()
 
 colorscheme onedark
 let g:airline_theme='onedark'
-highlight Normal guibg=none
+
+let t:is_transparent = 0
+function! ToggleTransparency()
+    if t:is_transparent == 0
+       let t:is_transparent = 1
+       highlight Normal guibg=NONE
+    else
+        let t:is_tranparent = 0
+        set background=dark
+    endif
+endfunction
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
 autocmd BufWritePre * %s/\s\+$//e
@@ -31,6 +41,7 @@ nnoremap <c-s> :w<cr>
 nnoremap <tab> :bnext<cr>
 nnoremap <s-tab> :bprevious<cr>
 nnoremap <leader>v :set cursorline!<cr>
+nnoremap <leader>b :call ToggleTransparency()<cr>
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
