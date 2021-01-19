@@ -151,7 +151,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 12
+  size: 11
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -181,7 +181,7 @@ colors:
   # Default colors
   primary:
     background: '#1d1f21'
-    foreground: '#c5c8c6'
+    foreground: '#61afef'
 
     # Bright and dim foreground colors
     #
@@ -251,40 +251,36 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#1d1f21'
-    red:     '#cc6666'
-    green:   '#b5bd68'
-    yellow:  '#f0c674'
-    blue:    '#81a2be'
-    magenta: '#b294bb'
-    cyan:    '#8abeb7'
-    white:   '#c5c8c6'
+    black:   '#191919'
+    red:     '#b02626'
+    green:   '#40a62f'
+    yellow:  '#f2e635'
+    blue:    '#314ad0'
+    magenta: '#b30ad0'
+    cyan:    '#32d0fc'
+    white:   '#acadb1'
 
   # Bright colors
   bright:
-    black:   '#666666'
-    red:     '#d54e53'
-    green:   '#b9ca4a'
-    yellow:  '#e7c547'
-    blue:    '#7aa6da'
-    magenta: '#c397d8'
-    cyan:    '#70c0b1'
-    white:   '#eaeaea'
+    black:   '#36393d'
+    red:     '#ce2727'
+    green:   '#47c930'
+    yellow:  '#fff138'
+    blue:    '#2e4bea'
+    magenta: '#cc15ed'
+    cyan:    '#54d9ff'
+    white:   '#dbdbdb'
 
   # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
   dim:
-    black:   '#131415'
-    red:     '#864343'
-    green:   '#777c44'
-    yellow:  '#9e824c'
-    blue:    '#556a7d'
-    magenta: '#75617b'
-    cyan:    '#5b7d78'
-    white:   '#828482'
-
+    black:   '#676f78'
+    red:     '#b55454'
+    green:   '#78a670'
+    yellow:  '#faf380'
+    blue:    '#707fd0'
+    magenta: '#c583d0'
+    cyan:    '#8adaf1'
+    white:   '#e0e3e7'
   # Indexed Colors
   #
   # The indexed colors include all colors from 16 to 256.
@@ -661,8 +657,8 @@ mouse_bindings:
 key_bindings:
   - { key: Equals,     mods: Control,                    action: IncreaseFontSize }
   - { key: Minus,      mods: Control,                    action: DecreaseFontSize }
-  - { key: C,          mods: Control|Shift,              action: Copy             }
-  - { key: V,          mods: Control|Shift,              action: Paste            }
+  - { key: C,          mods: Alt,                        action: Copy             }
+  - { key: V,          mods: Alt,                        action: Paste            }
   - { key: N,          mods: Control,                    action: SpawnNewInstance }
   - { key: J,          mods: Alt,                        action: ScrollLineDown   }
   - { key: K,          mods: Alt,                        action: ScrollLineUp     }
