@@ -9,7 +9,7 @@ alias l="ls -l"
 alias dwmrc='cd $HOME/.local/share/dwm && $EDITOR config.def.h'
 alias i3rc='cd $HOME/.config/i3/ && $EDITOR config'
 alias i3brc='cd $HOME/.config/i3blocks/ && $EDITOR config'
-alias strc='cd $HOME/.local/share/st && $EDITOR config.h'
+alias strc='cd $HOME/.local/share/st && $EDITOR config.def.h'
 alias dmenurc='cd $HOME/.local/share/dmenu && $EDITOR config.def.h'
 alias smci='sudo -A make clean install'
 
@@ -29,7 +29,8 @@ alias drmi='docker rmi $(docker images -qa) -f'
 alias drm='docker rm $(docker ps -qa)'
 alias drma='docker rm $(docker ps -qa) && docker rmi $(docker images -qa) -f'
 alias rmtex='rm -rf *.out *.aux *.log'
-alias sts='$EDITOR ~/.config/nvim/shortcuts.vim'
+alias sts='$EDITOR ~/.config/nvim/plugin/shortcuts.vim'
+alias xlx='xelatex -interaction nonstopmode -shell-escape'
 
 # sxiv in thumbnail mode
 alias iv='sxiv -t'
@@ -55,6 +56,7 @@ alias hdp='cd $HOME/dox/projects'
 alias hdw='cd $HOME/dwns'
 alias zd='cd $HOME/.config/zsh'
 alias dof='cd $HOME/dotfiles'
+alias nir='cd $HOME/dox/nir'
 
 # YouTube-DL
 alias ydla='youtube-dl  --extract-audio --audio-format mp3 --output "%(title)s.%(ext)s"'
