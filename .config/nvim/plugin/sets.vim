@@ -25,3 +25,4 @@ set clipboard+=unnamedplus
 set listchars=tab:→\ ,eol:↲,space:␣
 set updatetime=300
 set shortmess+=c
+set cursorline

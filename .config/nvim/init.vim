@@ -3,18 +3,18 @@ syntax on
 filetype indent on
 
 call plug#begin('~/.config/nvim/plugged')
-  Plug 'gruvbox-community/gruvbox'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'chrisbra/Colorizer'
   Plug 'junegunn/fzf.vim'
+  Plug 'airblade/vim-rooter'
   Plug 'honza/vim-snippets'
   Plug 'joshdick/onedark.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 colorscheme onedark
-let g:airline_theme='onedark'
 
 let t:is_transparent = 0
 function! ToggleTransparency()
@@ -38,10 +38,18 @@ nnoremap <space><space> <esc>/<++><cr>"_c4l
 nnoremap <space>j o<++><esc>0
 nnoremap <space>J O<++><esc>0
 nnoremap <c-s> :w<cr>
+nnoremap <c-x> :bd!<cr>
 nnoremap <tab> :bnext<cr>
 nnoremap <s-tab> :bprevious<cr>
 nnoremap <leader>v :set cursorline!<cr>
 nnoremap <leader>b :call ToggleTransparency()<cr>
+
+" maps for coc
+nnoremap <c-n> :CocCommand explorer<cr>
+
+" maps for fzf plugin
+nnoremap <c-p> :FZF<cr>
+nnoremap <c-f> :Files<cr>
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
