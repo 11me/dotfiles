@@ -44,6 +44,7 @@ let g:which_key_map['v'] = [ '<C-W>v'                                          ,
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
 let g:which_key_map['e'] = [ ':CocCommand explorer --toggle --sources=file+'   , 'explorer']
 let g:which_key_map['q'] = [ '<Plug>(coc-fix-current)'                         , 'quickfix']
+let g:which_key_map['m'] = [ ':CocList marketplace'                            , 'marketplace']
 
 " Group mappings
 

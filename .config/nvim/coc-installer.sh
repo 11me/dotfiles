@@ -30,5 +30,5 @@ then
 fi
 # Change extension names to the extensions you need
 npm install coc-snippets coc-sh coc-html coc-explorer \
-  coc-yaml coc-tsserver coc-python coc-json coc-css \
+  coc-yaml coc-tsserver coc-python coc-json coc-css coc-marketplace \
   --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
