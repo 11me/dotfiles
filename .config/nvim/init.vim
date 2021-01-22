@@ -25,6 +25,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-airline/vim-airline-themes'
   Plug 'sheerun/vim-polyglot'
   Plug 'mhinz/vim-signify'
+  Plug 'liuchengxu/vim-which-key'
+  Plug 'tpope/vim-fugitive'
+  Plug 'puremourning/vimspector'
 call plug#end()
 
 colorscheme onedark
@@ -48,14 +51,23 @@ autocmd VimLeave *.tex !cleartex %
 nnoremap <leader><f2> :set list!<cr>
 nnoremap <leader>s :setlocal spell! spelllang=ru_yo,en_us<cr>
 nnoremap <space><space> <esc>/<++><cr>"_c4l
-nnoremap <space>j o<++><esc>0
-nnoremap <space>J O<++><esc>0
 nnoremap <c-s> :w<cr>
 nnoremap <c-x> :bd!<cr>
 nnoremap <tab> :bnext<cr>
 nnoremap <s-tab> :bprevious<cr>
 nnoremap <leader>v :set cursorline!<cr>
-nnoremap <leader>b :call ToggleTransparency()<cr>
+
+ " Move selected line / block of text in visual mode
+ " shift + k to move up
+ " shift + j to move down
+  xnoremap K :move '<-2<CR>gv-gv
+  xnoremap J :move '>+1<CR>gv-gv
+
+" Use alt + hjkl to resize windows
+nnoremap <silent> <M-j>    :resize -2<CR>
+nnoremap <silent> <M-k>    :resize +2<CR>
+nnoremap <silent> <M-h>    :vertical resize -2<CR>
+nnoremap <silent> <M-l>    :vertical resize +2<CR>
 
 " maps for coc
 nnoremap <c-n> :CocCommand explorer<cr>
