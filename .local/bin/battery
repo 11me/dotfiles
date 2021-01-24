@@ -1,6 +1,11 @@
 #!/bin/env bash
 
-stat="$(acpi | sed \
+# Count batteries
+bat_count=$(ls /sys/class/power_supply | wc -l)
+
+if [ ! $bat_count -eq 0 ]; then
+
+  stat="$(acpi | sed \
   "s/Battery [0-9]: //;\
   s/[Dd]ischarging,*/🔋/;\
   s/[Nn]ot charging, /🛑/;\
@@ -8,6 +13,10 @@ stat="$(acpi | sed \
   s/[Uu]nknown, /♻️/;\
   s/[Ff]ull, /⚡/;\
   s/ \(remaining\|until charged\)//;\
-  s/, [0-9]*:[0-9]*:[0-9]*//g")"
+  s/, [0-9]*:[0-9]*:[0-9]*//g")" > /dev/null
 
-echo $stat
+  echo $stat
+
+else
+  exit 0
+fi
