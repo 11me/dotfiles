@@ -29,3 +29,27 @@
 .config/nvim/undodir
 .config/transmission-daemon
 .local/include
+.config/Atom/
+.config/Unknown Organization/
+.config/VirtualBox/
+.config/abiword/
+.config/aqemu/
+.config/irb/
+.config/kdenlive-layoutsrc
+.config/kdenliverc
+.config/libfm/
+.config/msmtp/
+.config/mutt/
+.config/wireshark/
+.config/zoomus.conf
+.local/bin/black
+.local/bin/black-primer
+.local/bin/blackd
+.local/bin/epylint
+.local/bin/f2py
+.local/bin/f2py3
+.local/bin/f2py3.9
+.local/bin/isort
+.local/bin/pylint
+.local/bin/pyreverse
+.local/bin/symilar
