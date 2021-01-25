@@ -41,8 +41,8 @@ precmd () { vcs_info }
 #}
 #precmd() { eval exit_code }
 
-#PROMPT='%F{5}[%F{2}%n@%m%F{5}]%F{3}%3~>${vcs_info_msg_0_} %f%> '
-PROMPT='%(?.%F{green}😎.%F{red}😈%?)%f %B%F{blue}%1~%f%b %# '
+PROMPT='%F{5}[%F{2}%n@%m%F{5}]%F{3}%3~>${vcs_info_msg_0_} %f%> '
+#PROMPT='%(?.%F{green}😎.%F{red}😈%?)%f %B%F{blue}%1~%f%b %# '
 
 # History in cache directory:
 HISTSIZE=10000
@@ -121,3 +121,7 @@ source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh >/dev/n
 
 
 ####################################################################################################
+
+# fnm
+export PATH=/home/lime/.fnm:$PATH
+eval "`fnm env`"

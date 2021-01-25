@@ -17,8 +17,15 @@
 .config/dconf
 .config/libreoffice
 .config/zsh/.zcompdump
-.config/coc
+.config/coc/extensions/node_modules
 .config/nvim/.netrwhist
 .config/nvim/plugged
 .config/pavucontrol.ini
 .config/pulse
+.config/coc
+.config/configstore
+.config/inkscape
+.config/nvim/autoload
+.config/nvim/undodir
+.config/transmission-daemon
+.local/include
