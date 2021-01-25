@@ -22,3 +22,10 @@
 .config/nvim/plugged
 .config/pavucontrol.ini
 .config/pulse
+.config/coc
+.config/configstore
+.config/inkscape
+.config/nvim/autoload
+.config/nvim/undodir
+.config/transmission-daemon
+.local/include
