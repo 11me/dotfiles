@@ -91,6 +91,12 @@ let g:which_key_map.d = {
       \ 's' : ['<Plug>VimspectorStop'                          , 'stop'],
       \ }
 
+let g:which_key_map.f = {
+      \ 'name': 'fuzzy search',
+      \ 'f': ['Files',                        'search files'],
+      \ 'g': ['GFiles',                      'search git files'],
+      \ 'r': ['Rg',                          'search in files'],
+\}
 
 
 " g is for git
