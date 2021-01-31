@@ -1,7 +1,3 @@
-#
-# .zshrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 [ -f $HOME/.profile ] && source $HOME/.profile
@@ -11,38 +7,14 @@ setopt autocd		            # Automatically cd into typed directory
 stty stop undef		            # Disable ctrl-s to freeze terminal
 
 # Prompt
-setopt prompt_subst
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' stagedstr 'M'
-zstyle ':vcs_info:*' unstagedstr 'M'
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' actionformats '%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
-zstyle ':vcs_info:*' formats \
-  '%F{5}[%F{2}%b%F{5}] %F{2}%c%F{3}%u%f'
-zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
-zstyle ':vcs_info:*' enable git
-+vi-git-untracked() {
-  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
-  [[ $(git ls-files --other --directory --exclude-standard | sed q | wc -l | tr -d ' ') == 1 ]] ; then
-  hook_com[unstaged]+='%F{1}??%f'
-fi
-}
 precmd () { vcs_info }
-
-
-# Gives exit code in promtp
-#exit_code() {
-#
-#    if [ "$?" -eq 0 ]; then
-#        exit_code=""
-#    else
-#        exit_code="$?"
-#    fi
-#}
-#precmd() { eval exit_code }
-
-PROMPT='%F{5}[%F{2}%n@%m%F{5}]%F{3}%3~>${vcs_info_msg_0_} %f%> '
-#PROMPT='%(?.%F{green}😎.%F{red}😈%?)%f %B%F{blue}%1~%f%b %# '
+zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
+zstyle ':vcs_info:*' enable git
+setopt prompt_subst
+RPROMPT=\$vcs_info_msg_0_
+PROMPT='%(?.%F{green}√.%F{red} %?)%f %F{178}%~%f %F{60}%#%f
+> '
 
 # History in cache directory:
 HISTSIZE=10000
@@ -99,29 +71,18 @@ lfcd () {
     fi
 }
 bindkey -s '^o' 'lfcd\n'
-
 bindkey -s '^a' 'bc -l\n'
+bindkey -s '^f' 'cd "$(dirname "$(fzf -i --layout=reverse)")"\n'
 
-bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
-
-bindkey '^[[P' delete-char
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
+# fnm
+export PATH=/home/lime/.fnm:$PATH
+eval "`fnm env`"
 
 # Load plugins
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh >/dev/null 2>&1
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh >/dev/null 2>&1
-#
-# Load theme
-#source ~/.config/zsh/themes/avit.zsh-theme
-
-
-
-####################################################################################################
-
-# fnm
-export PATH=/home/lime/.fnm:$PATH
-eval "`fnm env`"
