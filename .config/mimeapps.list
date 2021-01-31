@@ -22,7 +22,7 @@ application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 application/rss+xml=rss.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-SFGGW0.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-D33FY0.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
@@ -37,4 +37,4 @@ application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 application/pdf=firefox.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-SFGGW0.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-SFGGW0.desktop;userapp-Telegram Desktop-D33FY0.desktop;
