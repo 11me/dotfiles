@@ -1,10 +1,4 @@
 #!/bin/sh
 
-#while true; do
-#    xsetroot -name "$(date +"%R %d-%m-%Y %a")"
-#    sleep 1m
-#done
-ICON="📅"
-CLOCK="🕛"
 #printf "[$ICON %s" "$(date +"(%a) %d-%m-%Y $CLOCK%R]")"
-echo "$ICON$(date +"(%a) %d-%m-%Y $CLOCK%R")"
+echo "$(date +"(%a) %d-%m-%Y %R")"
