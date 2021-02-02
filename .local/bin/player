@@ -26,7 +26,7 @@ output() {
       s/\s+#[0-9]+\/[0-9]+\s+[0-9]+:[0-9]+\/[0-9]+:[0-9]+\s+\([0-9]+%\)//")"
 
     params="$(echo "$params" | sed -E \
-      "s/volume\s+?:[0-9]+%\s+//;\
+      "s/volume:\s?[0-9]+%\s+//;\
       s/repeat: off\s+//;\
       s/repeat: on\s+/🔁 /;\
       s/random: off\s+//;\
