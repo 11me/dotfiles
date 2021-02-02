@@ -76,3 +76,27 @@ super + Print
     dmenurecord
 super + Delete
     dmenurecord kill
+
+# Music control
+alt + period
+    mpc next
+alt + comma
+    mpc prev
+alt + shift + p
+    mpc play
+alt + p
+    mpc toggle
+alt + r
+    mpc repeat
+alt + shift + s
+    mpc stop
+alt + s
+    mpc single
+alt + bracketleft
+    mpc seek -10
+alt + shift + braceleft
+    mpc seek -60
+alt + bracketright
+    mpc seek +10
+alt + shift + braceright
+    mpc seek +60
