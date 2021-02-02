@@ -1,0 +1,45 @@
+#!/bin/env bash
+
+declare -a result
+
+# read in array
+# 0 - song name
+# 1 - playing status
+# 3 - volume and other params
+get_status() {
+
+  while read -r LINE
+  do
+    result+=("$LINE")
+  done <<< "$(mpc)"
+}
+
+output() {
+  local name="${result[0]}"
+  local status="${result[1]}"
+  local params="${result[2]}"
+
+  if [[ "$status" =~ playing|paused ]]; then
+    status="$(echo "$status" | sed -E \
+      "s/\[playing\]/🎵/;\
+      s/\[paused\]/⏸/;\
+      s/\s+#[0-9]+\/[0-9]+\s+[0-9]+:[0-9]+\/[0-9]+:[0-9]+\s+\([0-9]+%\)//")"
+
+    params="$(echo "$params" | sed -E \
+      "s/volume:[0-9]+%\s+//;\
+      s/repeat: off\s+//;\
+      s/repeat: on\s+/🔁 /;\
+      s/random: off\s+//;\
+      s/random: on\s+/🔀 /;\
+      s/single: off\s+//;\
+      s/single: on\s+/🔂/;\
+      s/consume: (off|on)//")"
+
+    echo "$params $status $name"
+  else
+    exit 0
+  fi
+}
+
+get_status
+output

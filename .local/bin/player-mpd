@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# This loop is for updating music in statusbar
+# by signaling to statusbar process
+
+while : ; do
+	mpc idle >/dev/null && pkill -RTMIN+11 "$STATUSBAR" || break
+done
