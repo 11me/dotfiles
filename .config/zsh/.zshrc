@@ -14,7 +14,7 @@ zstyle ':vcs_info:*' enable git
 setopt prompt_subst
 RPROMPT=\$vcs_info_msg_0_
 PROMPT='%(?.%F{green}√.%F{red} %?)%f %F{178}%~%f %F{60}%#%f
-> '
+%F{cyan}>%f '
 
 # History in cache directory:
 HISTSIZE=10000
