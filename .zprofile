@@ -10,8 +10,9 @@ export VIMRC="$HOME/.config/nvim/init.vim"
 export TERMINAL="st"
 export FILEMANAGER="lf"
 export BROWSER="librewolf"
-export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export STATUSBAR="dwmblocks"
+export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
+export SUDO_PROMPT="password 🔑:"
 
 # Clean up
 export PATH="$PATH:/home/$USER/.local/bin"
