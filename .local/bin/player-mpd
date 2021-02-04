@@ -4,5 +4,5 @@
 # by signaling to statusbar process
 
 while : ; do
-	mpc idle >/dev/null && pkill -RTMIN+11 "$STATUSBAR" || break
+	(mpc idle >/dev/null && pkill -RTMIN+11 "$STATUSBAR")
 done
