@@ -100,3 +100,7 @@ alt + bracketright
     mpc seek +10
 alt + shift + braceright
     mpc seek +60
+
+# open mailbox
+super + shift + n
+    st -e neomutt
