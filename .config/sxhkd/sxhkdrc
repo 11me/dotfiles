@@ -78,6 +78,8 @@ super + Delete
     dmenurecord kill
 
 # Music control
+super + m
+    st -e ncmpcpp
 alt + period
     mpc next
 alt + comma
