@@ -4,9 +4,7 @@ icon_full='📬'
 icon_empty='📭'
 
 # check if neomutt exists
-if [[ -f /usr/bin/neomutt ]]; then
-  # sync messages
-  mbsync -a >/dev/null
+if [[ -f /usr/bin/neomutt ]] && [[ -f /usr/local/bin/mw ]]; then
   # find unread messages
   unread="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
   if [[ "$unread" == "0" ]]; then
