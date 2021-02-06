@@ -1,10 +1,5 @@
 # If you dont know some keycode just run in terminal 'xev' command
 
-# Open browser
-#Super_L + w
-#    st -e $BROWSER
-
-
 # Lock screen
 super + shift + grave
     slock
@@ -12,19 +7,6 @@ super + shift + grave
 # Search for wi-fi
 super + F8
     wifi > /dev/null && dwmref
-
-## Increase volume
-#XF86AudioRaiseVolume
-#    amixer sset Master 5%+ && dwmref
-#
-## Decrease volume
-#XF86AudioLowerVolume
-#    amixer sset Master 5%- > /dev/null && dwmref
-#
-## Mute/Unmute
-#XF86AudioMute
-#    amixer sset Master toggle > /dev/null && amixer sset Speaker toggle > /dev/null && dwmref
-
 
 # Touchpad toggle
 super + F12
@@ -41,23 +23,18 @@ super + {F9,F10}
 #brightness
 XF86MonBrightnessDown
     xbacklight -dec 5
-
 XF86MonBrightnessUp
     xbacklight -inc 5
 
 # Volume control
 super + minus
     amixer -q sset Master 5%- && pkill -RTMIN+10 $STATUSBAR
-
 super + equal
    amixer -q sset Master 5%+ && pkill -RTMIN+10 $STATUSBAR
-
 super + shift + minus
     pactl set-sink-mute 0 toggle && pkill -RTMIN+10 $STATUSBAR
-
 XF86AudioMute
     pactl set-sink-mute 0 toggle && pkill -RTMIN+10 $STATUSBAR
-
 XF86AudioMicMute
     pactl set-source-mute 1 toggle > /dev/null && dwmref
 
@@ -80,20 +57,14 @@ super + Delete
 # Music control
 super + m
     st -e ncmpcpp
-alt + period
-    mpc next
-alt + comma
-    mpc prev
-alt + shift + p
-    mpc play
+alt + {comma,period}
+    mpc {prev,next}
 alt + p
     mpc toggle
 alt + r
-    mpc repeat
-alt + shift + S
-    mpc stop
-alt + s
     mpc single
+alt + s
+    mpc stop
 alt + bracketleft
     mpc seek -10
 alt + shift + braceleft
