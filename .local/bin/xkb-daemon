@@ -1,0 +1,6 @@
+#!/bin/bash
+
+while : ;
+do
+  xkb-switch -w && pkill -RTMIN+14 "$STATUSBAR" > /dev/null
+done
