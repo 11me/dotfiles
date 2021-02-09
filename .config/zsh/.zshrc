@@ -80,7 +80,7 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 # fnm
-export PATH=/home/lime/.fnm:$PATH
+export PATH=/home/lime/.fnm:$JAVA_HOME/bin:$PATH
 eval "`fnm env`"
 
 # Load plugins
