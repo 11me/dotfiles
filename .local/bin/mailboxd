@@ -4,5 +4,5 @@ while : ;
 do
   mbsync -a >/dev/null
   pkill -RTMIN+13 "$STATUSBAR"
-  sleep 5
+  sleep 1
 done
