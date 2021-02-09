@@ -79,3 +79,7 @@ alt + {minus,equal}
 # open mailbox
 super + shift + n
     st -e neomutt
+
+# open news
+super + n
+    st -e newsboat
