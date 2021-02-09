@@ -28,8 +28,8 @@ color listfocus_unread black green bold
 color info yellow black bold
 color article white black bold
 
-macro v set browser "setsid -f mpv"; open-in-browser ; set browser "firefox"
-macro w set browser "firefox"; open-in-browser ; set browser "firefox"
+macro v set browser "setsid -f mpv"; open-in-browser ; set browser "$BROWSER"
+macro w set browser "$BROWSER"; open-in-browser ; set browser "$BROWSER"
 
 highlight all "---.*---" yellow black
 highlight feedlist ".*(0/0))" black black
