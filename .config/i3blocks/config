@@ -15,19 +15,15 @@ command=echo "$(cat /tmp/recordingicon)" || exit
 interval=once
 signal=9
 
-[currency]
-LABEL=💰
-command=currency
-interval=1800
-markup=pango
+[player]
+command=player
+interval=once
+signal=11
 
-[weather]
-command=weather
-interval=1800
-
-#[updates]
-#command=updates
-#interval=3600
+[mailbox]
+command=mailbox
+signal=13
+interval=once
 
 [battery]
 LABEL=
@@ -44,18 +40,13 @@ STEP=5%
 #MIXER=[determined automatically]
 #SCONTROL=[determined automatically]
 
-[internet]
-LABEL=
-command=internet
-interval=10
-
 [time]
 command=datetime
 interval=1
 
-[xkb_layout]
-command=xkb_layout
-font=monospace
-font_weight=bold
-interval=persist
-markup=pango
+[kb_layout]
+command=xkb-switch -p | sed 's/us/US/g;s/ru/RU/g'
+#font=monospace
+#font_weight=bold
+interval=once
+signal=14
