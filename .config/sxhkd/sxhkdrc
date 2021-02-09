@@ -73,6 +73,8 @@ alt + bracketright
     mpc seek +10
 alt + shift + braceright
     mpc seek +60
+alt + {minus,equal}
+    mpc volume {-5,+5}
 
 # open mailbox
 super + shift + n

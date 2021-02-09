@@ -5,7 +5,7 @@ declare -a result
 # read in array
 # 0 - song name
 # 1 - playing status
-# 3 - volume and other params
+# 2 - volume and other params
 get_status() {
 
   while read -r LINE
@@ -18,6 +18,13 @@ output() {
   local name="${result[0]}"
   local status="${result[1]}"
   local params="${result[2]}"
+  local vol="$(echo $params | awk '{print $2}')"
+
+  # if vol is NaN then make it 100%
+  local re='^[0-9]+%'
+  if ! [[ $vol =~ $re ]] ; then
+     vol='100%'
+  fi
 
   if [[ "$status" =~ playing|paused ]]; then
     status="$(echo "$status" | sed -E \
@@ -35,7 +42,7 @@ output() {
       s/single: on\s+/🔂/;\
       s/consume: (off|on)//")"
 
-    echo "$params $status $name"
+    echo "$params $status $name ($vol)"
   else
     exit 0
   fi
