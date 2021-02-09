@@ -10,9 +10,11 @@ export VIMRC="$HOME/.config/nvim/init.vim"
 export TERMINAL="st"
 export FILEMANAGER="lf"
 export BROWSER="librewolf"
-export STATUSBAR="dwmblocks"
+#export STATUSBAR="dwmblocks"
+export STATUSBAR="i3blocks"
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export SUDO_PROMPT="password 🔑:"
+export JAVA_HOME="/usr/lib/jvm/java-15-openjdk"
 
 # Clean up
 export PATH="$PATH:/home/$USER/.local/bin"
