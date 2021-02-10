@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Script for updating my suckless programs
+
+programs=(dwm st dwmblocks dmenu)
+
+update() {
+  if [[ "$1" == 'dwmblocks' ]]; then
+    update_dwmblocks "$1"
+  fi
+  echo "Updating ${1^^}..."
+  cd "/home/$USER/.local/share/$1"
+  git pull >/dev/null
+  rm -rf config.h
+  sudo make clean install
+}
+
+update_dwmblocks() {
+  echo 'Updating dwmblocks...'
+  cd "/home/$USER/.local/share/$1"
+  git pull >/dev/null
+  rm -rf blocks.h
+  sudo make clean install
+}
+
+if [[ "$1" == 'all' ]]; then
+  for el in "${programs[@]}"; do
+    update "$el"
+  done
+else
+  for el in "${programs[@]}"; do
+    if [[ "$1" == "$el" ]]; then
+     update "$1"
+     exit 0
+    fi
+  done
+fi
