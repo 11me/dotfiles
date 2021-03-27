@@ -294,12 +294,24 @@ set $bar-bg-active       #3399ff
 set $bar-border-color    #ccccff
 set $bar-text-color      #ffffff
 
+# ONEDARK COLORS
+set $col_black          "#282c34"
+set $col_grey           "#4b5263"
+set $col_white          "#abb2bf"
+set $col_blue           "#61afef"
+set $col_magenta        "#c678dd"
+set $col_cyan           "#56b6c2"
+set $col_light_red      "#e06c75"
+set $col_dark_red       "#be5046"
+set $col_green          "#98c379"
+set $col_light_yellow   "#e5c07b"
+set $col_dark_yellow    "#d19a66"
 # window colors
 #                       border              background            text                 indicator
-client.focused          $border-color       $border-color       $text-color            $id-color
-client.unfocused        $inactive-bg-color  $inactive-bg-color  $inactive-text-color   $id-color
-client.focused_inactive $inactive-bg-color  $inactive-bg-color  $inactive-text-color   $id-color
-client.urgent           $urgent-bg-color    $urgent-bg-color    $text-color            $id-color
+client.focused          $col_blue           $col_blue           $text-color            $col_magenta
+client.unfocused        $col_grey           $col_grey           $col_white
+client.focused_inactive $inactive-bg-color  $inactive-bg-color  $inactive-text-color   $col_magenta
+client.urgent           $col_dark_red       $col_dark_red       $text-color            $col_magenta
 
 # Toggle between hide state and show state
 bindsym $mod+b bar mode toggle
@@ -312,8 +324,12 @@ bar {
         font pango:JetBrains Mono 10
 
         colors {
-                background $bar-bg-color
-                focused_workspace  $bar-border-color $bar-bg-active $bar-text-color
+                background $col_black
+                focused_workspace  $col_blue $col_blue $bar-text-color
+                                    # border  background text
+                inactive_workspace $col_grey $col_grey $col_white
+                active_workspace   $col_cyan $col_cyan $bar-text-color
+                urgent_workspace   $col_dark_red $col_dark_red $bar-text-color
             }
         hidden_state hide
         modifier none
