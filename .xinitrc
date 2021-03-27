@@ -5,5 +5,5 @@
 
 # Enable keybindings
 # Start WM
-#exec i3
-exec dwm
+exec i3
+#exec dwm

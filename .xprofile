@@ -5,7 +5,7 @@
 
 sxhkd &                 # keybindings
 dunst &                 # notifications
-dwmblocks &
+#dwmblocks &
 mpd &                   # music player daemon
 setbg &                 # sets the background
 xkb-daemon &            # keyboard daemon

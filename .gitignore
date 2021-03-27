@@ -53,3 +53,8 @@
 .local/bin/pylint
 .local/bin/pyreverse
 .local/bin/symilar
+.config/Electron
+.config/discord
+.config/filezilla
+.config/JetBrains
+.local/bin/jupyter*
