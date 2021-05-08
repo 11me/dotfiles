@@ -55,7 +55,7 @@ nnoremap <c-s> :w<cr>
 nnoremap <c-x> :bd!<cr>
 nnoremap <tab> :bnext<cr>
 nnoremap <s-tab> :bprevious<cr>
-nnoremap <leader>v :set cursorline!<cr>
+"nnoremap <leader>v :set cursorline!<cr>
 
  " Move selected line / block of text in visual mode
  " shift + k to move up
@@ -68,6 +68,9 @@ nnoremap <silent> <M-j>    :resize -2<CR>
 nnoremap <silent> <M-k>    :resize +2<CR>
 nnoremap <silent> <M-h>    :vertical resize -2<CR>
 nnoremap <silent> <M-l>    :vertical resize +2<CR>
+
+" Remap terminal exit to ctrl+q
+tnoremap <C-q> <C-\><C-n>
 
 " maps for coc
 nnoremap <c-n> :CocCommand explorer<cr>
