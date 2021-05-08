@@ -45,6 +45,7 @@ let g:which_key_map['h'] = [ '<C-W>s'                                          ,
 let g:which_key_map['e'] = [ ':CocCommand explorer --toggle --sources=file+'   , 'explorer']
 let g:which_key_map['q'] = [ '<Plug>(coc-fix-current)'                         , 'quickfix']
 let g:which_key_map['m'] = [ ':CocList marketplace'                            , 'marketplace']
+let g:which_key_map['t'] = [ ':CocCommand terminal.Toggle'                     , 'toggle terminal']
 
 " Group mappings
 
