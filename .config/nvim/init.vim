@@ -21,6 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'airblade/vim-rooter'
   Plug 'honza/vim-snippets'
   Plug 'joshdick/onedark.vim'
+  Plug 'lifepillar/vim-gruvbox8'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'sheerun/vim-polyglot'
@@ -28,9 +29,12 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'liuchengxu/vim-which-key'
   Plug 'tpope/vim-fugitive'
   Plug 'puremourning/vimspector'
+  Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
-colorscheme onedark
+" Gruvbox colorscheme
+colorscheme gruvbox8_hard
+autocmd vimenter * ++nested colorscheme gruvbox8_hard
 
 let t:is_transparent = 0
 function! ToggleTransparency()
