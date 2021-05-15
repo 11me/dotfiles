@@ -30,6 +30,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'puremourning/vimspector'
   Plug 'jiangmiao/auto-pairs'
+  Plug 'preservim/nerdcommenter'
 call plug#end()
 
 " Gruvbox colorscheme
