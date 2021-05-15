@@ -36,7 +36,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_section_c = airline#section#create([''])
 
 " Switch to your current theme
-let g:airline_theme = 'onedark'
+let g:airline_theme = 'base16_gruvbox_dark_hard'
 
 " Always show tabs
 set showtabline=2
