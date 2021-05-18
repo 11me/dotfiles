@@ -61,12 +61,15 @@ format_output() {
     [ "$USD_SIGN" = $arrow_up ] || usd_color="red"
     [ "$EUR_SIGN" = $arrow_up ] || eur_color="red"
 
+    if [ "$STATUSBAR" = "dwmblocks" ];
+    then echo $EUR_CURRENT$EUR_SIGN $USD_CURRENT$USD_SIGN
+    else echo echo "$EUR_CURRENT<span foreground='$eur_color'>$EUR_SIGN</span> $USD_CURRENT<span foreground='$usd_color'>$USD_SIGN</span>"
+    fi
+
 }
 
 get_currency
 parse_xml
 currency_compare
 format_output
-
-echo "$EUR_CURRENT<span foreground='$eur_color'>$EUR_SIGN</span> $USD_CURRENT<span foreground='$usd_color'>$USD_SIGN</span>"
 remove_old
