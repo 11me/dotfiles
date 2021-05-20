@@ -36,6 +36,8 @@ call plug#end()
 " Gruvbox colorscheme
 colorscheme gruvbox8_hard
 autocmd vimenter * ++nested colorscheme gruvbox8_hard
+" Make transparent background
+autocmd vimenter * ++nested highlight Normal guibg=NONE
 
 let t:is_transparent = 0
 function! ToggleTransparency()
