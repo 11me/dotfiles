@@ -46,6 +46,11 @@ alias gck='git checkout'
 alias ga='git add'
 alias gp='git push'
 
+# Tmux shortcuts
+alias tls='tmux list-sessions'
+alias tks='tmux kill-session -t'
+alias tas='tmux attach -t'
+
 # Local folders
 alias hc='cd $HOME/.config'
 alias hl='cd $HOME/.local'
