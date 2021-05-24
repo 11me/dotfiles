@@ -13,8 +13,8 @@ zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 setopt prompt_subst
 RPROMPT=\$vcs_info_msg_0_
-PROMPT='%(?.%F{green}√.%F{red} %?)%f %F{178}%~%f %F{60}%#%f
-%F{cyan}>%f '
+PROMPT='%(?.%F{green}.%F{red} %?)%f %F{190}%~%f %F{60}%f
+%F{green}λ%f '
 
 # History in cache directory:
 HISTSIZE=10000
