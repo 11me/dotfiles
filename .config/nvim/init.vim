@@ -21,7 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'airblade/vim-rooter'
   Plug 'honza/vim-snippets'
   Plug 'joshdick/onedark.vim'
-  Plug 'lifepillar/vim-gruvbox8'
+  Plug 'morhetz/gruvbox'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'sheerun/vim-polyglot'
@@ -33,11 +33,11 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'preservim/nerdcommenter'
 call plug#end()
 
-" Gruvbox colorscheme
-colorscheme gruvbox8_hard
-autocmd vimenter * ++nested colorscheme gruvbox8_hard
-" Make transparent background
-autocmd vimenter * ++nested highlight Normal guibg=NONE
+"" Gruvbox colorscheme
+"colorscheme gruvbox8_hard
+"autocmd vimenter * ++nested colorscheme gruvbox8_hard
+"" Make transparent background
+"autocmd vimenter * ++nested highlight Normal guibg=NONE
 
 let t:is_transparent = 0
 function! ToggleTransparency()
