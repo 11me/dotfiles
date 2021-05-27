@@ -20,7 +20,7 @@ set noshowmode
 set completeopt=menuone,noinsert,noselect
 set signcolumn=yes
 set colorcolumn=80
-set cmdheight=2
+set cmdheight=1
 set clipboard+=unnamedplus
 set listchars=tab:→\ ,eol:↲,space:␣
 set updatetime=300
