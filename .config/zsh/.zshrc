@@ -82,6 +82,15 @@ bindkey '^e' edit-command-line
 export PATH=/home/lime/.fnm:$JAVA_HOME/bin:$PATH
 eval "`fnm env`"
 
+# Automatically attach tmux
+attach_tmux() {
+  # if tmux is executable, X is running, and not inside a tmux session, then try to attach.
+  # if attachment fails, start a new session
+  if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ]; then
+    [ -z "${TMUX}" ] && { tmux attach || tmux; } >/dev/null 2>&1
+  fi
+}
+
 # Load plugins
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh >/dev/null 2>&1
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh >/dev/null 2>&1
