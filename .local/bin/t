@@ -1,0 +1,34 @@
+#!/bin/bash
+
+if [ "$1" == "" ]; then
+  cat << EOF
+Simple TMUX script that creates N named windows within a session name.
+The first argument is a session-name and the last ones are named windows.
+
+USAGE: t seesion-name [win-name1] [win-name2] [...win-nameN]
+EOF
+  exit 1
+fi
+
+# take the first arg as a session-name
+sn="$1"
+declare defwin
+
+# second argument as a first window name
+if [ "$2" == "" ]; then
+  defwin="Terminal"
+else
+  defwin="$2"
+fi
+
+# start the tmux session
+tmux new -s "$sn" -n "$defwin" -c ~ -d
+
+shift
+shift
+for i in "$@"; do
+    tmux new-window -n "$i"
+done
+
+tmux select-window -t "$sn:0"
+tmux attach
