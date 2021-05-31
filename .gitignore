@@ -20,6 +20,7 @@
 .config/coc/extensions/node_modules
 .config/nvim/.netrwhist
 .config/nvim/plugged
+.config/nvim/plugin/packer_compiled.vim
 .config/pavucontrol.ini
 .config/pulse
 .config/coc
