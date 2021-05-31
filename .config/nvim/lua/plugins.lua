@@ -66,6 +66,7 @@ return packer.startup(function()
   use {'vimwiki/vimwiki', opt = true}
 
   use {'sbdchd/neoformat', opt = true}
+  use {'airblade/vim-gitgutter', opt = true}
 
   -- plugins shoudl be required
   require_plugin('nvim-lspconfig')
@@ -86,5 +87,6 @@ return packer.startup(function()
   require_plugin('telescope-media-files.nvim')
   require_plugin('vimwiki')
   require_plugin('neoformat')
+  require_plugin('vim-gitgutter')
 
 end)
