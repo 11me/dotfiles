@@ -20,6 +20,7 @@ nnoremap <silent> <M-l>    :vertical resize +2<CR>
 
 " Remap terminal exit to ctrl+q
 tnoremap <C-q> <C-\><C-n>
+nnoremap <silent><leader>t :terminal<CR>i
 
 " Open exporer
 nnoremap <silent> <C-n> :Lexplore<CR>:vertical resize -30<CR>
