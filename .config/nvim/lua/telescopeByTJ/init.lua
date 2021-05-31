@@ -2,15 +2,15 @@ local actions = require('telescope.actions')
 
 require('telescope').setup{
   defaults = {
-    vimgrep_arguments = {
-      'rg',
-      '--color=never',
-      '--no-heading',
-      '--with-filename',
-      '--line-number',
-      '--column',
-      '--smart-case',
-    },
+    -- vimgrep_arguments = {
+    --   'rg',
+    --   '--color=never',
+    --   '--no-heading',
+    --   '--with-filename',
+    --   '--line-number',
+    --   '--column',
+    --   '--smart-case',
+    -- },
     mappings = {
       -- remaps some globals
       i = {
@@ -50,9 +50,6 @@ require('telescope').setup{
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
-
-    -- Developer configurations: Not meant for general override
-    buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
   },
   extensions = {
     fzy_native = {
@@ -69,7 +66,8 @@ require('telescope').setup{
 }
 
 -- mappings
-vim.cmd([[nnoremap <leader>ff <cmd>Telescope find_files<cr>]])
+vim.cmd([[nnoremap <leader>ff :lua require('telescope.builtin').find_files{hidden = true}<cr>]])
+vim.cmd([[nnoremap <leader>fe :lua require('telescope.builtin').file_browser{hidden = true}<cr>]])
 vim.cmd([[nnoremap <leader>fg <cmd>Telescope live_grep<cr>]])
 vim.cmd([[nnoremap <leader>fb <cmd>Telescope buffers<cr>]])
 vim.cmd([[nnoremap <leader>fh <cmd>Telescope help_tags<cr>]])
