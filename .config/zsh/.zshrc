@@ -70,9 +70,13 @@ lfcd () {
         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
 }
-bindkey -s '^o' 'lfcd\n'
-bindkey -s '^f' 'cd "$(dirname "$(fzf -i --layout=reverse)")"\n'
 
+_f() {
+  cd "$(dirname "$(fzf -i --layout=reverse)")"
+}
+
+bindkey -s '^o' 'lfcd\n'
+bindkey -s '^f' '_f\n'
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
