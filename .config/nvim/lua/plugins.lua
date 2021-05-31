@@ -63,22 +63,28 @@ return packer.startup(function()
   use {'terrortylor/nvim-comment', opt = true}
   use {'nvim-telescope/telescope-media-files.nvim', opt = true}
 
+  use {'vimwiki/vimwiki', opt = true}
+
+  use {'sbdchd/neoformat', opt = true}
+
   -- plugins shoudl be required
-  require_plugin("nvim-lspconfig")
-  require_plugin("nvim-compe")
-  require_plugin("lspsaga.nvim")
-  require_plugin("nvim-lspinstall")
-  require_plugin("nvim-autopairs")
-  require_plugin("nvim-treesitter")
-  require_plugin("vim-vsnip")
-  require_plugin("friendly-snippet")
-  require_plugin("telescope.nvim")
-  require_plugin("popup.nvim")
-  require_plugin("plenary.nvim")
-  require_plugin("nvim-ts-autotag")
-  require_plugin("nvim-colorizer.lua")
-  require_plugin("nvim-comment")
-  require_plugin("telescope-fzy-native.nvim")
-  require_plugin("telescope-media-files.nvim")
+  require_plugin('nvim-lspconfig')
+  require_plugin('nvim-compe')
+  require_plugin('lspsaga.nvim')
+  require_plugin('nvim-lspinstall')
+  require_plugin('nvim-autopairs')
+  require_plugin('nvim-treesitter')
+  require_plugin('vim-vsnip')
+  require_plugin('friendly-snippet')
+  require_plugin('telescope.nvim')
+  require_plugin('popup.nvim')
+  require_plugin('plenary.nvim')
+  require_plugin('nvim-ts-autotag')
+  require_plugin('nvim-colorizer.lua')
+  require_plugin('nvim-comment')
+  require_plugin('telescope-fzy-native.nvim')
+  require_plugin('telescope-media-files.nvim')
+  require_plugin('vimwiki')
+  require_plugin('neoformat')
 
 end)
