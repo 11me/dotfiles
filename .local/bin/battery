@@ -5,17 +5,29 @@ bat_count=$(ls /sys/class/power_supply | wc -l)
 
 if [ ! $bat_count -eq 0 ]; then
 
-  stat="$(acpi | sed \
-  "s/Battery [0-9]: //;\
-  s/[Dd]ischarging,*/🔋/;\
-  s/[Nn]ot charging, /🛑/;\
-  s/[Cc]harging, /🔌/;\
-  s/[Uu]nknown, /♻️/;\
-  s/[Ff]ull, /⚡/;\
-  s/ \(remaining\|until charged\)//;\
-  s/, [0-9]*:[0-9]*:[0-9]*//g")" > /dev/null
-
+  if [ "$1" == "tmux" ]; then
+    stat="$(acpi | sed \
+    "s/Battery [0-9]: //;\
+    s/[Dd]ischarging,*//;\
+    s/[Nn]ot charging, /🛑/;\
+    s/[Cc]harging, /🔌/;\
+    s/[Uu]nknown, //;\
+    s/[Ff]ull, /⚡/;\
+    s/ \(remaining\|until charged\)//;\
+    s/, [0-9]*:[0-9]*:[0-9]*//g")" > /dev/null
+    echo $stat
+  else
+    stat="$(acpi | sed \
+    "s/Battery [0-9]: //;\
+    s/[Dd]ischarging,*/🔋/;\
+    s/[Nn]ot charging, /🛑/;\
+    s/[Cc]harging, /🔌/;\
+    s/[Uu]nknown, /♻️/;\
+    s/[Ff]ull, /⚡/;\
+    s/ \(remaining\|until charged\)//;\
+    s/, [0-9]*:[0-9]*:[0-9]*//g")" > /dev/null
   echo $stat
+  fi
 
 else
   exit 0
