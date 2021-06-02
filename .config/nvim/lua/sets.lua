@@ -8,7 +8,7 @@ o.hidden = true
 o.errorbells = false
 o.backup = false
 o.writebackup = false
-o.undodir = "~/.config/nvim/undodir"
+-- o.undodir = "~/.config/nvim/undodir"
 o.termguicolors = true
 o.incsearch = true
 o.scrolloff = 10
@@ -39,5 +39,6 @@ cmd('set shortmess+=c')
 cmd('syntax on')
 cmd([[set listchars=tab:→\ ,eol:↲,space:␣]])
 cmd('filetype indent on') -- needs `ftplugin` folder
+cmd([[set undodir=~/.config/nvim/undodir]])
 --cmd('filetype plugin off')
 --cmd('set omnifunc=')
