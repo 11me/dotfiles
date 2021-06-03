@@ -2,15 +2,6 @@ local actions = require('telescope.actions')
 
 require('telescope').setup{
   defaults = {
-    -- vimgrep_arguments = {
-    --   'rg',
-    --   '--color=never',
-    --   '--no-heading',
-    --   '--with-filename',
-    --   '--line-number',
-    --   '--column',
-    --   '--smart-case',
-    -- },
     mappings = {
       -- remaps some globals
       i = {
@@ -71,20 +62,27 @@ vim.cmd([[nnoremap <leader>fe :lua require('telescope.builtin').file_browser{hid
 vim.cmd([[nnoremap <leader>fg <cmd>Telescope live_grep<cr>]])
 vim.cmd([[nnoremap <leader>fb <cmd>Telescope buffers<cr>]])
 vim.cmd([[nnoremap <leader>fh <cmd>Telescope help_tags<cr>]])
-vim.cmd([[nnoremap <leader>vrc :lua require('telescopeByTJ').search_dotfiles()<cr>]])
+vim.cmd([[nnoremap <leader>vrc :lua require('telescopeByTJ').search_vimrc()<cr>]])
+vim.cmd([[nnoremap <leader>dof :lua require('telescopeByTJ').search_dotfiles({hidden = true})<cr>]])
 
 -- native fzf
 require('telescope').load_extension('fzy_native')
 -- media files preview
 require('telescope').load_extension('media_files')
 
+local search = function (cwd, prompt)
+  return function ()
+    require('telescope.builtin').find_files({
+      prompt_title = prompt,
+      cwd = cwd
+  })
+  end
+end
+
 -- my module
 local M = {}
-M.search_dotfiles = function ()
-  require('telescope.builtin').find_files({
-    prompt_title = "<<-- VimRC -->>",
-    cwd = "~/dotfiles/.config/nvim",
-})
-end
+
+M.search_dotfiles = search("~/dotfiles/.config", "<<-- Dotfiles -->>")
+M.search_vimrc    = search("~/dotfiles/.config/nvim",  "<<-- VimRC -->>")
 
 return M
