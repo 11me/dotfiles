@@ -5,6 +5,7 @@ set ifs "\n"
 set scrolloff 10
 set icons
 set period 1
+set hidden
 
 map - $/home/lime/.config/lf/draw_img.sh $f
 
