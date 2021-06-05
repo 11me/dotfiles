@@ -23,7 +23,7 @@ tnoremap <C-q> <C-\><C-n>
 nnoremap <silent><leader>t :terminal<CR>i
 
 " Open exporer
-nnoremap <silent> <C-n> :Lexplore<CR>:vertical resize -30<CR>
+" nnoremap <silent> <C-n> :Lexplore<CR>:vertical resize -30<CR>
 
 map <leader><f3> :ColorizerToggle<cr>
 

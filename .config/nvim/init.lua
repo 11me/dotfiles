@@ -20,3 +20,4 @@ require('treeshitter') ---------> beautiful plugin which works with AST
 require('autopairs')
 require('telescopeByTJ')
 require('comment')
+require('tree')

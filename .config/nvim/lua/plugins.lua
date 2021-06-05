@@ -68,6 +68,10 @@ return packer.startup(function()
   use {'sbdchd/neoformat', opt = true}
   use {'airblade/vim-gitgutter', opt = true}
 
+  -- explorer
+  use {'kyazdani42/nvim-tree.lua', opt = true}
+  use {'kyazdani42/nvim-web-devicons', opt = true}
+
   -- plugins shoudl be required
   require_plugin('nvim-lspconfig')
   require_plugin('nvim-compe')
@@ -88,5 +92,7 @@ return packer.startup(function()
   require_plugin('vimwiki')
   require_plugin('neoformat')
   require_plugin('vim-gitgutter')
+  require_plugin('nvim-tree.lua')
+  require_plugin('nvim-web-devicons')
 
 end)
