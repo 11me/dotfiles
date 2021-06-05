@@ -71,6 +71,7 @@ return packer.startup(function()
   -- explorer
   use {'kyazdani42/nvim-tree.lua', opt = true}
   use {'kyazdani42/nvim-web-devicons', opt = true}
+  use {'ahmedkhalf/lsp-rooter.nvim', opt = true}
 
   -- plugins shoudl be required
   require_plugin('nvim-lspconfig')
@@ -94,5 +95,6 @@ return packer.startup(function()
   require_plugin('vim-gitgutter')
   require_plugin('nvim-tree.lua')
   require_plugin('nvim-web-devicons')
+  require_plugin('lsp-rooter.nvim')
 
 end)
