@@ -14,6 +14,7 @@ require('lsp/latex-ls')
 require('lsp/html-ls')
 require('lsp/bash-ls')
 require('lsp/yaml-ls')
+require('lsp/go-ls')
 
 require('completion')
 require('treeshitter') ---------> beautiful plugin which works with AST
