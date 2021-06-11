@@ -17,7 +17,7 @@ o.updatetime = 300
 o.showmode = true
 o.completeopt = "menuone,noinsert,noselect"
 o.cmdheight = 1
---o.guicursor = ''
+o.guicursor = ''
 o.showtabline = 0
 
 wo.relativenumber = true
