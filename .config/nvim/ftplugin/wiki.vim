@@ -1,4 +1,4 @@
-setl sw=2
-setl ts=2
-setl softtabstop=2
+setl sw=4
+setl ts=4
+setl softtabstop=4
 setl expandtab

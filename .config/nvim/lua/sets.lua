@@ -40,5 +40,6 @@ cmd('syntax on')
 cmd([[set listchars=tab:→\ ,eol:↲,space:␣]])
 cmd('filetype indent on') -- needs `ftplugin` folder
 cmd([[set undodir=~/.config/nvim/undodir]])
+cmd([[autocmd BufNewFile,BufRead *.wiki set filetype=wiki]])
 --cmd('filetype plugin off')
 --cmd('set omnifunc=')
