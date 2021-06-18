@@ -1,9 +1,5 @@
 #This file runs on login
 
-
-# Alias source
-source ~/.config/alias
-
 # Default programms
 export EDITOR="nvim"
 export VIMRC="$HOME/.config/nvim/init.vim"
@@ -19,7 +15,7 @@ export SUDO_PROMPT="password 🔑:"
 export JAVA_HOME="/usr/lib/jvm/java-15-openjdk"
 
 # Clean up
-export PATH="$PATH:/home/$USER/.local/bin"
+export PATH="$PATH:/home/$USER/.local/bin:/home/lime/.fnm:$JAVA_HOME/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export ZDOTDIR="$HOME/.config/zsh"
