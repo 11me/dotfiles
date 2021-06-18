@@ -19,5 +19,5 @@ unclutter &             # hides mouse
 transmission-daemon &   # transmission-daemon for torrents
 nm-applet &
 player-mpd &            # daemon script for mdp
-mailboxd &              # sync mailbox every 10 sec
+#mailboxd &              # sync mailbox every 10 sec
 #xrdb /home/$USER/.config/.Xresources &
