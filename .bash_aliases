@@ -50,7 +50,7 @@ alias gp='git push'
 alias tls='tmux list-sessions'
 alias tks='tmux kill-session -t'
 alias tas='tmux attach -t'
-alias thnz='t hacking nvim zsh'
+alias thnz='t hacking nvim shell'
 
 # Local folders
 alias hc='cd $HOME/.config'
