@@ -3,6 +3,10 @@
 # 	 promptvars sourcepath progcomp autocd cdspell dirspell direxpand\
 # 	 nocasematch histappend cmdhist lithist
 
+################# options ####################
+set -o vi
+shopt -s histappend
+
 # exports
 
 export HISTCONTROL='ignoreboth'
@@ -28,6 +32,45 @@ lfcd () {
     fi
 } && export -f lfcd
 
+# add at the end of the path
+pathappend() {
+  declare arg
+  for arg in "$@"; do
+    test -d "${arg}" || continue
+    PATH=${PATH//:${arg}:/:}
+    PATH=${PATH/#${arg}:/}
+    PATH=${PATH/%:${arg}/}
+    export PATH="${PATH:+"${PATH}:"}${arg}"
+  done
+}
+
+# add at the beginning of the path
+pathprepend() {
+  for ARG in "$@"; do
+    test -d "${ARG}" || continue
+    PATH=${PATH//:${ARG}:/:}
+    PATH=${PATH/#${ARG}:/}
+    PATH=${PATH/%:${ARG}/}
+    export PATH="${ARG}${PATH:+":${PATH}"}"
+  done
+}
+
+# remember last arg will be first in path
+pathprepend \
+  $SCRIPTS \
+  $HOME/.fnm \
+  $JAVA_HOME/bin   #JAVA_HOME is set in .profile
+
+#export PATH="$PATH:/home/$USER/.local/bin:/home/lime/.fnm:$JAVA_HOME/bin"
+pathappend \
+  /usr/local/bin \
+  /usr/local/sbin \
+  /usr/sbin \
+  /usr/bin \
+  /sbin \
+  /bin
+
+
 ################# prompt ####################
 
 __prompt() {
@@ -38,6 +81,15 @@ __prompt() {
 
 export PROMPT_COMMAND='__prompt'
 
+# ----------------------------- dircolors ----------------------------
+
+if command -v dircolors &>/dev/null; then
+  if test -r ~/.dircolors; then
+    eval "$(dircolors -b ~/.dircolors)"
+  else
+    eval "$(dircolors -b)"
+  fi
+fi
 
 ################# aliases ####################
 
