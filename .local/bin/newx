@@ -1,0 +1,5 @@
+#!/bin/sh
+
+path="$SCRIPTS/$1"
+(printf "#!/bin/bash" > "$path") && (chmod 744 "$path") || exit 1
+$EDITOR "$path"
