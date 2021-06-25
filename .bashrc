@@ -81,7 +81,7 @@ __prompt() {
 
 export PROMPT_COMMAND='__prompt'
 
-# ----------------------------- dircolors ----------------------------
+################# dircolors ####################
 
 if command -v dircolors &>/dev/null; then
   if test -r ~/.dircolors; then
