@@ -7,7 +7,19 @@
 set -o vi
 shopt -s histappend
 
-# exports
+
+################# colors ####################
+
+r='\[\e[31m\]' #red
+g='\[\e[30m\]' #
+h='\[\e[34m\]'
+u='\[\e[33m\]'
+p='\[\e[33m\]'
+w='\[\e[35m\]'
+b='\[\e[36m\]'
+x='\[\e[0m\]'
+
+################# exports ####################
 
 export HISTCONTROL='ignoreboth'
 export HISTFILESIZE=1000
@@ -75,7 +87,8 @@ pathappend \
 
 __prompt() {
 
-  PS1='\[\e[38;5;190m\w\]\n\e[0m\[\e[38;5;45mλ\]\e[0m '
+  #PS1='\[\e[38;5;190m\w\]\n\e[0m\[\e[38;5;45mλ\]\e[0m '
+  PS1="${w}\w\n${h}λ${x} "
 
 }
 
