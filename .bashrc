@@ -139,6 +139,7 @@ alias rmtex='rm -rf *.out *.aux *.log'
 alias sts='$EDITOR ~/.config/nvim/plugin/shortcuts.vim'
 alias xlx='xelatex -interaction nonstopmode -shell-escape'
 alias mirrup='sudo reflector --verbose --country Russia --latest 5 --sort rate --save /etc/pacman.d/mirrorlist'
+alias ?='duck'
 
 # sxiv in thumbnail mode
 alias iv='sxiv -t'
