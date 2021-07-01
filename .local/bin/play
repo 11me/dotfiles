@@ -1,0 +1,20 @@
+#!/bin/bash
+
+pathgo="/tmp/playgo"
+
+# if tmux is running
+if [[ -n $(pgrep tmux) ]]; then
+  # create temporary directory
+  mkdir -p "$pathgo"
+  # create new window named "playground" and open file main.go
+  tmux new-window -n "playground" -c "$pathgo" "mgo play && $EDITOR main.go"
+  # split that pane into 70/30
+  tmux split-window -t "playground" -p 30 -c "$pathgo"
+  # switch to first pane
+  tmux select-pane -t ":playground.0" #"session-name:pane-name.pane-id"
+  # open main.go file and write the main func
+  tmux send-keys -t ":playground.0" "o" "Enter" "func main() {" "Enter"
+else
+  echo "Error: tmux is not runnig"
+  exit 1
+fi
