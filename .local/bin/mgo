@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "package main" > main.go
+go mod init $1
