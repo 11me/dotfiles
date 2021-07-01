@@ -28,6 +28,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 # Server name for rsync
 export SERVER="server"
 
+export GOMAXPROCS="$(nproc)"
 export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
 export LF_ICONS="di=📁:\
 fi=📃:\
