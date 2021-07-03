@@ -1,0 +1,115 @@
+" set leader key to space
+let mapleader = " "
+
+" skip defaults settings
+let skip_defaults_vim=1
+
+" set nocompatible to Vi
+set nocompatible
+
+" enable syntax highlighting
+syntax enable
+filetype plugin on
+
+" set numbers and relative numbers on
+set number
+set relativenumber
+
+" show the commands normal, insert ...etc
+" by default it is on, but I want to be explicit
+set showmode
+
+" show the cursor position
+set ruler
+
+" copy indent from current line when starting a new line
+set autoindent
+set smartindent " should be on with autoindent
+
+" set tab settigs
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set smarttab " when on, a <Tab> in front of a line inserts blanks according to
+
+" nice looking list chars
+set listchars=tab:→\ ,eol:↲,space:␣
+
+" do not wrap the text
+set nowrap
+
+" no backups
+set nobackup
+set noswapfile
+set nowritebackup
+
+" highlight search
+set hlsearch
+set incsearch
+
+" set the colored column on the right
+set colorcolumn=80
+set textwidth=72
+"highlight ColorColumn ctermbg=grey " change the color
+
+" buffer becomes hidden when it is |abandon|ed.
+set hidden
+
+" be quet, do not make noise
+set noerrorbells
+
+" allows copy from vim
+set clipboard+=unnamedplus
+
+" enable omni-completion
+"set omnifunc=syntaxcomplete#Complete
+
+" PLUGINS
+" load plugins only if vim plug installed
+if filereadable(expand("~/.vim/autoload/plug.vim"))
+
+  call plug#begin('~/.vimplugins')
+    Plug 'sheerun/vim-polyglot'
+    "Plug 'pangloss/vim-javascript'
+    Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'morhetz/gruvbox'
+  call plug#end()
+
+  " colorscheme settings
+  set termguicolors
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set background=dark
+  let g:gruvbox_invert_selection=0
+  colorscheme gruvbox
+  highlight ColorColumn ctermbg=0 guibg=grey
+  highlight LineNr guifg=#5eacd3
+  highlight Normal guibg=NONE
+  highlight SignColumn guibg=NONE ctermbg=0
+
+  " column for showing modified lines
+  " for gitgutter plugin
+  set signcolumn=yes
+  " the background colours to match the sign column
+  let g:gitgutter_set_sign_backgrounds = 1
+
+else
+  autocmd BufWrite *.go !gofmt -w % " backup if fatih fails
+endif
+
+
+" move selected line / block of text in visual mode
+" shift + k to move up
+" shift + j to move down
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
+
+" jump to the <++>
+nnoremap <space><space> <esc>/<++><cr>"_c4l
+
+" automatically deletes all trailing whitespace and newlines at end of
+" file on save.
+autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * %s/\n\+\%$//e
