@@ -94,6 +94,21 @@ __prompt() {
 
 export PROMPT_COMMAND='__prompt'
 
+################# pager ######################
+
+if test -x /usr/bin/lesspipe; then
+  export LESSOPEN="| /usr/bin/lesspipe %s";
+  export LESSCLOSE="/usr/bin/lesspipe %s %s";
+fi
+
+export LESS_TERMCAP_mb="[35m" # magenta
+export LESS_TERMCAP_md="[33m" # yellow
+export LESS_TERMCAP_me="" # "0m"
+export LESS_TERMCAP_se="" # "0m"
+export LESS_TERMCAP_so="[34m" # blue
+export LESS_TERMCAP_ue="" # "0m"
+export LESS_TERMCAP_us="[4m"  # underline
+
 ################# dircolors ####################
 
 if command -v dircolors &>/dev/null; then
@@ -158,7 +173,7 @@ alias gp='git push'
 alias tls='tmux list-sessions'
 alias tks='tmux kill-session -t'
 alias tas='tmux attach -t'
-alias thnz='t hacking nvim shell'
+alias thnz='t hacking nvim bash lynx docker'
 
 # Local folders
 alias hc='cd $HOME/.config'
