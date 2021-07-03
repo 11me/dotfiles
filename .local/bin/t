@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-if [ "$1" == "" ]; then
+if [ "$1" = "" ]; then
   cat << EOF
 Simple TMUX script that creates N named windows within a session name.
 The first argument is a session-name and the last ones are named windows.
@@ -12,10 +12,10 @@ fi
 
 # take the first arg as a session-name
 sn="$1"
-declare defwin
+defwin=""
 
 # second argument as a first window name
-if [ "$2" == "" ]; then
+if [ "$2" = "" ]; then
   defwin="Terminal"
 else
   defwin="$2"
