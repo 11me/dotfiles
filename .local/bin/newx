@@ -1,5 +1,17 @@
 #!/bin/sh
 
+# Script for creating my executable files in .local/bin
 path="$SCRIPTS/$1"
-(printf "#!/bin/bash" > "$path") && (chmod 744 "$path") || exit 1
-$EDITOR "$path"
+if [ -e "$path" ]; then
+    printf 'Oops...\e[31m %s \e[0m already exists\n' "$path"
+    echo "Do you want me open it for you? Press (y|Y) or (n|N)"
+    read -r answer
+    case "$answer" in
+        [Yy]* ) "$EDITOR" "$path";;
+        [Nn]* ) echo "Okay, bye! :)"; exit 0;;
+        * ) echo "Looks like No :/"; exit 0;;
+    esac
+else
+    (printf "#!/bin/sh" > "$path") && (chmod 744 "$path") || exit 1
+    $EDITOR "$path"
+fi
