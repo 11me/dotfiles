@@ -173,7 +173,7 @@ alias gp='git push'
 alias tls='tmux list-sessions'
 alias tks='tmux kill-session -t'
 alias tas='tmux attach -t'
-alias thnz='t hacking nvim bash lynx docker'
+alias thnz='t hacking vim bash lynx docker'
 
 # Local folders
 alias hc='cd $HOME/.config'
