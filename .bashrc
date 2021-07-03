@@ -119,7 +119,7 @@ __prompt() {
     B=""
   fi
 
-  PS1="${yellow}\w${blue}${B}\n${blue}λ${x} "
+  PS1="${red}${yellow}\w${blue}$B\n${blue}λ${x} "
 
 }
 
