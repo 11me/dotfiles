@@ -6,30 +6,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# Default programms
-export EDITOR="vim"
-export VIMRC="$HOME/.config/nvim/init.vim"
-export TERMINAL="st"
-export FILEMANAGER="lf"
-export BROWSER="librewolf"
-export STATUSBAR="dwmblocks"
-export WM="dwm"
-#export WM="i3"
-#export STATUSBAR="i3blocks"
-export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
-export SUDO_PROMPT="password 🔑:"
-export JAVA_HOME="/usr/lib/jvm/java-15-openjdk"
-
-# Clean up
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export ZDOTDIR="$HOME/.config/zsh"
-
-# Server name for rsync
-export SERVER="server"
-
-export GOMAXPROCS="$(nproc)"
-export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
 export LF_ICONS="di=📁:\
 fi=📃:\
 tw=🤝:\
@@ -91,7 +67,6 @@ ex=🎯:\
 *.part=💔:\
 *.torrent=🔽:\
 "
-
 
 # Start graphical server on tty1 if not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx
