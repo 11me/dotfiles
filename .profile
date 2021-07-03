@@ -7,7 +7,7 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # Default programms
-export EDITOR="nvim"
+export EDITOR="vim"
 export VIMRC="$HOME/.config/nvim/init.vim"
 export TERMINAL="st"
 export FILEMANAGER="lf"
