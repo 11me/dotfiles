@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# script for quick opening
+# any file in my .local/bin folder
+
+# the first argument is gonna be the filename
+filename="$1"
+pathToFile="$SCRIPTS/$filename"
+
+# if the filename is given and that file exists
+if [ -n "$filename" ] && [ -e "$pathToFile" ]; then
+  # open the file in my editor
+  "$EDITOR" "$pathToFile"
+else
+  # or just leave a message if the file does not exist
+  echo "Can not find a file, sorry :("
+  exit 1
+fi
