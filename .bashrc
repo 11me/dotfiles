@@ -7,7 +7,6 @@
 set -o vi
 shopt -s histappend
 
-
 ################# colors ####################
 
 red='\[\e[31m\]'
@@ -28,6 +27,31 @@ export HISTFILE="$HOME/.cache/.bash_history"
 export CDPATH=".:~:~/dox:~/dox/projects:~/dox/books"
 export SCRIPTS="$HOME/.local/bin"
 export GOBIN="$HOME/go/bin"
+
+# Default programms
+export EDITOR="vim"
+export VIMRC="$HOME/.config/nvim/init.vim"
+export TERMINAL="st"
+export FILEMANAGER="lf"
+export BROWSER="librewolf"
+export STATUSBAR="dwmblocks"
+export WM="dwm"
+#export WM="i3"
+#export STATUSBAR="i3blocks"
+export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
+export SUDO_PROMPT="password 🔑:"
+export JAVA_HOME="/usr/lib/jvm/java-15-openjdk"
+
+# Clean up
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export ZDOTDIR="$HOME/.config/zsh"
+
+# Server name for rsync
+export SERVER="server"
+
+export GOMAXPROCS="$(nproc)"
+export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
 
 ################# functions ####################
 
