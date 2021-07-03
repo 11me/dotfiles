@@ -62,7 +62,10 @@ set noerrorbells
 set clipboard+=unnamedplus
 
 " enable omni-completion
-"set omnifunc=syntaxcomplete#Complete
+set omnifunc=syntaxcomplete#Complete
+
+" set menu completion
+set wildmenu
 
 " PLUGINS
 " load plugins only if vim plug installed
