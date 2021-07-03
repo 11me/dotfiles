@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 pathgo="/tmp/playgo"
 
 # if tmux is running
-if [[ -n $(pgrep tmux) ]]; then
+if [ -n "$(pgrep tmux)" ]; then
   # create temporary directory
   mkdir -p "$pathgo"
   # create new window named "playground" and open file main.go
@@ -15,6 +15,6 @@ if [[ -n $(pgrep tmux) ]]; then
   # open main.go file and write the main func
   tmux send-keys -t ":playground.0" "o" "Enter" "func main() {" "Enter"
 else
-  echo "Error: tmux is not runnig"
+  echo "tmux is not runnig... Bye :)"
   exit 1
 fi
