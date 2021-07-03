@@ -1,7 +1,7 @@
-# shopt -s checkwinsize globstar complete_fullquote expand_aliases extquote\
-# 	 extglob force_fignore hostcomplete interactive_comments xpg_echo\
-# 	 promptvars sourcepath progcomp autocd cdspell dirspell direxpand\
-# 	 nocasematch histappend cmdhist lithist
+shopt -s checkwinsize globstar complete_fullquote expand_aliases extquote\
+ 	 extglob force_fignore hostcomplete interactive_comments xpg_echo\
+ 	 promptvars sourcepath progcomp autocd cdspell dirspell direxpand\
+ 	 nocasematch histappend cmdhist lithist
 
 ################# options ####################
 set -o vi
