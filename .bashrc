@@ -27,6 +27,7 @@ export HISTSIZE=1000
 export HISTFILE="$HOME/.cache/.bash_history"
 export CDPATH=".:~:~/dox:~/dox/projects:~/dox/books"
 export SCRIPTS="$HOME/.local/bin"
+export GOBIN="$HOME/go/bin"
 
 ################# functions ####################
 
