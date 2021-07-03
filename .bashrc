@@ -10,14 +10,14 @@ shopt -s histappend
 
 ################# colors ####################
 
-r='\[\e[31m\]' #red
-g='\[\e[30m\]' #
-h='\[\e[34m\]'
-u='\[\e[33m\]'
-p='\[\e[33m\]'
-w='\[\e[35m\]'
-b='\[\e[36m\]'
-x='\[\e[0m\]'
+red='\[\e[31m\]'
+green='\[\e[32m\]'
+yellow='\[\e[33m\]'
+blue='\[\e[34m\]'
+magenta='\[\e[35m\]'
+cyan='\[\e[36m\]'
+white='\[\e[37m\]'
+x='\[\e[0m\]' # reset
 
 ################# exports ####################
 
@@ -88,8 +88,14 @@ pathappend \
 
 __prompt() {
 
-  #PS1='\[\e[38;5;190m\w\]\n\e[0m\[\e[38;5;45mλ\]\e[0m '
-  PS1="${w}\w\n${h}λ${x} "
+  local B="$(git branch --show-current 2>/dev/null)"
+  if test -n "$B"; then
+    B=" ($B)"
+  else
+    B=""
+  fi
+
+  PS1="${yellow}\w${blue}${B}\n${blue}λ${x} "
 
 }
 
