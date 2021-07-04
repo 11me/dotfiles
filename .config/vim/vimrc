@@ -22,6 +22,9 @@ set showmode
 " show the cursor position
 set ruler
 
+" minimal number of screen lines to keep above and below the cursor.
+set scrolloff=10
+
 " copy indent from current line when starting a new line
 set autoindent
 set smartindent " should be on with autoindent
