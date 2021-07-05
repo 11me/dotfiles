@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# script for creating notes
+
+# unique directory name
+dirname="$(date '+%Y%m%d%H%M%S')"
+# path where my notes are located
+path="$HOME/dox/znotes"
+# file to create
+filepath="$path/$dirname/README.md"
+
+
+create_znote() {
+  # check if notes direcotry exists
+  if [ -d "$path" ]; then
+    mkdir "$path/$dirname"
+    "$EDITOR" "$filepath"
+  else
+    echo "Oops... can not find $path"
+    echo "Bye!"
+  fi
+}
+
+case $1 in
+  "todo") "$EDITOR" "$path/TODO.md";;
+  *) create_znote ;;
+esac
