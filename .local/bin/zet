@@ -21,7 +21,50 @@ create_znote() {
   fi
 }
 
-case $1 in
+# search the word in my notes and put them to dmenu
+# for selection
+search_znote() {
+  # open the selection in my editor
+  res="$(grep -ril --exclude-dir=".git" "$1" "$path" | dmenu -p Found -l 10 -i)"
+  # if the result is not empty
+  if [ -n "$res" ]; then
+    # open the selected file
+    "$EDITOR" "$res"
+  fi
+}
+
+# clear empty directories in znotes
+clear_empty() {
+  rmdir ./* "$path" 2>/dev/null
+}
+
+_help() {
+  cat << EOF
+Zet - is a script that helps to create and search znotes.
+
+USAGE:
+  zet [OPTION]
+
+AVAILABLE OPTIONS:
+  todo - opens TODO file for fast editing.
+  search - searches through znotes and gives back results
+  to select from dmenu.
+  clear - remove empty directories within a znotes directory.
+  help - shows help menu.
+
+EXAMPLES:
+  1)zet todo - opens a TODO file.
+  2)zet search vim - search for a 'vim' word in the znotes.
+  3)zet - without any options just creates new znote within
+  a unique folder named with current date and time like that:
+  "20210706002915".
+EOF
+}
+
+case "$1" in
   "todo") "$EDITOR" "$path/TODO.md";;
+  "search") search_znote "$2";;
+  "help") _help;;
+  "clear") clear_empty;;
   *) create_znote ;;
 esac
