@@ -2,6 +2,13 @@
 
 # script for creating notes
 
+# check whether the vim installed or not
+# if vim is not installed just exit
+if [ ! "$(command -v vim)" ]; then
+  echo "vim is not found on your system, exiting ..."
+  exit 1
+fi
+
 # unique directory name
 dirname="$(date '+%Y%m%d%H%M%S')"
 # path where my notes are located
@@ -14,7 +21,7 @@ create_znote() {
   # check if notes direcotry exists
   if [ -d "$path" ]; then
     mkdir "$path/$dirname"
-    "$EDITOR" "$filepath"
+    "${EDITOR:=vim}" "$filepath"
   else
     echo "Oops... can not find $path"
     echo "Bye!"
@@ -29,7 +36,7 @@ search_znote() {
   # if the result is not empty
   if [ -n "$res" ]; then
     # open the selected file
-    "$EDITOR" "$res"
+    "${EDITOR:=vim}" -c "/$1" "$res"
   fi
 }
 
@@ -61,8 +68,9 @@ EXAMPLES:
 EOF
 }
 
+
 case "$1" in
-  "todo") "$EDITOR" "$path/TODO.md";;
+  "todo") "${EDITOR:=vim}" "$path/TODO.md";;
   "search") search_znote "$2";;
   "help") _help;;
   "clear") clear_empty;;
