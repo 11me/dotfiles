@@ -48,7 +48,8 @@ set nowritebackup
 
 " highlight search
 set hlsearch
-set incsearch
+set incsearch  " highlight matched words while typing
+set ignorecase " ignore case when searching
 
 " set the colored column on the right
 set colorcolumn=80
