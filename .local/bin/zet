@@ -49,24 +49,21 @@ clear_empty() {
 
 _help() {
   cat << EOF
-Zet - is a script that helps to create and search znotes.
+Zet is a script that helps to create and search znotes.
 
-USAGE:
+Usage:
   zet [OPTION]
 
-AVAILABLE OPTIONS:
-  todo - opens TODO file for fast editing.
-  search - searches through znotes and gives back results
-  to select from dmenu.
-  clear - remove empty directories within a znotes directory.
-  help - shows help menu.
+Available options:
+  todo               open TODO file for fast editing
+  search             search through znotes
+  clear              remove empty notes
+  help               show help menu
 
-EXAMPLES:
-  1)zet todo - opens a TODO file.
-  2)zet search vim - search for a 'vim' word in the znotes.
-  3)zet - without any options just creates new znote within
-  a unique folder named with current date and time like that:
-  "20210706002915".
+Examples:
+  1)zet todo         open TODO file
+  2)zet search vim   search for a 'vim' word in znotes
+  3)zet              create a new znote
 EOF
 }
 
