@@ -44,7 +44,7 @@ search_znote() {
 
 # clear empty directories in znotes
 clear_empty() {
-  rmdir ./* "$path" 2>/dev/null
+  rmdir "$path/"* 2>/dev/null
 }
 
 _help() {
