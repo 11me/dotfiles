@@ -56,7 +56,7 @@ export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
 ################# functions ####################
 
 c() {
-  clear
+  printf "\e[H\e[2J"
 } && export -f c
 
 lfcd () {
