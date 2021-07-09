@@ -106,6 +106,14 @@ else
   autocmd BufWrite *.go !gofmt -w % " backup if fatih fails
 endif
 
+" displays all the syntax rules for current position, useful
+" when writing vimscript syntax plugins
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 " move selected line / block of text in visual mode
 " shift + k to move up
@@ -121,6 +129,8 @@ nmap <tab> :bnext<CR>
 nmap <s-tab> :bprev<CR>
 " jump to the <++>
 nnoremap <space><space> <esc>/<++><cr>"_c4l
+" show syntax rule
+nmap <F2> :call <SID>SynStack()<CR>
 
 " automatically deletes all trailing whitespace and newlines at end of
 " file on save.
