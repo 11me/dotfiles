@@ -155,7 +155,7 @@ fi
 alias aliasrc='$EDITOR $HOME/.config/alias'
 
 # Fast listing
-alias ls="ls -lh --color=auto"
+alias ls="ls --color=auto"
 alias la="ls -Alh"
 
 # Make config changes easy in suckless programs
