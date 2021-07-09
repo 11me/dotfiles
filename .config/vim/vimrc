@@ -113,6 +113,12 @@ endif
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
 
+" delete current buffer
+nmap <C-x> :bd!<CR>
+" move to the next buffer
+nmap <tab> :bnext<CR>
+" move to the previous buffer
+nmap <s-tab> :bprev<CR>
 " jump to the <++>
 nnoremap <space><space> <esc>/<++><cr>"_c4l
 
