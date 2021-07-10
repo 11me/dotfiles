@@ -91,7 +91,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   set background=dark
   let g:gruvbox_invert_selection=0
   colorscheme gruvbox
-  highlight ColorColumn ctermbg=0 guibg=grey
+  "highlight ColorColumn ctermbg=0 guibg=grey
   highlight LineNr guifg=#5eacd3
   highlight Normal guibg=NONE
   highlight SignColumn guibg=NONE ctermbg=0
