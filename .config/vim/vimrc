@@ -131,6 +131,8 @@ nmap <s-tab> :bprev<CR>
 nnoremap <space><space> <esc>/<++><cr>"_c4l
 " show syntax rule
 nmap <F2> :call <SID>SynStack()<CR>
+" open my vimrc fast
+nnoremap <leader>vrc :e $VIMRC<CR>
 
 " automatically deletes all trailing whitespace and newlines at end of
 " file on save.
