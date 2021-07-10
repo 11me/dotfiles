@@ -70,6 +70,8 @@ set omnifunc=syntaxcomplete#Complete
 
 " set menu completion
 set wildmenu
+" set concealing
+set conceallevel=2
 
 " PLUGINS
 " load plugins only if vim plug installed
@@ -114,6 +116,10 @@ function! <SID>SynStack()
   endif
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+" Conceal ends of markdown `code` to just code
+syn region mkdCode matchgroup=mkdDelimiter start=/\(\([^\\]\|^\)\\\)\@<!`/ end=/\(\([^\\]\|^\)\\\)\@<!`/ concealends
+hi htmlItalic ctermfg=14 ctermbg=0 guifg=NONE guibg=NONE cterm=bold
 
 " move selected line / block of text in visual mode
 " shift + k to move up
