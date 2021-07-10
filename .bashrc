@@ -30,7 +30,7 @@ export GOBIN="$HOME/go/bin"
 
 # Default programms
 export EDITOR="vim"
-export VIMRC="$HOME/.config/nvim/init.vim"
+export VIMRC="$HOME/.vim/vimrc"
 export TERMINAL="st"
 export FILEMANAGER="lf"
 export BROWSER="librewolf"
