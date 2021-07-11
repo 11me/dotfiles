@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# key from JSON data
+#'{"translatedText":"Привет"}'
+key="translatedText"
+re="\"($key)\":\"([^\"]*)\""
+usage="$(cat <<EOF
+tl is a simple translator from english to russian
+Usage:
+  tl from to query
+Example:
+  tl en ru hello
+Lang codes:
+ en - English
+ ar - Arabic
+ zh - Chinese
+ fr - French
+ de - German
+ hi - Hindi
+ id - Indonesian
+ ga - Irish
+ it - Italian
+ ja - Japanese
+ ko - Korean
+ pl - Polish
+ pt - Portuguese
+ ru - Russian
+ es - Spanish
+ tr - Turkish
+ vi - Vietnamese
+EOF
+)"
+
+# if query is empty just exit
+[[ "$#" -lt 3 ]] && echo "$usage" && exit 1
+
+# get the query params
+from="$1"
+to="$2"
+req="$3"
+
+# make a query to free API
+declare query
+declare result
+# make a query
+query() {
+  query=$(curl -s -d "q=$3&source=$1&target=$2"\
+    'https://libretranslate.de/translate')
+}
+
+# parse JSON data
+parse_JSON() {
+  while read -r l; do
+      if [[ $l =~ $re ]]; then
+          result="${BASH_REMATCH[2]}"
+
+      else
+          result="No match"
+      fi
+  done <<< "$1"
+}
+
+out() {
+  echo -e "\e[35m$result\e[0m"
+}
+
+query "$from" "$to" "$req"
+parse_JSON "$query"
+out
