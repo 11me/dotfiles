@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 # script for creating notes
 
 # check whether the vim installed or not
 # if vim is not installed just exit
-if [ ! "$(command -v vim)" ]; then
+if [[ ! "$(command -v vim)" ]]; then
   echo "vim is not found on your system, exiting ..."
   exit 1
 fi
@@ -32,14 +32,31 @@ create_znote() {
 
 # search the word in my notes and put them to dmenu
 # for selection
+#search_znote() {
+#  # open the selection in my editor
+#  res="$(grep -ril --exclude-dir=".git" "$1" "$path" | dmenu -p Found -l 10 -i)"
+#  # if the result is not empty
+#  if [ -n "$res" ]; then
+#    # open the selected file
+#    "${EDITOR:=vim}" -c "/$1" "$res"
+#  fi
+#}
 search_znote() {
-  # open the selection in my editor
-  res="$(grep -ril --exclude-dir=".git" "$1" "$path" | dmenu -p Found -l 10 -i)"
-  # if the result is not empty
-  if [ -n "$res" ]; then
-    # open the selected file
-    "${EDITOR:=vim}" -c "/$1" "$res"
-  fi
+  # nice prompt when selecting
+  PS3="What would you like to see? (Type 0 to exit): "
+  # get the results with grep excluding .git directory
+  local results
+  results="$(grep -ril --exclude-dir=".git" "$1" "$path")"
+  # make a prompt to select a note
+  select result in $results;
+  do
+    if [[ -n "$result" ]]; then
+      "${EDITOR:=vim}" -c "/$1" "$result"
+    else
+      echo "Nothing selected, byeee! :)"
+    fi
+    break
+  done
 }
 
 # clear empty directories in znotes
