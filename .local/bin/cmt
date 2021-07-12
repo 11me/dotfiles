@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Do comment UNIXWAY
+# do not need any plugin for this!
+# Just one simple loop and thats it!
+
+while IFS= read -r line; do
+  echo "${1:-#} $line"
+done
