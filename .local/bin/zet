@@ -23,7 +23,7 @@ create_znote() {
   # check if notes direcotry exists
   if [ -d "$path" ]; then
     mkdir "$path/$dirname"
-    "${EDITOR:=vim}" "$filepath/${1:-$defaultmd}.md"
+    exec "${EDITOR:=vim}" "$filepath/${1:-$defaultmd}.md"
   else
     echo "Oops... can not find $path"
     echo "Bye!"
@@ -51,7 +51,7 @@ search_znote() {
   select result in $results;
   do
     if [[ -n "$result" ]]; then
-      "${EDITOR:=vim}" -c "/$1" "$result"
+      exec "${EDITOR:=vim}" -c "/$1" "$result"
     else
       echo "Nothing selected, byeee! :)"
     fi
@@ -86,9 +86,19 @@ EOF
 
 
 case "$1" in
-  "todo") "${EDITOR:=vim}" "$path/TODO.md";;
-  "search") search_znote "$2";;
-  "help") _help;;
-  "clear") clear_empty;;
-  *) create_znote "$1";;
+  "todo" | "t")
+    "${EDITOR:=vim}" "$path/TODO.md"
+    ;;
+  "search" | "s")
+    search_znote "$2"
+    ;;
+  "help" | "h")
+    _help
+    ;;
+  "clear" | "c")
+    clear_empty
+    ;;
+  *)
+    create_znote "$1"
+    ;;
 esac
