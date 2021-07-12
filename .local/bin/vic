@@ -10,7 +10,7 @@ pathToFile="$SCRIPTS/$filename"
 # if the filename is given and that file exists
 if [ -n "$filename" ] && [ -e "$pathToFile" ]; then
   # open the file in my editor
-  "$EDITOR" "$pathToFile"
+  exec "$EDITOR" "$pathToFile"
 else
   # or just leave a message if the file does not exist
   echo "Can not find a file, sorry :("
