@@ -70,8 +70,12 @@ set omnifunc=syntaxcomplete#Complete
 
 " set menu completion
 set wildmenu
+
 " set concealing
 set conceallevel=2
+
+" be faster
+set updatetime=100
 
 " PLUGINS
 " load plugins only if vim plug installed
@@ -139,6 +143,8 @@ nnoremap <space><space> <esc>/<++><cr>"_c4l
 nmap <F2> :call <SID>SynStack()<CR>
 " open my vimrc fast
 nnoremap <leader>vrc :e $VIMRC<CR>
+" List buffers
+nnoremap <leader>fb :buffers<CR>
 
 " automatically deletes all trailing whitespace and newlines at end of
 " file on save.
