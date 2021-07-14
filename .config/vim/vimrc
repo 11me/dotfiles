@@ -13,7 +13,7 @@ filetype plugin on
 
 " set numbers and relative numbers on
 set number
-set relativenumber
+"set relativenumber
 
 " show the commands normal, insert ...etc
 " by default it is on, but I want to be explicit
@@ -94,13 +94,57 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   set termguicolors
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
   set background=dark
   let g:gruvbox_invert_selection=0
   colorscheme gruvbox
-  "highlight ColorColumn ctermbg=0 guibg=grey
-  highlight LineNr guifg=#5eacd3
-  highlight Normal guibg=NONE
+
+  highlight ColorColumn ctermbg=236
+  "highlight LineNr guifg=#5eacd3
+  highlight Normal guibg=NONE ctermbg=0
   highlight SignColumn guibg=NONE ctermbg=0
+
+	" base default color changes (gruvbox dark friendly)
+	hi Normal ctermbg=NONE
+	hi Special ctermfg=cyan guifg=cyan
+	hi SpecialKey ctermfg=black ctermbg=NONE
+	hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
+	hi MoreMsg ctermfg=black ctermbg=NONE
+	hi NonText ctermfg=black ctermbg=NONE
+	hi vimGlobal ctermfg=black ctermbg=NONE
+	hi ErrorMsg ctermbg=234 ctermfg=darkred cterm=NONE
+	hi Error ctermbg=234 ctermfg=darkred cterm=NONE
+	hi SpellBad ctermbg=234 ctermfg=darkred cterm=NONE
+	hi SpellRare ctermbg=234 ctermfg=darkred cterm=NONE
+	hi Search ctermbg=236 ctermfg=darkred
+	hi vimTodo ctermbg=236 ctermfg=darkred
+	hi Todo ctermbg=236 ctermfg=darkred
+	hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
+	hi MatchParen ctermbg=236 ctermfg=darkred
+
+	" color overrides
+	hi StatusLineNC ctermfg=grey ctermbg=NONE
+	hi Normal ctermbg=NONE
+	hi Special ctermfg=cyan guifg=cyan
+	hi LineNr ctermfg=grey ctermbg=NONE
+	hi SpecialKey ctermfg=black ctermbg=NONE guifg=black guibg=NONE
+	hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
+	hi MoreMsg ctermfg=black ctermbg=NONE
+	hi NonText ctermfg=black ctermbg=NONE
+	hi vimGlobal ctermfg=black ctermbg=NONE
+	hi ErrorMsg ctermbg=234 ctermfg=darkred cterm=NONE
+	hi Error ctermbg=234 ctermfg=darkred cterm=NONE
+	hi SpellBad ctermbg=234 ctermfg=darkred cterm=NONE
+	hi SpellRare ctermbg=234 ctermfg=darkred cterm=NONE
+	hi Search ctermbg=236 ctermfg=darkred
+	hi vimTodo ctermbg=236 ctermfg=darkred
+	hi Todo ctermbg=236 ctermfg=darkred
+	hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
+	hi MatchParen ctermbg=236 ctermfg=darkred
+	hi vimFuncName ctermfg=121 cterm=NONE
+	hi goFunction ctermfg=121 cterm=NONE
+	au FileType markdown,pandoc hi Title ctermfg=yellow ctermbg=NONE
+	au FileType markdown,pandoc hi Operator ctermfg=yellow ctermbg=NONE
 
   " column for showing modified lines
   " for gitgutter plugin
@@ -108,6 +152,23 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   " the background colours to match the sign column
   let g:gitgutter_set_sign_backgrounds = 1
 
+  " golang
+  let g:go_fmt_fail_silently = 0
+  let g:go_fmt_command = 'goimports'
+  let g:go_fmt_autosave = 1
+  let g:go_gopls_enabled = 1
+  let g:go_highlight_types = 1
+  let g:go_highlight_fields = 1
+  let g:go_highlight_functions = 1
+  let g:go_highlight_function_calls = 1
+  let g:go_highlight_operators = 1
+  let g:go_highlight_extra_types = 1
+  let g:go_highlight_variable_declarations = 1
+  let g:go_highlight_variable_assignments = 1
+  let g:go_highlight_build_constraints = 1
+  let g:go_highlight_diagnostic_errors = 1
+  let g:go_highlight_diagnostic_warnings = 1
+  let g:go_auto_sameids = 0
 else
   autocmd BufWrite *.go !gofmt -w % " backup if fatih fails
 endif
@@ -124,6 +185,7 @@ endfunc
 " Conceal ends of markdown `code` to just code
 syn region mkdCode matchgroup=mkdDelimiter start=/\(\([^\\]\|^\)\\\)\@<!`/ end=/\(\([^\\]\|^\)\\\)\@<!`/ concealends
 hi htmlItalic ctermfg=14 ctermbg=0 guifg=NONE guibg=NONE cterm=bold
+hi htmlH1 ctermfg=cyan ctermbg=0 guifg=NONE guibg=NONE cterm=bold
 
 " move selected line / block of text in visual mode
 " shift + k to move up
@@ -143,8 +205,12 @@ nnoremap <space><space> <esc>/<++><cr>"_c4l
 nmap <F2> :call <SID>SynStack()<CR>
 " open my vimrc fast
 nnoremap <leader>vrc :e $VIMRC<CR>
-" List buffers
+" list buffers
 nnoremap <leader>fb :buffers<CR>
+" comment lines
+nnoremap <leader>cmt :.!cmt
+autocmd FileType go nnoremap <leader>cmt :.!cmt<space>//<CR>
+autocmd FileType vim nnoremap <leader>cmt :.!cmt<space>\"<CR>
 
 " automatically deletes all trailing whitespace and newlines at end of
 " file on save.
