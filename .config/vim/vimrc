@@ -87,17 +87,16 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
     Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
-    Plug 'morhetz/gruvbox'
+    "Plug 'morhetz/gruvbox'
+    Plug 'aditya-azad/candle-grey'
   call plug#end()
 
   " colorscheme settings
-  set termguicolors
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
   set background=dark
-  let g:gruvbox_invert_selection=0
-  colorscheme gruvbox
+  "colorscheme gruvbox
+  set t_Co=256 " enable colors in terminal
+  colorscheme candle-grey
 
   highlight ColorColumn ctermbg=236
   "highlight LineNr guifg=#5eacd3
@@ -108,8 +107,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 	hi Normal ctermbg=NONE
 	hi Special ctermfg=cyan guifg=cyan
 	hi SpecialKey ctermfg=black ctermbg=NONE
-	hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
-	hi MoreMsg ctermfg=black ctermbg=NONE
 	hi NonText ctermfg=black ctermbg=NONE
 	hi vimGlobal ctermfg=black ctermbg=NONE
 	hi ErrorMsg ctermbg=234 ctermfg=darkred cterm=NONE
@@ -122,27 +119,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 	hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
 	hi MatchParen ctermbg=236 ctermfg=darkred
 
-	" color overrides
-	hi StatusLineNC ctermfg=grey ctermbg=NONE
-	hi Normal ctermbg=NONE
-	hi Special ctermfg=cyan guifg=cyan
-	hi LineNr ctermfg=grey ctermbg=NONE
-	hi SpecialKey ctermfg=black ctermbg=NONE guifg=black guibg=NONE
-	hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
-	hi MoreMsg ctermfg=black ctermbg=NONE
-	hi NonText ctermfg=black ctermbg=NONE
-	hi vimGlobal ctermfg=black ctermbg=NONE
-	hi ErrorMsg ctermbg=234 ctermfg=darkred cterm=NONE
-	hi Error ctermbg=234 ctermfg=darkred cterm=NONE
-	hi SpellBad ctermbg=234 ctermfg=darkred cterm=NONE
-	hi SpellRare ctermbg=234 ctermfg=darkred cterm=NONE
-	hi Search ctermbg=236 ctermfg=darkred
-	hi vimTodo ctermbg=236 ctermfg=darkred
-	hi Todo ctermbg=236 ctermfg=darkred
-	hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
-	hi MatchParen ctermbg=236 ctermfg=darkred
-	hi vimFuncName ctermfg=121 cterm=NONE
-	hi goFunction ctermfg=121 cterm=NONE
 	au FileType markdown,pandoc hi Title ctermfg=yellow ctermbg=NONE
 	au FileType markdown,pandoc hi Operator ctermfg=yellow ctermbg=NONE
 
@@ -157,17 +133,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   let g:go_fmt_command = 'goimports'
   let g:go_fmt_autosave = 1
   let g:go_gopls_enabled = 1
-  let g:go_highlight_types = 1
-  let g:go_highlight_fields = 1
-  let g:go_highlight_functions = 1
-  let g:go_highlight_function_calls = 1
-  let g:go_highlight_operators = 1
-  let g:go_highlight_extra_types = 1
-  let g:go_highlight_variable_declarations = 1
-  let g:go_highlight_variable_assignments = 1
-  let g:go_highlight_build_constraints = 1
-  let g:go_highlight_diagnostic_errors = 1
-  let g:go_highlight_diagnostic_warnings = 1
   let g:go_auto_sameids = 0
 else
   autocmd BufWrite *.go !gofmt -w % " backup if fatih fails
