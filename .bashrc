@@ -170,7 +170,7 @@ alias smci='sudo -A make clean install'
 alias prc='$EDITOR $HOME/.profile'
 alias zrc='$EDITOR $HOME/.config/zsh/.zshrc'
 alias ignore='$EDITOR $HOME/dotfiles/.gitignore'
-alias vimrc='$EDITOR $HOME/.config/nvim/init.vim'
+alias vimrc='$EDITOR $HOME/.config/vim/vimrc'
 
 # Actions
 alias ps='sudo pacman -S'
