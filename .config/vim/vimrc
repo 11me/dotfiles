@@ -13,7 +13,7 @@ filetype plugin on
 
 " set numbers and relative numbers on
 set number
-"set relativenumber
+set relativenumber
 
 " show the commands normal, insert ...etc
 " by default it is on, but I want to be explicit
@@ -151,6 +151,7 @@ endfunc
 syn region mkdCode matchgroup=mkdDelimiter start=/\(\([^\\]\|^\)\\\)\@<!`/ end=/\(\([^\\]\|^\)\\\)\@<!`/ concealends
 hi htmlItalic ctermfg=14 ctermbg=0 guifg=NONE guibg=NONE cterm=bold
 hi htmlH1 ctermfg=cyan ctermbg=0 guifg=NONE guibg=NONE cterm=bold
+hi mkdLink ctermfg=blue ctermbg=NONE cterm=underline
 
 " move selected line / block of text in visual mode
 " shift + k to move up
@@ -173,7 +174,7 @@ nnoremap <leader>vrc :e $VIMRC<CR>
 " list buffers
 nnoremap <leader>fb :buffers<CR>
 " comment lines
-nnoremap <leader>cmt :.!cmt
+nnoremap <leader>cmt :.!cmt<space>
 autocmd FileType go nnoremap <leader>cmt :.!cmt<space>//<CR>
 autocmd FileType vim nnoremap <leader>cmt :.!cmt<space>\"<CR>
 
