@@ -34,10 +34,10 @@ export VIMRC="$HOME/.vim/vimrc"
 export TERMINAL="st"
 export FILEMANAGER="lf"
 export BROWSER="librewolf"
-export STATUSBAR="dwmblocks"
-export WM="dwm"
-#export WM="i3"
-#export STATUSBAR="i3blocks"
+#export STATUSBAR="dwmblocks"
+#export WM="dwm"
+export WM="i3"
+export STATUSBAR="i3blocks"
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export SUDO_PROMPT="password 🔑:"
 export JAVA_HOME="/usr/lib/jvm/java-15-openjdk"
@@ -132,13 +132,13 @@ if test -x /usr/bin/lesspipe; then
   export LESSCLOSE="/usr/bin/lesspipe %s %s";
 fi
 
-export LESS_TERMCAP_mb="[35m" # magenta
-export LESS_TERMCAP_md="[33m" # yellow
-export LESS_TERMCAP_me="" # "0m"
-export LESS_TERMCAP_se="" # "0m"
-export LESS_TERMCAP_so="[34m" # blue
-export LESS_TERMCAP_ue="" # "0m"
-export LESS_TERMCAP_us="[4m"  # underline
+#export LESS_TERMCAP_mb="[35m" # magenta
+#export LESS_TERMCAP_md="[33m" # yellow
+#export LESS_TERMCAP_me="" # "0m"
+#export LESS_TERMCAP_se="" # "0m"
+#export LESS_TERMCAP_so="[34m" # blue
+#export LESS_TERMCAP_ue="" # "0m"
+#export LESS_TERMCAP_us="[4m"  # underline
 
 ################# dircolors ####################
 
