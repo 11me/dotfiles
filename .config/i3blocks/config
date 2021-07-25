@@ -20,10 +20,10 @@ command=player
 interval=once
 signal=11
 
-[mailbox]
-command=mailbox
-signal=13
-interval=once
+#[mailbox]
+#command=mailbox
+#signal=13
+#interval=once
 
 [battery]
 LABEL=
@@ -44,9 +44,9 @@ STEP=5%
 command=datetime
 interval=1
 
-[kb_layout]
-command=xkb-switch -p | sed 's/us/US/g;s/ru/RU/g'
+#[kb_layout]
+#command=xkb-switch -p | sed 's/us/US/g;s/ru/RU/g'
 #font=monospace
 #font_weight=bold
-interval=once
-signal=14
+#interval=once
+#signal=14
