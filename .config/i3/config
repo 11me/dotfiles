@@ -52,6 +52,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 # start a browser
 bindsym $mod+w exec $BROWSER
 
+# start a chill
+bindsym $mod+Shift+z workspace 10; exec chromium --app=https://sudo.fm
+
 # kill focused window
 bindsym $mod+q kill
 
