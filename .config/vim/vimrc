@@ -11,6 +11,10 @@ set nocompatible
 syntax enable
 filetype plugin on
 
+" set 8 bit color and light background for default colorscheme
+"set t_Co=8
+"set background=light
+
 " set numbers and relative numbers on
 set number
 set relativenumber
@@ -36,7 +40,7 @@ set expandtab
 set smarttab " when on, a <Tab> in front of a line inserts blanks according to
 
 " nice looking list chars
-set listchars=tab:→\ ,eol:↲,space:␣
+"set listchars=tab:→\ ,eol:↲,space:␣
 
 " do not wrap the text
 set nowrap
@@ -54,7 +58,6 @@ set ignorecase " ignore case when searching
 " set the colored column on the right
 set colorcolumn=80
 set textwidth=80
-"highlight ColorColumn ctermbg=grey " change the color
 
 " buffer becomes hidden when it is |abandon|ed.
 set hidden
@@ -98,13 +101,12 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   set t_Co=256 " enable colors in terminal
   colorscheme candle-grey
 
-  highlight ColorColumn ctermfg=NONE ctermbg=236
+  "highlight ColorColumn ctermfg=NONE ctermbg=236
   "highlight LineNr guifg=#5eacd3
-  highlight Normal guibg=NONE ctermbg=0
   highlight SignColumn guibg=NONE ctermbg=0
 
 	" base default color changes (gruvbox dark friendly)
-	hi Normal ctermbg=NONE
+  highlight Normal guibg=NONE ctermbg=0
 	hi Special ctermfg=cyan guifg=cyan
 	hi SpecialKey ctermfg=black ctermbg=NONE
 	hi NonText ctermfg=black ctermbg=NONE
@@ -137,6 +139,8 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 else
   autocmd BufWrite *.go !gofmt -w % " backup if fatih fails
 endif
+
+highlight ColorColumn ctermfg=NONE ctermbg=236
 
 " displays all the syntax rules for current position, useful
 " when writing vimscript syntax plugins
