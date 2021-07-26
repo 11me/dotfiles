@@ -119,7 +119,10 @@ __prompt() {
     B=""
   fi
 
-  PS1="${red}${yellow}\w${blue}$B\n${blue}\$${x} "
+  ps_minimal="${red}${yellow}\w${blue}$B\n${blue}\$${x} "
+  ps_slim="${yellow}\w${blue}$B\n${blue}\u${white}@${cyan}\H${x}\$ "
+
+  PS1="$ps_minimal"
 
 }
 
