@@ -82,4 +82,4 @@ super + shift + n
 
 # open news
 super + n
-    st -e newsboat
+    st -e newsboat -u ~/dox/personal/news
