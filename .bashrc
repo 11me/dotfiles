@@ -210,7 +210,7 @@ alias tls='tmux list-sessions'
 alias tks='tmux kill-session -t'
 alias tas='tmux attach -t'
 alias thnz='t hacking vim bash lynx docker'
-alias tt='t tmux default'
+alias tt='t tmux vim'
 
 # Local folders
 alias hc='cd $HOME/.config'
