@@ -26,7 +26,6 @@ export HISTSIZE=1000
 export HISTFILE="$HOME/.cache/.bash_history"
 export CDPATH=".:~:~/dox:~/dox/projects:~/dox/books"
 export SCRIPTS="$HOME/.local/bin"
-export GOBIN="$HOME/go/bin"
 
 # Default programms
 export EDITOR="vim"
@@ -51,6 +50,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 export SERVER="server"
 
 export GOMAXPROCS="$(nproc)"
+export GOPATH="$HOME/go"
 export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
 
 ################# functions ####################
@@ -95,6 +95,8 @@ pathprepend() {
 # remember last arg will be first in path
 pathprepend \
   $SCRIPTS \
+  $GOPATH \
+  $GOPATH/bin \
   $HOME/.fnm \
   $JAVA_HOME/bin   #JAVA_HOME is set in .profile
 
