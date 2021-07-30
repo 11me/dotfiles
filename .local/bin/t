@@ -16,7 +16,7 @@ defwin=""
 
 # second argument as a first window name
 if [ "$2" = "" ]; then
-  defwin="Terminal"
+  defwin="vim"
 else
   defwin="$2"
 fi
