@@ -179,6 +179,11 @@ nnoremap <leader>vrc :e $VIMRC<CR>
 nnoremap <leader>fb :buffers<CR>
 " comment lines
 nnoremap <leader>cmt :.!cmt<space>
+" source vimrc
+nmap <leader>rc :so $VIMRC<CR>
+" nohlsearch
+nmap <leader>hl :nohlsearch<CR>
+
 autocmd FileType go nnoremap <leader>cmt :.!cmt<space>//<CR>
 autocmd FileType vim nnoremap <leader>cmt :.!cmt<space>\"<CR>
 
