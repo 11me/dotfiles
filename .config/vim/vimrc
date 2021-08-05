@@ -185,6 +185,9 @@ nmap <leader>rc :so $VIMRC<CR>
 nmap <leader>hl :nohlsearch<CR>
 
 autocmd FileType go nnoremap <leader>cmt :.!cmt<space>//<CR>
+autocmd FileType go nnoremap <leader>gd :GoDef<CR>
+autocmd FileType go nnoremap <leader>doc :GoDoc<CR>
+autocmd FileType go nnoremap <leader>gi :GoInfo<CR>
 autocmd FileType vim nnoremap <leader>cmt :.!cmt<space>\"<CR>
 
 " automatically deletes all trailing whitespace and newlines at end of
