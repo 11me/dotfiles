@@ -178,9 +178,6 @@ alias ignore='$EDITOR $HOME/dotfiles/.gitignore'
 alias vimrc='$EDITOR $HOME/.config/vim/vimrc'
 
 # Actions
-alias ps='sudo pacman -S'
-alias pss='pacman -Ss'
-alias ss='source ~/.config/zsh/.zshrc'
 alias todo='$EDITOR $HOME/dox/personal/todo'
 alias vi='$EDITOR'
 alias drmi='docker rmi $(docker images -qa) -f'
