@@ -1,3 +1,7 @@
-set editing-mode vi
 set bell-style none
-set keymap vi
+# display different colors on completion
+set colored-stats on
+#set menu-complete-display-prefix on
+#set show-mode-in-prompt on
+#set vi-cmd-mode-string c
+#set vi-ins-mode-string i
