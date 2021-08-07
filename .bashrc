@@ -5,7 +5,7 @@ shopt -s checkwinsize globstar complete_fullquote expand_aliases extquote\
 
 ################# options ####################
 set -o vi
-shopt -s histappend
+bind -x '"\C-o": lfcd'
 
 ################# colors ####################
 
@@ -162,6 +162,8 @@ alias aliasrc='$EDITOR $HOME/.config/alias'
 # Fast listing
 alias ls="ls --color=auto"
 alias la="ls -Alh"
+# Make ip command colorful
+alias ip='ip -c'
 
 # Make config changes easy in suckless programs
 alias dwmrc='cd $HOME/.local/share/dwm && $EDITOR config.def.h'
