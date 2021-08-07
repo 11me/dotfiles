@@ -1,0 +1,68 @@
+#!/bin/bash
+#----------------------------------------------------------------------
+# PROJECT NAME
+# cwatch
+#
+# PROJECT DESCRIPTION
+# Script watches any changes to a given file and executes supplied
+# command within a one second interval. I found it pretty useful when
+# dealing with go tests. It automatically runs tests when file was
+# saved.
+#----------------------------------------------------------------------
+# Author: 11me
+# Github: github.com/11me
+#----------------------------------------------------------------------
+
+file_to_watch="$1"
+sleep_interval=1
+shift
+
+# SAFETY CHECKS
+# if no args supplied show the usage
+if [[ -z $1 ]]; then
+  cat<<EOF
+Usage:
+  cwatch <filename> <commands ...>
+
+Description:
+  Script watches any changes to a given file and executes supplied
+  command within a one second interval.
+EOF
+exit 1
+fi
+
+# check if a given file exists
+if [[ ! -f $file_to_watch ]]; then
+  echo "ERROR: file $file_to_watch is not found"
+  exit 1
+fi
+
+# run the given command once to check the status code
+eval "$@" >/dev/null 2>&1
+if [[ $? -gt 0 ]]; then
+  echo "ERROR: given command not found"
+  exit 1
+fi
+# END OF SAFETY CHECKS
+
+# get the last modified time of the file
+last_modified=`stat -c %Y "$file_to_watch"`
+
+while true; do
+
+  new_modified=`stat -c %Y "$file_to_watch"`
+
+  if [[ $last_modified != $new_modified ]]; then
+    # clear the output
+    clear
+
+    # give the feedback
+    printf "Watching $file_to_watch\n\n"
+
+    # execute the command
+    eval "$@"
+
+    last_modified=`stat -c %Y "$file_to_watch"`
+  fi
+  sleep "$sleep_interval"
+done
