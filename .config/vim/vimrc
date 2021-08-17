@@ -56,8 +56,8 @@ set incsearch  " highlight matched words while typing
 set ignorecase " ignore case when searching
 
 " set the colored column on the right
-set colorcolumn=80
-set textwidth=80
+set colorcolumn=74
+set textwidth=72
 
 " buffer becomes hidden when it is |abandon|ed.
 set hidden
@@ -183,6 +183,8 @@ nnoremap <leader>cmt :.!cmt<space>
 nmap <leader>rc :so $VIMRC<CR>
 " nohlsearch
 nmap <leader>hl :nohlsearch<CR>
+" paste mode
+nmap <leader>p :set paste!<CR>
 
 autocmd FileType go nnoremap <leader>cmt :.!cmt<space>//<CR>
 autocmd FileType go nnoremap <leader>gd :GoDef<CR>
