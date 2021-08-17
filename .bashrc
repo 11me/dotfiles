@@ -69,6 +69,10 @@ lfcd () {
     fi
 } && export -f lfcd
 
+k() {
+  kubectl "$@"
+} && export -f k
+
 # add at the end of the path
 pathappend() {
   declare arg
