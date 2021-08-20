@@ -118,6 +118,7 @@ pathappend \
 
 __prompt() {
 
+  # git branch
   local B="$(git branch --show-current 2>/dev/null)"
   if test -n "$B"; then
     B=" ($B)"
@@ -125,7 +126,13 @@ __prompt() {
     B=""
   fi
 
-  ps_minimal="${red}${yellow}\w${blue}$B\n${blue}\$${x} "
+  # python virtualenv
+  local ENV=""
+  if test -n "$VIRTUAL_ENV"; then
+    ENV="(venv)"
+  fi
+
+  ps_minimal="${red}${yellow}\w${blue}$B ${yellow}$ENV\n${blue}\$${x} "
   ps_slim="${yellow}\w${blue}$B\n${blue}\u${white}@${cyan}\H${x}\$ "
 
   PS1="$ps_minimal"
