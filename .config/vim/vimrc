@@ -92,6 +92,10 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
     Plug 'airblade/vim-gitgutter'
     "Plug 'morhetz/gruvbox'
     Plug 'aditya-azad/candle-grey'
+
+    "fuzzy search
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
   call plug#end()
 
   " colorscheme settings
@@ -136,6 +140,9 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   let g:go_fmt_autosave = 1
   let g:go_gopls_enabled = 1
   let g:go_auto_sameids = 0
+
+  " popup window of fzf (center of the current window)
+  let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:true } }
 else
   autocmd BufWrite *.go !gofmt -w % " backup if fatih fails
 endif
@@ -185,6 +192,12 @@ nmap <leader>rc :so $VIMRC<CR>
 nmap <leader>hl :nohlsearch<CR>
 " paste mode
 nmap <leader>p :set paste!<CR>
+" search with fzf
+nmap <leader>ff :Files<CR>
+" search with Ripgrep (requires Rg)
+nmap <leader>rg :Rg<CR>
+" search with Ag (requires the silver search)
+nmap <leader>ag :Ag<CR>
 
 autocmd FileType go nnoremap <leader>cmt :.!cmt<space>//<CR>
 autocmd FileType go nnoremap <leader>gd :GoDef<CR>
