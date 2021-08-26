@@ -143,6 +143,9 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
   " popup window of fzf (center of the current window)
   let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:true } }
+
+  command! -bang -nargs=? -complete=dir HFiles
+    \ call fzf#vim#files(<q-args>, {'source': 'ag --hidden --skip-vcs-ignores -g ""'}, <bang>0)
 else
   autocmd BufWrite *.go !gofmt -w % " backup if fatih fails
 endif
@@ -193,7 +196,7 @@ nmap <leader>hl :nohlsearch<CR>
 " paste mode
 nmap <leader>p :set paste!<CR>
 " search with fzf
-nmap <leader>ff :Files<CR>
+nmap <leader>ff :HFiles<CR>
 " search with Ripgrep (requires Rg)
 nmap <leader>rg :Rg<CR>
 " search with Ag (requires the silver search)
