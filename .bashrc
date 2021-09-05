@@ -237,3 +237,6 @@ alias nir='cd $HOME/dox/nir'
 
 # YouTube-DL
 alias ydla='youtube-dl  --extract-audio --audio-format mp3 --output "%(title)s.%(ext)s"'
+
+# work
+[ -e ~/.bash_work ] && source ~/.bash_work
