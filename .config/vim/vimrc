@@ -197,7 +197,7 @@ nmap <leader>p :set paste!<CR>
 " search with fzf
 nmap <leader>ff :HFiles<CR>
 " search with Ripgrep (requires Rg)
-nmap <leader>rg :Rg<CR>
+nmap <leader>rg :Find<CR>
 " search with Ag (requires the silver search)
 nmap <leader>ag :Ag<CR>
 " copy to clipboard
@@ -215,3 +215,10 @@ autocmd FileType vim nnoremap <leader>cmt :.!cmt<space>\"<CR>
 " file on save.
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWritePre * %s/\n\+\%$//e
+
+" search for term incuding hidden files
+command! -bang -nargs=* Find call fzf#vim#grep('rg
+      \ --column --line-number --no-heading
+      \ --fixed-strings --ignore-case --no-ignore
+      \ --hidden --follow --glob "!.git/*"
+      \ --color "always" '.shellescape(<q-args>), 1, <bang>0)
