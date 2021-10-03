@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Script for creating my executable files in .local/bin
+[ -z "$1" ] && echo "No filename was provided" && exit 1
 path="$SCRIPTS/$1"
 if [ -e "$path" ]; then
     printf 'Oops...\e[31m %s \e[0m already exists\n' "$path"
