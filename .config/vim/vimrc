@@ -200,6 +200,10 @@ nmap <leader>ff :HFiles<CR>
 nmap <leader>rg :Rg<CR>
 " search with Ag (requires the silver search)
 nmap <leader>ag :Ag<CR>
+" copy to clipboard
+vnoremap <silent><leader>yy :%w !xclip -i -sel cp<CR><CR>
+nnoremap <silent><leader>cp :%w !xclip -i -sel cp<CR><CR>
+nmap <silent><leader>pp :r !xclip -o -sel cp<CR>
 
 autocmd FileType go nnoremap <leader>cmt :.!cmt<space>//<CR>
 autocmd FileType go nnoremap <leader>gd :GoDef<CR>
