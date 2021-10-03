@@ -90,7 +90,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
     Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
-    "Plug 'morhetz/gruvbox'
+    Plug 'morhetz/gruvbox'
     Plug 'aditya-azad/candle-grey'
 
     "fuzzy search
@@ -101,9 +101,8 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   " colorscheme settings
 
   set background=dark
-  "colorscheme gruvbox
   set t_Co=256 " enable colors in terminal
-  colorscheme candle-grey
+  colorscheme gruvbox
 
   "highlight ColorColumn ctermfg=NONE ctermbg=236
   "highlight LineNr guifg=#5eacd3
