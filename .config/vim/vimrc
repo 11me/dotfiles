@@ -209,8 +209,8 @@ nnoremap <leader>fb :buffers<CR>
 nnoremap <leader>cmt :.!cmt<space>
 " source vimrc
 nmap <leader>rc :so $VIMRC<CR>
-" nohlsearch
-nmap <leader>hl :nohlsearch<CR>
+" hlsearch swap
+nmap <leader>hl :hlsearch!<CR>
 " paste mode
 nmap <leader>p :set paste!<CR>
 " search with fzf
