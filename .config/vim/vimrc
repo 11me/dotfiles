@@ -107,6 +107,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
   set laststatus=2 " show lightline
   set noshowmode   " hide default mode (e.g.: insert/visual)
+  set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
 
   let g:lightline = {
         \ 'colorscheme': 'wombat',
@@ -125,22 +126,24 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
 	" base default color changes (gruvbox dark friendly)
   highlight Normal guibg=NONE ctermbg=0
-	hi Special ctermfg=cyan guifg=cyan
-	hi SpecialKey ctermfg=black ctermbg=NONE
-	hi NonText ctermfg=black ctermbg=NONE
-	hi vimGlobal ctermfg=black ctermbg=NONE
-	hi ErrorMsg ctermbg=234 ctermfg=darkred cterm=NONE
-	hi Error ctermbg=234 ctermfg=darkred cterm=NONE
-	hi SpellBad ctermbg=234 ctermfg=darkred cterm=NONE
-	hi SpellRare ctermbg=234 ctermfg=darkred cterm=NONE
-	hi Search ctermbg=236 ctermfg=darkred
-	hi vimTodo ctermbg=236 ctermfg=darkred
-	hi Todo ctermbg=236 ctermfg=darkred
-	hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
-	hi MatchParen ctermbg=236 ctermfg=darkred
+  hi Special ctermfg=cyan guifg=cyan
+  hi SpecialKey ctermfg=black ctermbg=NONE
+  hi NonText ctermfg=black ctermbg=NONE
+  hi vimGlobal ctermfg=black ctermbg=NONE
+  hi ErrorMsg ctermbg=234 ctermfg=darkred cterm=NONE
+  hi Error ctermbg=234 ctermfg=darkred cterm=NONE
+  hi SpellBad ctermbg=234 ctermfg=darkred cterm=NONE
+  hi SpellRare ctermbg=234 ctermfg=darkred cterm=NONE
+  hi Search ctermbg=236 ctermfg=darkred
+  hi vimTodo ctermbg=236 ctermfg=darkred
+  hi Todo ctermbg=236 ctermfg=darkred
+  hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
+  hi MatchParen ctermbg=236 ctermfg=darkred
+"change color of spaces/tabs/etc
+  hi SpecialKey ctermfg=66 guifg=#649A9A
 
-	au FileType markdown,pandoc hi Title ctermfg=yellow ctermbg=NONE
-	au FileType markdown,pandoc hi Operator ctermfg=yellow ctermbg=NONE
+  au FileType markdown,pandoc hi Title ctermfg=yellow ctermbg=NONE
+  au FileType markdown,pandoc hi Operator ctermfg=yellow ctermbg=NONE
 
   " column for showing modified lines
   " for gitgutter plugin
@@ -197,6 +200,7 @@ nmap <s-tab> :bprev<CR>
 nnoremap <space><space> <esc>/<++><cr>"_c4l
 " show syntax rule
 nmap <F2> :call <SID>SynStack()<CR>
+nmap <F3> :set list!<CR>
 " open my vimrc fast
 nnoremap <leader>vrc :e $VIMRC<CR>
 " list buffers
