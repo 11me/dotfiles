@@ -92,6 +92,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
     Plug 'airblade/vim-gitgutter'
     Plug 'morhetz/gruvbox'
     Plug 'aditya-azad/candle-grey'
+    Plug 'itchyny/lightline.vim'
 
     "fuzzy search
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -103,6 +104,20 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   set background=dark
   set t_Co=256 " enable colors in terminal
   colorscheme gruvbox
+
+  set laststatus=2 " show lightline
+  set noshowmode   " hide default mode (e.g.: insert/visual)
+
+  let g:lightline = {
+        \ 'colorscheme': 'wombat',
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+        \ },
+        \ 'component_function': {
+        \   'gitbranch': 'FugitiveHead'
+        \ },
+        \ }
 
   "highlight ColorColumn ctermfg=NONE ctermbg=236
   "highlight LineNr guifg=#5eacd3
