@@ -240,3 +240,5 @@ alias ydla='youtube-dl  --extract-audio --audio-format mp3 --output "%(title)s.%
 
 # work
 [ -e ~/.bash_work ] && source ~/.bash_work
+# fnm
+eval "$(fnm env)"
