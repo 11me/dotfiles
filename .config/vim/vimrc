@@ -206,8 +206,8 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   " popup window of fzf (center of the current window)
   let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:true } }
 
-  command! -bang -nargs=? -complete=dir HFiles
-    \ call fzf#vim#files(<q-args>, {'source': 'ag --hidden --skip-vcs-ignores -g ""'}, <bang>0)
+  command! -bang -nargs=*  HFiles
+    \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*}"'}))
 else
   autocmd BufWrite *.go !gofmt -w % " backup if fatih fails
 endif
