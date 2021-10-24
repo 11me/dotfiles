@@ -6,6 +6,7 @@ shopt -s checkwinsize globstar complete_fullquote expand_aliases extquote\
 ################# options ####################
 set -o vi
 bind -x '"\C-o": lfcd'
+xset r rate 300 50 # Speed xrate up
 
 ################# colors ####################
 
@@ -241,4 +242,5 @@ alias ydla='youtube-dl  --extract-audio --audio-format mp3 --output "%(title)s.%
 # work
 [ -e ~/.bash_work ] && source ~/.bash_work
 # fnm
-eval "$(fnm env)"
+#eval "$(fnm env)"
+[[ -n $(command -v fnm) ]] && eval "$(fnm env)"
