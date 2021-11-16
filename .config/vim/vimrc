@@ -57,7 +57,6 @@ set ignorecase " ignore case when searching
 
 " set the colored column on the right
 set colorcolumn=74
-set textwidth=72
 
 " buffer becomes hidden when it is |abandon|ed.
 set hidden
