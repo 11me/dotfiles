@@ -228,6 +228,9 @@ hi htmlItalic ctermfg=14 ctermbg=0 guifg=NONE guibg=NONE cterm=bold
 hi htmlH1 ctermfg=cyan ctermbg=0 guifg=NONE guibg=NONE cterm=bold
 hi mkdLink ctermfg=blue ctermbg=NONE cterm=underline
 
+" turn off guibg
+hi Normal guibg=NONE ctermbg=NONE
+
 " move selected line / block of text in visual mode
 " shift + k to move up
 " shift + j to move down
