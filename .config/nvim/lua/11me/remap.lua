@@ -31,3 +31,6 @@ vim.keymap.set("n", "<tab>", function() vim.cmd("bnext") end)
 -- move to the previous buffer
 vim.keymap.set("n", "<s-tab>", function() vim.cmd("bprev") end)
 
+vim.keymap.set("n", "vrc", function() 
+    vim.cmd("e /home/lime/dotfiles/.config/nvim/lua/11me") 
+end)
