@@ -36,3 +36,7 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+-- enable spelling
+vim.opt.spelllang = "en"
+vim.opt.spell = true
+
