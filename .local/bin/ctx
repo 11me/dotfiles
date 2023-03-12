@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ctx="$(kubectl config current-context | tr '/' ' ' | awk '{print $2}')"
+
+printf "\u2388 %s" $ctx
