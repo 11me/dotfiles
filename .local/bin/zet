@@ -4,7 +4,7 @@
 
 # check whether the vim installed or not
 # if vim is not installed just exit
-if [[ ! "$(command -v vim)" ]]; then
+if [[ ! "$(command -v $EDITOR)" ]]; then
   echo "vim is not found on your system, exiting ..."
   exit 1
 fi
@@ -12,7 +12,7 @@ fi
 # unique directory name
 dirname="$(date '+%Y%m%d%H%M%S')"
 # path where my notes are located
-path="$HOME/dox/znotes"
+path="$HOME/Documents/todo"
 #default markdown filename
 defaultmd="README"
 # file to create
@@ -23,7 +23,7 @@ create_znote() {
   # check if notes direcotry exists
   if [ -d "$path" ]; then
     mkdir "$path/$dirname"
-    exec "${EDITOR:=vim}" "$filepath/${1:-$defaultmd}.md"
+    exec "${EDITOR:=nvim}" "$filepath/${1:-$defaultmd}.md"
   else
     echo "Oops... can not find $path"
     echo "Bye!"

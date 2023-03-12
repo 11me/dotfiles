@@ -6,20 +6,17 @@
 sxhkd &                 # keybindings
 dunst &                 # notifications
 #dwmblocks &
-"$STATUSBAR" &
-mpd &                   # music player daemon
-setbg &                 # sets the background
+#"$STATUSBAR" &
+#mpd &                   # music player daemon
+#setbg &                 # sets the background
 #xkb-daemon &           # keyboard daemon
 #touchpad_toggle &      # turn on/off touchpad *Uncomment to turn touchpad off when laptop is turned on*
-xset r rate 300 50 &    # Speed xrate up
-xset -b &               # Turn off awful beep sound
-xset s off -dpms        # Do not turn off the screen
-picom -b &              # composite manager
+#picom -b &              # composite manager
 setxkbmap -model pc104 -layout us,ru -option grp:alt_shift_toggle # sets keyboard layout
 unclutter &             # hides mouse
-transmission-daemon &   # transmission-daemon for torrents
+#transmission-daemon &   # transmission-daemon for torrents
 nm-applet &
-player-mpd &            # daemon script for mdp
-pomod >/dev/null &      # start pomo daemon
+#player-mpd &            # daemon script for mdp
+#pomod >/dev/null &      # start pomo daemon
 #mailboxd &             # sync mailbox every 10 sec
 #xrdb /home/$USER/.config/.Xresources &

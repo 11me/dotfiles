@@ -50,10 +50,10 @@ set $right l
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $TERMINAL
+bindsym $mod+Return exec --no-startup-id gnome-terminal
 
 # start a browser
-bindsym $mod+w exec $BROWSER
+bindsym $mod+w exec --no-startup-id firefox
 
 # kill focused window
 bindsym $mod+q kill

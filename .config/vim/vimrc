@@ -280,7 +280,7 @@ autocmd FileType vim nnoremap <leader>cmt :.!cmt<space>\"<CR>
 " automatically deletes all trailing whitespace and newlines at end of
 " file on save.
 autocmd BufWritePre * %s/\s\+$//e
-autocmd BufWritePre * %s/\n\+\%$//e
+"autocmd BufWritePre * %s/\n\+\%$//e
 
 " search for term incuding hidden files
 command! -bang -nargs=* Find call fzf#vim#grep('rg
