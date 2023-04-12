@@ -61,12 +61,14 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "<leader>lca", function() vim.lsp.buf.code_action() end, opts)
 	vim.keymap.set("n", "<leader>lrr", function() vim.lsp.buf.references() end, opts)
 	vim.keymap.set("n", "<leader>lrn", function() vim.lsp.buf.rename() end, opts)
+    vim.keymap.set('n', '<leader>le', vim.diagnostic.open_float)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+
 end)
 
 lsp.setup()
 
 vim.diagnostic.config({
-	virtual_text = true
+	virtual_text = false
 })
 
