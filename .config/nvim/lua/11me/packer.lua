@@ -8,6 +8,10 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+
+    -- Post-install/update hook with neovim command
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
