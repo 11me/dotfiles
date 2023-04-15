@@ -50,10 +50,10 @@ set $right l
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id gnome-terminal
+bindsym $mod+Return exec --no-startup-id st
 
 # start a browser
-bindsym $mod+w exec --no-startup-id firefox
+bindsym $mod+w exec --no-startup-id brave-browser
 
 # kill focused window
 bindsym $mod+q kill
@@ -210,7 +210,7 @@ bindsym $mod+b bar mode toggle
 bar {
         #status_command i3status
         status_command i3blocks
-        position top
+        position bottom
 
         # dont show bar event when pressing $mod
         hidden_state hide
