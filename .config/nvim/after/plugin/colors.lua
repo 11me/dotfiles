@@ -1,5 +1,5 @@
 function SetColor(color)
-	color = color or "austere"
+	color = color or "atlas"
 	vim.cmd.colorscheme(color)
 
 	-- Make background transparent
