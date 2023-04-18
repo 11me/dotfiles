@@ -1,5 +1,6 @@
 vim.opt.guicursor = ""
 
+vim.cmd("syntax off")
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -28,10 +29,6 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
--- vim.cmd('set clipboard+=unnamedplus')
-
---vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
-
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
@@ -40,3 +37,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.spelllang = "en"
 vim.opt.spell = true
 
+-- tree view for netrw
+vim.g.netrw_liststyle = 3
+-- disable netrw banner
+vim.g.netrw_banner = 0
