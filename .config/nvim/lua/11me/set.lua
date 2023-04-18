@@ -1,6 +1,8 @@
 vim.opt.guicursor = ""
 
 vim.cmd("syntax off")
+vim.wo.cursorline = true
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
