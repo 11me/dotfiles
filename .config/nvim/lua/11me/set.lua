@@ -1,6 +1,6 @@
 vim.opt.guicursor = ""
 
-vim.cmd("syntax off")
+--vim.cmd("syntax off")
 vim.wo.cursorline = true
 
 vim.opt.nu = true
@@ -43,3 +43,6 @@ vim.opt.spell = true
 vim.g.netrw_liststyle = 3
 -- disable netrw banner
 vim.g.netrw_banner = 0
+-- disable `--INSERT` and use lualine instead
+vim.o.showmode = false
+
