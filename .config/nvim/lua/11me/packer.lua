@@ -3,10 +3,17 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+
+    -- Telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
+    }
+    -- Telescope file browser
+    use {
+        "nvim-telescope/telescope-file-browser.nvim",
+        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
     }
 
     -- Post-install/update hook with neovim command
@@ -29,12 +36,21 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},             -- Required
         }
     }
-    use 'tpope/vim-fugitive'
     use {
         'lewis6991/gitsigns.nvim',
         -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
     }
-    use 'huyvohcmc/atlas.vim'
+     
+    -- Git staff
+    use {
+      'TimUntersberger/neogit',
+      requires = {
+        'nvim-lua/plenary.nvim',
+        'sindrets/diffview.nvim'
+      }
+    }
+
+    -- Status line and theme
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
