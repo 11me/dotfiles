@@ -1,15 +1,15 @@
 # Font configuration
 font:
   normal:
-    family: 'JetBrainsMono Nerd Font'
-    style: Regular
+    family: 'Fira Code Nerd Font'
+    style: Medium
   bold:
-    family: 'JetBrainsMono Nerd Font'
+    family: 'Fira Code Nerd Font'
     style: Bold
   italic:
-    family: 'JetBrainsMono Nerd Font'
+    family: 'Fira Code Nerd Font'
     style: Italic
-  size: 9
+  size: 7
   # Colors (Hyper)
 colors:
   # Default colors
@@ -41,3 +41,5 @@ colors:
     magenta: '0xcc00ff'
     cyan:    '0x00ffff'
     white:   '0xFFFFFF'
+window:
+  opacity: 1

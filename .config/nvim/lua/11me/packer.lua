@@ -40,14 +40,9 @@ return require('packer').startup(function(use)
         'lewis6991/gitsigns.nvim',
         -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
     }
-     
     -- Git staff
     use {
-      'TimUntersberger/neogit',
-      requires = {
-        'nvim-lua/plenary.nvim',
-        'sindrets/diffview.nvim'
-      }
+        'tpope/vim-fugitive'
     }
 
     -- Status line and theme
@@ -56,6 +51,8 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
     use "blazkowolf/gruber-darker.nvim"
+
+    use { "catppuccin/nvim", as = "catppuccin" }
 
 end)
 
