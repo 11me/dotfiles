@@ -36,7 +36,7 @@ export SCRIPTS="$HOME/.local/bin"
 
 # Default programms
 export EDITOR="nvim"
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export FILEMANAGER="lf"
 export BROWSER="brave-browser"
 export WM="i3"
@@ -53,6 +53,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 export GOMAXPROCS="$(nproc)"
 export PATHGO="/usr/bin/go/bin"
 export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
+export BOB="$HOME/.local/share/bob/nvim-bin"
 
 ################# functions ####################
 
@@ -92,7 +93,8 @@ pathprepend \
   $SCRIPTS \
   $PATHGO \
   $HOME/.fnm \
-  $JAVA_HOME/bin   #JAVA_HOME is set in .profile
+  $JAVA_HOME/bin \
+  $BOB
 
 #export PATH="$PATH:/home/$USER/.local/bin:/home/lime/.fnm:$JAVA_HOME/bin"
 pathappend \
@@ -188,3 +190,6 @@ alias ydla='youtube-dl  --extract-audio --audio-format mp3 --output "%(title)s.%
 # work
 [ -e ~/.bash_work ] && source ~/.bash_work
 
+if command -v fnm >/dev/null; then
+    eval `fnm env`
+fi
