@@ -64,7 +64,7 @@ format_output() {
     if [ "$STATUSBAR" = "dwmblocks" ]; then
         echo EU$EUR_SIGN$EUR_CURRENT USD$USD_SIGN$USD_CURRENT
     else
-        echo echo "$EUR_CURRENT<span foreground='$eur_color'>$EUR_SIGN</span> $USD_CURRENT<span foreground='$usd_color'>$USD_SIGN</span>"
+        echo $EUR_CURRENT$EUR_SIGN $USD_CURRENT$USD_SIGN
     fi
 
 }
