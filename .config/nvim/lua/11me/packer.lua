@@ -45,11 +45,6 @@ return require('packer').startup(function(use)
         'tpope/vim-fugitive'
     }
 
-    -- Status line and theme
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
     use "blazkowolf/gruber-darker.nvim"
 
     use { "catppuccin/nvim", as = "catppuccin" }

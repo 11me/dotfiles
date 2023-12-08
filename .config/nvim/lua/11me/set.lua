@@ -40,9 +40,13 @@ vim.opt.spelllang = "en"
 vim.opt.spell = true
 
 -- tree view for netrw
-vim.g.netrw_liststyle = 3
+--vim.g.netrw_liststyle = 3
 -- disable netrw banner
-vim.g.netrw_banner = 0
+--vim.g.netrw_banner = 0
 -- disable `--INSERT` and use lualine instead
 vim.o.showmode = false
+vim.api.nvim_create_autocmd('BufWritePost', {
+    pattern = { '*.go' },
+    command = [[ silent! !go fmt % ]],
+})
 
