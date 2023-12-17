@@ -6,14 +6,16 @@ return require('packer').startup(function(use)
 
     -- Telescope
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        'nvim-telescope/telescope.nvim', tag = '0.1.x',
+        requires = {'nvim-lua/plenary.nvim'}
     }
     -- Telescope file browser
     use {
-        "nvim-telescope/telescope-file-browser.nvim",
-        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+        'nvim-telescope/telescope-file-browser.nvim',
+        requires = { 
+            'nvim-telescope/telescope.nvim',
+            'nvim-lua/plenary.nvim'
+        }
     }
 
     -- Post-install/update hook with neovim command
@@ -36,18 +38,10 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},             -- Required
         }
     }
-    use {
-        'lewis6991/gitsigns.nvim',
-        -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
-    }
-    -- Git staff
-    use {
-        'tpope/vim-fugitive'
-    }
 
-    use "blazkowolf/gruber-darker.nvim"
-
-    use { "catppuccin/nvim", as = "catppuccin" }
-
+    use { 'lewis6991/gitsigns.nvim' }
+    use { 'tpope/vim-fugitive' }
+    use { 'blazkowolf/gruber-darker.nvim' }
+    use { 'catppuccin/nvim', as = 'catppuccin' }
 end)
 
