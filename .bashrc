@@ -51,7 +51,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export ZDOTDIR="$HOME/.config/zsh"
 
 export GOMAXPROCS="$(nproc)"
-export PATHGO="/usr/bin/go/bin"
+export PATHGO="/usr/local/go/bin"
 export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
 export BOB="$HOME/.local/share/bob/nvim-bin"
 
@@ -193,4 +193,3 @@ alias ydla='youtube-dl  --extract-audio --audio-format mp3 --output "%(title)s.%
 if command -v fnm >/dev/null; then
     eval `fnm env`
 fi
-. "$HOME/.cargo/env"
