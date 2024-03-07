@@ -38,7 +38,7 @@ export SCRIPTS="$HOME/.local/bin"
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export FILEMANAGER="lf"
-export BROWSER="brave-browser"
+export BROWSER="firefox"
 export WM="i3"
 export STATUSBAR="i3blocks"
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
@@ -193,3 +193,4 @@ alias ydla='youtube-dl  --extract-audio --audio-format mp3 --output "%(title)s.%
 if command -v fnm >/dev/null; then
     eval `fnm env`
 fi
+. "$HOME/.cargo/env"

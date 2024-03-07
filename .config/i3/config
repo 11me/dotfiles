@@ -34,8 +34,9 @@ exec --no-startup-id nm-applet
 # hides mouse
 exec --no-startup-id unclutter
 
-exec xinput set-prop "SYNA8018:00 06CB:CE67 Touchpad" "libinput Tapping Enabled" 1
-exec "setxkbmap -model pc104 -layout us,ru -option grp:alt_shift_toggle"
+#exec xinput set-prop "SYNA8018:00 06CB:CE67 Touchpad" "libinput Tapping Enabled" 1
+#https://www.reddit.com/r/i3wm/comments/s59jfp/use_tap_to_click_on_i3_on_archlinux/?rdt=38058
+#exec "setxkbmap -model pc104 -layout us,ru -option grp:alt_shift_toggle"
 
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status
@@ -55,10 +56,10 @@ set $right l
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id "$TERMINAL"
+bindsym $mod+Return exec --no-startup-id $TERMINAL
 
 # start a browser
-bindsym $mod+w exec --no-startup-id brave-browser
+bindsym $mod+w exec --no-startup-id $BROWSER
 
 # kill focused window
 bindsym $mod+q kill
