@@ -6,6 +6,37 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+if [[ "$TERM" != "screen" ]]; then
+  export TERM=screen-256color
+fi
+export HISTCONTROL='ignoreboth'
+export HISTFILESIZE=10000
+export HISTSIZE=10000
+export HISTFILE="$HOME/.cache/.bash_history"
+export CDPATH=".:~:~/dox:~/dox/projects:~/dox/books"
+export SCRIPTS="$HOME/.local/bin"
+
+# Default programms
+export EDITOR="nvim"
+export TERMINAL="st"
+export FILEMANAGER="lf"
+export BROWSER="firefox"
+export WM="i3"
+export STATUSBAR="i3blocks"
+export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
+export SUDO_PROMPT="password 🔑:"
+export JAVA_HOME="/usr/lib/jvm/java-15-openjdk"
+
+# Clean up
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export ZDOTDIR="$HOME/.config/zsh"
+
+export GOMAXPROCS="$(nproc)"
+export PATHGO="/usr/local/go/bin"
+export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
+export BOB="$HOME/.local/share/bob/nvim-bin"
+
 export LF_ICONS="di=📁:\
 fi=📃:\
 tw=🤝:\

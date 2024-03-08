@@ -2,10 +2,13 @@
 
 # Symbolic linking
 ln -sf "$(pwd)/.config/nvim" /home/$USER/.config/nvim
-ln -sf "$(pwd)/.config/tmux/.tmux.conf" /home/$USER/.tmux
+ln -sf "$(pwd)/.config/tmux/.tmux.conf" /home/$USER/.tmux.conf
 ln -sf "$(pwd)/.bashrc" /home/$USER/.bashrc
 ln -sf "$(pwd)/.config/alacritty" /home/$USER/.config/alacritty
 ln -sf "$(pwd)/.config/i3" /home/$USER/.config/i3
+ln -sf "$(pwd)/.profile" /home/$USER/.profile
+
+sudo usermod -aG video $USER
 
 # Writing Xorg configuration files
 sudo tee /etc/X11/xorg.conf.d/90-touchpad.conf > /dev/null <<EOF
@@ -36,6 +39,7 @@ sudo apt-get update && \
     sudo apt-get install -y \
     i3 \
     tmux \
+    pavucontrol \
     git \
     xclip \
     brightnessctl \
@@ -50,20 +54,14 @@ sudo apt-get update && \
     dnsutils \
     tcpdump \
     ripgrep \
-    ssh
+    ssh \
+    unifont \
+    libxft2-dev
 
 # Install Node.js and dependencies
 curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - && \
     sudo apt-get install -y nodejs && \
     npm install -g yarn
-
-# Install Docker
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg && \
-    echo \
-      "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-      $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null && \
-    sudo apt-get update && \
-    sudo apt-get install -y docker-ce-cli
 
 # Install Helm
 curl -LO https://get.helm.sh/helm-v3.8.2-linux-amd64.tar.gz && \
