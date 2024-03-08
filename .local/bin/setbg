@@ -1,6 +1,0 @@
-#!/bin/sh
-
-#First argument is a path to an image you want to set as your background
-
-[ -f "$1" ] && cp "$1" ~/.local/share/wall.png
-xwallpaper --zoom ~/.local/share/wall.png
