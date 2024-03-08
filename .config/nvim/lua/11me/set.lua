@@ -26,4 +26,4 @@ vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = { '*.go' },
     command = [[ silent! !go fmt % ]],
 })
-vim.cmd.colorscheme('wildcharm')
+vim.cmd.colorscheme('gruber-darker')
