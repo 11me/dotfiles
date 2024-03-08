@@ -7,6 +7,7 @@ ln -sf "$(pwd)/.bashrc" /home/$USER/.bashrc
 ln -sf "$(pwd)/.config/alacritty" /home/$USER/.config/alacritty
 ln -sf "$(pwd)/.config/i3" /home/$USER/.config/i3
 ln -sf "$(pwd)/.profile" /home/$USER/.profile
+ln -sf "$(pwd)/.local/bin" /home/$USER/.local/bin
 
 sudo usermod -aG video $USER
 
