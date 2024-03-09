@@ -6,6 +6,7 @@ ln -sf "$(pwd)/.config/tmux/.tmux.conf" /home/$USER/.tmux.conf
 ln -sf "$(pwd)/.bashrc" /home/$USER/.bashrc
 ln -sf "$(pwd)/.config/alacritty" /home/$USER/.config/alacritty
 ln -sf "$(pwd)/.config/i3" /home/$USER/.config/i3
+ln -sf "$(pwd)/.config/sxhkd" /home/$USER/.config/sxhkd
 ln -sf "$(pwd)/.profile" /home/$USER/.profile
 ln -sf "$(pwd)/.local/bin" /home/$USER/.local/bin
 
@@ -57,7 +58,10 @@ sudo apt-get update && \
     ripgrep \
     ssh \
     unifont \
-    libxft2-dev
+    libxft2-dev \
+    maim \
+    sxhkd \
+    feh
 
 # Install Node.js and dependencies
 curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - && \

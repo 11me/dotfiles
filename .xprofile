@@ -3,7 +3,7 @@
 
 #dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRES DISPLAY XAUTHORITY
 
-sxhkd &                 # keybindings
+#sxhkd &                 # keybindings
 dunst &                 # notifications
 #dwmblocks &
 #"$STATUSBAR" &
@@ -11,7 +11,8 @@ dunst &                 # notifications
 #setbg &                 # sets the background
 #xkb-daemon &           # keyboard daemon
 #touchpad_toggle &      # turn on/off touchpad *Uncomment to turn touchpad off when laptop is turned on*
-#picom -b &              # composite manager
+feh --bg-fill /home/$USER/dotfiles/.local/share/bg.jpg &
+picom -b &              # composite manager
 setxkbmap -model pc104 -layout us,ru -option grp:alt_shift_toggle # sets keyboard layout
 unclutter &             # hides mouse
 #transmission-daemon &   # transmission-daemon for torrents
