@@ -7,12 +7,12 @@ return require('packer').startup(function(use)
     -- Telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.x',
-        requires = {'nvim-lua/plenary.nvim'}
+        requires = { 'nvim-lua/plenary.nvim' }
     }
     -- Telescope file browser
     use {
         'nvim-telescope/telescope-file-browser.nvim',
-        requires = { 
+        requires = {
             'nvim-telescope/telescope.nvim',
             'nvim-lua/plenary.nvim'
         }
@@ -26,16 +26,16 @@ return require('packer').startup(function(use)
         branch = 'v1.x',
         requires = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {'williamboman/mason.nvim'},           -- Optional
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
+            { 'neovim/nvim-lspconfig' },             -- Required
+            { 'williamboman/mason.nvim' },           -- Optional
+            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},         -- Required
-            {'hrsh7th/cmp-nvim-lsp'},     -- Required
+            { 'hrsh7th/nvim-cmp' },     -- Required
+            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
 
             -- Snippets
-            {'L3MON4D3/LuaSnip'},             -- Required
+            { 'L3MON4D3/LuaSnip' }, -- Required
         }
     }
 
@@ -43,5 +43,13 @@ return require('packer').startup(function(use)
     use { 'tpope/vim-fugitive' }
     use { 'blazkowolf/gruber-darker.nvim' }
     use { 'catppuccin/nvim', as = 'catppuccin' }
-end)
+    use { 'rose-pine/neovim', as = "rose-pine" }
+    use { 'folke/tokyonight.nvim', as = 'tokyonight' }
 
+    use { 'ray-x/go.nvim',
+        requires = {
+            "neovim/nvim-lspconfig",
+            "nvim-treesitter/nvim-treesitter",
+        }
+    }
+end)

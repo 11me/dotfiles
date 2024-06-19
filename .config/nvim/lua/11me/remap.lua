@@ -1,5 +1,8 @@
 vim.g.mapleader = " "
 
+vim.keymap.set("n", "<esc>", function ()
+    vim.cmd("nohlsearch")
+end)
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -27,5 +30,7 @@ vim.keymap.set("n", "<tab>", function() vim.cmd("bnext") end)
 vim.keymap.set("n", "<s-tab>", function() vim.cmd("bprev") end)
 
 vim.keymap.set("n", "vrc", function() 
-    vim.cmd("e /home/lime/dotfiles/.config/nvim/lua/11me") 
+    vim.cmd("e /home/lime/dotfiles/.config/nvim/lua/11me")
 end)
+-- Easily hit escape in terminal mode.
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
