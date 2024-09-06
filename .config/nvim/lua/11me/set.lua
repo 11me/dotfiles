@@ -22,5 +22,4 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.spelllang = "en"
 vim.opt.spell = true
-vim.cmd.colorscheme('tokyonight-night')
 vim.g.netrw_localrmdir = "rm -r"
