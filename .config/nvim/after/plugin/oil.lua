@@ -1,8 +1,14 @@
 require("oil").setup({
     columns = {
-        --"icon",
         "permissions",
         "size",
         "mtime",
+    },
+    skip_confirm_for_simple_edits = false,
+    view_options = {
+        show_hidden = true,
+        is_always_hidden = function(name, bufnr)
+            return vim.startswith(name, "..")
+        end,
     },
 })
