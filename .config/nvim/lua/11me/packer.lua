@@ -52,4 +52,10 @@ return require('packer').startup(function(use)
             "nvim-treesitter/nvim-treesitter",
         }
     }
+
+    require("packer").startup(function()
+        use({
+            "stevearc/oil.nvim",
+        })
+    end)
 end)
