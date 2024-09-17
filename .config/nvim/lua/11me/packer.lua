@@ -53,9 +53,7 @@ return require('packer').startup(function(use)
         }
     }
 
-    require("packer").startup(function()
-        use({
-            "stevearc/oil.nvim",
-        })
-    end)
+    use({
+        "stevearc/oil.nvim",
+    })
 end)
