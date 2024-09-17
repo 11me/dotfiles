@@ -7,3 +7,4 @@ require('rose-pine').setup({
 })
 
 vim.cmd.colorscheme('default')
+vim.cmd [[hi Normal guibg=NONE ctermbg=NONE]]
