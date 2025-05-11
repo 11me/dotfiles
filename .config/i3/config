@@ -56,9 +56,7 @@ set $right l
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id xfce4-terminal
-
-# start a browser
+bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+w exec --no-startup-id brave
 
 # kill focused window
@@ -78,6 +76,7 @@ bindsym $mod+q kill
 
 bindsym $mod+d exec --no-startup-id xfce4-appfinder
 for_window [class="Xfce4-appfinder"] floating enable, resize set 600 400
+for_window [class="Telegram"] floating enable resize set 600 400
 
 # change focus
 bindsym $mod+$left focus left

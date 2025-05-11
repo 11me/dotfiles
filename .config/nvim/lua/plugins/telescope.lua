@@ -94,7 +94,6 @@ return {
           borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }, -- Rounded border
           mappings = {
             i = {
-              ["<C-h>"] = "which_key", -- Your mapping to trigger which_key
               ["<C-j>"] = actions.move_selection_next,
               ["<C-k>"] = actions.move_selection_previous,
               ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
@@ -143,24 +142,6 @@ return {
       -- Make sure these are also listed in dependencies if they are separate plugins
       -- pcall(telescope.load_extension, "fzf")
       -- pcall(telescope.load_extension, "ui-select")
-    end,
-  },
-
-  -- Which-key integration (if you want the <C-h> mapping in Telescope to work)
-  -- If you don't have which-key.nvim already, you'll need to add it.
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy", -- Load it very lazily
-    opts = {
-      -- your which-key config
-    },
-    config = function(_, opts)
-        require("which-key").setup(opts)
-        -- You might need to register Telescope mappings with which-key if not automatic
-        -- require("which-key").register({
-        --   ["<leader>f"] = { name = "+find", icon = "" }, -- Example group
-        --   -- your Telescope keybindings are already set with `desc` which which-key might pick up
-        -- })
     end,
   },
 }
