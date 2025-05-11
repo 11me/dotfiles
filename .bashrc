@@ -126,9 +126,6 @@ if command -v dircolors &>/dev/null; then
   fi
 fi
 
-################# aliases ####################
-alias aliasrc='$EDITOR $HOME/.config/alias'
-
 # Fast listing
 alias ls="ls --color=auto"
 alias la="ls -Alh"
@@ -136,19 +133,9 @@ alias la="ls -Alh"
 # Make ip command colorful
 alias ip='ip -c'
 
-# Some useful aliases
-alias prc='$EDITOR $HOME/.profile'
-alias zrc='$EDITOR $HOME/.config/zsh/.zshrc'
-
 # Actions
 alias vi='$EDITOR'
 alias ?='duck'
-
-# sxiv in thumbnail mode
-alias iv='sxiv -t'
-
-# sxiv in thumbnail mode search recursively
-alias ivr='sxiv -rt'
 
 # Git cmds
 alias gs='git status'
@@ -158,7 +145,3 @@ alias ydla='youtube-dl  --extract-audio --audio-format mp3 --output "%(title)s.%
 
 # work
 [ -e ~/.bash_work ] && source ~/.bash_work
-
-if command -v fnm >/dev/null; then
-    eval `fnm env`
-fi

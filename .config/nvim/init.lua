@@ -1,1 +1,3 @@
-require("11me")
+require("config.keymaps")
+require("config.lazy")
+

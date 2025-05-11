@@ -1,4 +1,30 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+vim.opt.guicursor = ""
+vim.wo.cursorline = true
+vim.opt.nu = true
+vim.opt.relativenumber = true
+vim.opt.errorbells = false
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.wrap = false
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+--vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.termguicolors = true
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+vim.opt.updatetime = 50
+vim.opt.spelllang = "en"
+vim.opt.spell = true
+vim.g.netrw_localrmdir = "rm -r"
 
 vim.keymap.set("n", "<esc>", function ()
     vim.cmd("nohlsearch")
@@ -29,8 +55,5 @@ vim.keymap.set("n", "<tab>", function() vim.cmd("bnext") end)
 -- move to the previous buffer
 vim.keymap.set("n", "<s-tab>", function() vim.cmd("bprev") end)
 
-vim.keymap.set("n", "vrc", function()
-    vim.cmd("e /home/lime/dotfiles/.config/nvim/lua/11me")
-end)
 -- Easily hit escape in terminal mode.
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
