@@ -1,3 +1,25 @@
+export HISTCONTROL=ignoreboth
+export HISTFILESIZE=10000
+export HISTSIZE=10000
+export HISTFILE="$HOME/.cache/.bash_history"
+export CDPATH=".:~:~/repos"
+
+if [[ "$TERM" != "screen" ]]; then
+  export TERM=screen-256color
+fi
+
+# Default programms
+export EDITOR="nvim"
+export TERMINAL="alacritty"
+export BROWSER="brave"
+export SUDO_PROMPT="password 🔑:"
+export GOMAXPROCS="$(nproc)"
+#export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
+
+# Clean up
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+
 shopt -s checkwinsize globstar complete_fullquote expand_aliases extquote\
  	 extglob force_fignore hostcomplete interactive_comments xpg_echo\
  	 promptvars sourcepath progcomp autocd cdspell dirspell direxpand\
@@ -58,14 +80,11 @@ pathprepend() {
 }
 
 # remember last arg will be first in path
-pathprepend \
-  $SCRIPTS \
-  $PATHGO \
-  $HOME/.fnm \
-  $JAVA_HOME/bin \
-  $BOB
+#pathprepend \
+#  $SCRIPTS \
+#  $PATHGO \
+#  $HOME/.fnm \
 
-#export PATH="$PATH:/home/$USER/.local/bin:/home/lime/.fnm:$JAVA_HOME/bin"
 pathappend \
   /usr/local/bin \
   /usr/local/sbin \
