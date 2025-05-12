@@ -139,33 +139,10 @@ return {
         ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
         ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
         ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-        ["<C-Space>"] = cmp.mapping.complete(), -- Manually trigger completion
-        -- ['<C-x><C-o>'] = cmp.mapping.complete(), -- Your original keybinding for omnifunc-like manual trigger
-        ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Confirm with Enter, but only if an item is selected
-        -- Tab completion (optional, if you like it)
-        ["<Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item(cmp_select)
-          elseif luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
-          else
-            fallback()
-          end
-        end, { "i", "s" }), -- i for insert mode, s for select mode (for snippets)
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_prev_item(cmp_select)
-          elseif luasnip.jumpable(-1) then
-            luasnip.jump(-1)
-          else
-            fallback()
-          end
-        end, { "i", "s" }),
+        --["<C-Space>"] = cmp.mapping.complete(),
+        ['<C-x><C-o>'] = cmp.mapping.complete(),
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
       }
-      -- Remove the Tab mappings if you don't want them, or adjust as needed
-      -- cmp_mappings["<Tab>"] = nil
-      -- cmp_mappings["<S-Tab>"] = nil
-
 
       cmp.setup({
         snippet = {
@@ -173,7 +150,7 @@ return {
             luasnip.lsp_expand(args.body)
           end,
         },
-        mapping = cmp_mappings, -- Use your custom mappings here
+        mapping = cmp_mappings,
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" },
@@ -183,17 +160,13 @@ return {
         }),
         completion = {
           -- completeopt = "menu,menuone,noinsert", -- Example: more Vim-like completion
-          autocomplete = false, -- Your preference
+          autocomplete = false,
         },
         -- Optional: customize window appearance
         window = {
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
         },
-        -- Optional: experimental features
-        -- experimental = {
-        --   ghost_text = true, -- Virtual text for completion preview
-        -- },
       })
     end,
   },

@@ -18,13 +18,6 @@ return {
         end,
         desc = "Open Oil file explorer",
       },
-      {
-        "~",
-        function()
-          require("oil").open(vim.fn.expand("~")) -- Corrected way to open home directory
-        end,
-        desc = "Open Oil in home directory",
-      },
     },
     -- The 'opts' table will be passed to oil.setup()
     -- by the config function below.
