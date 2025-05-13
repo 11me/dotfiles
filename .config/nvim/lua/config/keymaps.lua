@@ -57,3 +57,15 @@ vim.keymap.set("n", "<s-tab>", function() vim.cmd("bprev") end)
 
 -- Easily hit escape in terminal mode.
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
+
+local trim_whitespace_group = vim.api.nvim_create_augroup('TrimWhitespace', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePre', {
+  group = trim_whitespace_group,
+  pattern = '*', -- Apply to all file types
+  callback = function()
+    local view = vim.fn.winsaveview()
+    vim.cmd([[%s/\s\+$//e]])
+    vim.fn.winrestview(view)
+  end,
+  desc = 'Trim trailing whitespace on save',
+})
