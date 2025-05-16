@@ -46,7 +46,7 @@ return {
 
         -- Main modules and their configurations
         highlight = {
-          enable = true, -- Enable syntax highlighting
+          enable = false, -- Enable syntax highlighting
           -- Or disable for large files to prevent performance issues
           -- disable = function(lang, buf)
           --     local max_filesize = 100 * 1024 -- 100 KB

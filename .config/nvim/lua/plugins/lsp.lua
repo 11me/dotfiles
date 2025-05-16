@@ -4,7 +4,7 @@ return {
   {
     "VonHeikemen/lsp-zero.nvim",
     branch = "v3.x", -- Or the latest recommended branch
-    ft = { "go", "lua", "python", "rust", "typescript", "javascript" },
+    ft = { "go", "lua", "python", "rust", "typescript", "javascript", "typescriptreact", "javascriptreact" },
     -- event = {"BufReadPre", "BufNewFile"}, -- Alternative trigger if ft doesn't work as expected immediately
     dependencies = {
       -- LSP Support
@@ -33,6 +33,7 @@ return {
             "gopls",
             "lua_ls",
             "pyright",
+            "ts_ls",
           },
           -- You can also add handlers for specific servers if needed
           -- handlers = {
