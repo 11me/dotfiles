@@ -27,12 +27,6 @@ shopt -s checkwinsize globstar complete_fullquote expand_aliases extquote\
 
 ################# options ####################
 set -o vi
-if command -v xset >/dev/null; then
-    xset r rate 300 50 # Speed xrate up
-    xset -b            # Turn off awful beep sound
-    xset s off -dpms   # Do not turn off the screen
-fi
-
 
 ################# colors ####################
 
