@@ -1,16 +1,12 @@
--- lua/plugins/oil.lua
-
 return {
   {
     "stevearc/oil.nvim",
     version = "v2.15.0",
     dependencies = {
     },
-    -- Lazy load oil.nvim until a command or keymap triggers it.
-    cmd = "Oil", -- Loads when :Oil is called
+    event = "VimEnter",
+    cmd = "Oil",
     keys = {
-      -- Example keymap to open Oil in the current directory
-      -- You can change <leader>e to your preferred keybinding
       {
         "<leader>e",
         function()
@@ -62,9 +58,7 @@ return {
         ["g."] = { "actions.toggle_hidden", desc = "Toggle hidden files" }, -- Useful with show_hidden = true
       },
 
-      -- Optional: Set oil as the default file explorer (replaces netrw)
-      -- default_file_explorer = true,
-
+      default_file_explorer = true,
       win_options = {
         -- This is how you can pass options to nvim_open_win
         -- For example, to disable winblend for oil:
