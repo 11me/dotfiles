@@ -77,7 +77,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id xfce4-appfinder
 bindsym $mod+p exec --no-startup-id flameshot gui
 for_window [class="Xfce4-appfinder"] floating enable, resize set 600 400
-for_window [class="Telegram"] floating enable resize set 600 400
+for_window [class="Telegram"] floating enable resize set 600 800
 for_window [class="AmneziaVPN"] floating enable
 
 # change focus
