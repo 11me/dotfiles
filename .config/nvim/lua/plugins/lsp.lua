@@ -1,18 +1,14 @@
--- lua/plugins/lsp.lua (or your chosen file for LSP config)
-
 return {
   {
     "VonHeikemen/lsp-zero.nvim",
-    branch = "v3.x", -- Or the latest recommended branch
+    branch = "v3.x",
     ft = { "go", "lua", "python", "rust", "typescript", "javascript", "typescriptreact", "javascriptreact" },
-    -- event = {"BufReadPre", "BufNewFile"}, -- Alternative trigger if ft doesn't work as expected immediately
     dependencies = {
-      -- LSP Support
       { "neovim/nvim-lspconfig" },
       {
         "williamboman/mason.nvim",
-        build = ":MasonUpdate", -- Ensures Mason is automatically updated
-        opts = { -- Default options for Mason
+        build = ":MasonUpdate",
+        opts = {
           ui = {
             border = "rounded",
             icons = {

@@ -26,7 +26,7 @@ vim.opt.spelllang = "en"
 vim.opt.spell = true
 vim.g.netrw_localrmdir = "rm -r"
 
-vim.keymap.set("n", "<esc>", function ()
+vim.keymap.set("n", "<esc>", function()
     vim.cmd("nohlsearch")
 end)
 vim.keymap.set("n", "<leader>pv", vim.cmd.Oil)
@@ -42,9 +42,9 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- yank into the system clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
@@ -60,12 +60,29 @@ vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
 local trim_whitespace_group = vim.api.nvim_create_augroup('TrimWhitespace', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePre', {
-  group = trim_whitespace_group,
-  pattern = '*', -- Apply to all file types
-  callback = function()
-    local view = vim.fn.winsaveview()
-    vim.cmd([[%s/\s\+$//e]])
-    vim.fn.winrestview(view)
-  end,
-  desc = 'Trim trailing whitespace on save',
+    group = trim_whitespace_group,
+    pattern = '*', -- Apply to all file types
+    callback = function()
+        local view = vim.fn.winsaveview()
+        vim.cmd([[%s/\s\+$//e]])
+        vim.fn.winrestview(view)
+    end,
+    desc = 'Trim trailing whitespace on save',
 })
+
+
+vim.api.nvim_create_augroup("BlackAutoFormat", {})
+vim.api.nvim_create_autocmd(
+    "BufWritePost",
+    {
+        pattern = "*.py",
+        group = "BlackAutoFormat",
+        callback = function()
+            local view = vim.fn.winsaveview()
+            vim.cmd("silent !black --quiet %")
+            vim.cmd("silent !isort --quiet %")
+            vim.cmd("edit")
+            vim.fn.winrestview(view)
+        end,
+    }
+)
