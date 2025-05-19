@@ -157,7 +157,7 @@ return {
         }),
         completion = {
           -- completeopt = "menu,menuone,noinsert", -- Example: more Vim-like completion
-          autocomplete = false,
+          -- autocomplete = true,
         },
         -- Optional: customize window appearance
         window = {
