@@ -79,6 +79,9 @@ pathprepend() {
 #  $PATHGO \
 #  $HOME/.fnm \
 
+pathprepend \
+    $HOME/.local/scripts
+
 pathappend \
   /usr/local/bin \
   /usr/local/sbin \

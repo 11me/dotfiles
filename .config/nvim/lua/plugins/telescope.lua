@@ -4,15 +4,8 @@ return {
     branch = "0.1.x",
     dependencies = {
       { "nvim-lua/plenary.nvim" },
-      -- Optional: for icons
       { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
-      -- Optional: for more powerful sorting, if you install the C compiler and requirements
-      -- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-      -- Optional: for a different UI experience
-      -- { "nvim-telescope/telescope-ui-select.nvim" },
     },
-    -- `cmd` will lazy load Telescope until you run one of its commands
-    -- `keys` will also lazy load Telescope until you press one of the keybindings
     cmd = "Telescope",
     keys = {
       {
@@ -30,7 +23,7 @@ return {
         desc = "Live Grep (Telescope)",
       },
       {
-        "<leader>fg", -- Consider changing this if it conflicts with "Find Git files"
+        "<leader>fg",
         function()
           require("telescope.builtin").git_files()
         end,
@@ -59,14 +52,14 @@ return {
         desc = "Recent Files (Telescope)",
       },
       {
-        "<leader>fk", -- For keymaps
+        "<leader>fk",
         function()
             require("telescope.builtin").keymaps()
         end,
         desc = "Keymaps (Telescope)",
       },
       {
-        "<leader>fc", -- For commands
+        "<leader>fc",
         function()
             require("telescope.builtin").commands()
         end,
@@ -79,7 +72,7 @@ return {
 
       telescope.setup({
         defaults = {
-          layout_strategy = "vertical", -- or "flex", "vertical", "cursor"
+          layout_strategy = "vertical",
           layout_config = {
             horizontal = {
               prompt_position = "top",
@@ -108,7 +101,6 @@ return {
               -- You can add normal mode mappings here (for results window)
             },
           },
-          -- You can customize other defaults here, e.g.,
           prompt_prefix = ">  ",
           -- selection_caret = "❯ ",
           -- path_display = { "truncate" },
