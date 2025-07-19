@@ -4,6 +4,11 @@ export HISTSIZE=10000
 export HISTFILE="$HOME/.cache/.bash_history"
 export CDPATH=".:~:~/repos"
 
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 if [[ "$TERM" != "screen" ]]; then
   export TERM=screen-256color
 fi
@@ -83,6 +88,7 @@ pathprepend \
     $HOME/.local/scripts
 
 pathappend \
+  /usr/local/go/bin \
   /usr/local/bin \
   /usr/local/sbin \
   /usr/sbin \
@@ -90,30 +96,35 @@ pathappend \
   /sbin \
   /bin
 
-
-################# prompt ####################
-
 __prompt() {
+  local_reset="\[\033[0m\]"
+  local_black="\[\033[0;30m\]" # #212121
+  local_red="\[\033[0;31m\]"   # #c61e5c
+  local_green="\[\033[0;32m\]" # #81af24
+  local_yellow="\[\033[0;33m\]" # #fd971f
+  local_blue="\[\033[0;34m\]"  # #51aebe
+  local_magenta="\[\033[0;35m\]" # #ae81ff
+  local_cyan="\[\033[0;36m\]"  # #80beb5
+  local_white="\[\033[0;37m\]" # #bababa
 
-  # git branch
-  local B="$(git branch --show-current 2>/dev/null)"
-  if test -n "$B"; then
-    B=" ($B)"
-  else
-    B=""
+  # Git branch information
+  local git_branch=""
+  local current_branch
+  current_branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  if [ "$?" -eq 0 ] && [ "$current_branch" != "HEAD" ]; then
+    git_branch="${local_blue}(${current_branch})${local_reset}"
   fi
 
-  # python virtualenv
-  local ENV=""
-  if test -n "$VIRTUAL_ENV"; then
-    ENV="(venv)"
+  # Python virtual environment indicator
+  local venv_indicator=""
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    # Extract just the name of the virtual environment
+    local venv_name
+    venv_name=$(basename "$VIRTUAL_ENV")
+    venv_indicator="${local_green}(${venv_name})${local_reset}"
   fi
 
-  ps_minimal="${red}${yellow}\w${blue}$B ${yellow}$ENV\n${blue}\$${x} "
-  ps_slim="${yellow}\w${blue}$B\n${blue}\u${white}@${cyan}\H${x}\$ "
-
-  PS1="$ps_minimal"
-
+  PS1="${local_yellow}\w ${git_branch} ${venv_indicator}\n${local_blue}\$ ${local_reset}"
 }
 
 export PROMPT_COMMAND='__prompt'
@@ -125,15 +136,11 @@ if test -x /usr/bin/lesspipe; then
   export LESSCLOSE="/usr/bin/lesspipe %s %s";
 fi
 
-#export LESS_TERMCAP_mb="[35m" # magenta
-#export LESS_TERMCAP_md="[33m" # yellow
-#export LESS_TERMCAP_me="" # "0m"
-#export LESS_TERMCAP_se="" # "0m"
-#export LESS_TERMCAP_so="[34m" # blue
-#export LESS_TERMCAP_ue="" # "0m"
-#export LESS_TERMCAP_us="[4m"  # underline
+export LESS_TERMCAP_so=$'\E[94;40m'
+export LESS_TERMCAP_md=$'\E[33;40m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS="-R"
 
-################# dircolors ####################
 if command -v dircolors &>/dev/null; then
   if test -r ~/.dircolors; then
     eval "$(dircolors -b ~/.dircolors)"
@@ -142,9 +149,8 @@ if command -v dircolors &>/dev/null; then
   fi
 fi
 
-# Fast listing
-alias ls="ls --color=auto"
-alias la="ls -Alh"
+alias ls="ls -w 120 --color=auto"
+alias la="ls -w 120 -Alh"
 
 # Make ip command colorful
 alias ip='ip -c'
@@ -157,7 +163,7 @@ alias ?='duck'
 alias gs='git status'
 
 # YouTube-DL
-alias ydla='youtube-dl  --extract-audio --audio-format mp3 --output "%(title)s.%(ext)s"'
+alias ydla='youtube-dl  --extract-audio --audio-format mp3'
 
 # work
 [ -e ~/.bash_work ] && source ~/.bash_work

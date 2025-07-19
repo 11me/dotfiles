@@ -1,89 +1,93 @@
+# Alacritty configuration for unokai colorscheme
+# Based on the unokai Vim colorscheme by k-37
+
 [colors.primary]
-foreground = "#e0def4"
-background = "#191724"
-dim_foreground = "#908caa"
-bright_foreground = "#e0def4"
+background = "#212121"
+foreground = "#f8f8f2"
+dim_foreground = "#74705d"
+bright_foreground = "#f8f8f2"
 
 [colors.cursor]
-text = "#e0def4"
-cursor = "#524f67"
+text = "#000000"
+cursor = "#dadada"
 
 [colors.vi_mode_cursor]
-text = "#e0def4"
-cursor = "#524f67"
+text = "#f8f8f2"
+cursor = "#3a392f"
 
 [colors.search.matches]
-foreground = "#908caa"
-background = "#26233a"
+foreground = "#66d9ef"
+background = "#212121"
 
 [colors.search.focused_match]
-foreground = "#191724"
-background = "#ebbcba"
+foreground = "#ffaf5f"
+background = "#212121"
 
 [colors.hints.start]
-foreground = "#908caa"
-background = "#1f1d2e"
-
+foreground = "#66d9ef"
+background = "#212121"
 [colors.hints.end]
-foreground = "#6e6a86"
-background = "#1f1d2e"
+foreground = "#74705d"
+background = "#212121"
 
 [colors.line_indicator]
 foreground = "None"
 background = "None"
 
 [colors.footer_bar]
-foreground = "#e0def4"
-background = "#1f1d2e"
+foreground = "#f8f8f2"
+background = "#212121"
 
 [colors.selection]
-text = "#e0def4"
-background = "#403d52"
+text = "#a1efe4"
+background = "#212121"
 
 [colors.normal]
-black = "#26233a"
-red = "#eb6f92"
-green = "#31748f"
-yellow = "#f6c177"
-blue = "#9ccfd8"
-magenta = "#c4a7e7"
-cyan = "#ebbcba"
-white = "#e0def4"
+black = "#212121"
+red = "#c61e5c"
+green = "#81af24"
+yellow = "#fd971f"
+blue = "#51aebe"
+magenta = "#ae81ff"
+cyan = "#80beb5"
+white = "#bababa"
 
 [colors.bright]
-black = "#6e6a86"
-red = "#eb6f92"
-green = "#31748f"
-yellow = "#f6c177"
-blue = "#9ccfd8"
-magenta = "#c4a7e7"
-cyan = "#ebbcba"
-white = "#e0def4"
+black = "#74705d"
+red = "#f92672"
+green = "#a6e22e"
+yellow = "#e6db74"
+blue = "#66d9ef"
+magenta = "#fd5ff0"
+cyan = "#a1efe4"
+white = "#f8f8f2"
 
 [colors.dim]
-black = "#6e6a86"
-red = "#eb6f92"
-green = "#31748f"
-yellow = "#f6c177"
-blue = "#9ccfd8"
-magenta = "#c4a7e7"
-cyan = "#ebbcba"
-white = "#e0def4"
+# Retaining dim colors from your original Alacritty config as Vim scheme doesn't provide a direct mapping.
+black = "#32302f"
+red = "#9d0006"
+green = "#3f8c5e"
+yellow = "#a68832"
+blue = "#2d698e"
+magenta = "#8f4d6c"
+cyan = "#2b7f77"
+white = "#8c8c8c"
 
 [font]
-size = 13
+size = 12
 
 [font.normal]
-family = "Iosevka Nerd Font"
+family = "Ubuntu Sans Mono"
 style = "Regular"
 
 [font.bold]
-family = "Iosevka Nerd Font"
+family = "Ubuntu Sans Mono"
 style = "Bold"
 
 [font.italic]
-family = "Iosevka Nerd Font"
+family = "Ubuntu Sans Mono"
 style = "Italic"
 
-[window]
-opacity = 0.8
+#[window]
+#opacity = 0.8
+
