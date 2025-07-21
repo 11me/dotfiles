@@ -97,34 +97,41 @@ pathappend \
   /bin
 
 __prompt() {
-  local_reset="\[\033[0m\]"
-  local_black="\[\033[0;30m\]" # #212121
-  local_red="\[\033[0;31m\]"   # #c61e5c
-  local_green="\[\033[0;32m\]" # #81af24
-  local_yellow="\[\033[0;33m\]" # #fd971f
-  local_blue="\[\033[0;34m\]"  # #51aebe
-  local_magenta="\[\033[0;35m\]" # #ae81ff
-  local_cyan="\[\033[0;36m\]"  # #80beb5
-  local_white="\[\033[0;37m\]" # #bababa
+  local reset="\[\033[0m\]"
+  local unokai_black="\[\033[0;38;5;235m\]"
+  local unokai_dark_gray="\[\033[0;38;5;244m\]"
+  local unokai_gray="\[\033[0;38;5;250m\]"
+  local unokai_white="\[\033[0;38;5;255m\]"
+  local unokai_red="\[\033[0;38;5;197m\]"
+  local unokai_green="\[\033[0;38;5;112m\]"
+  local unokai_yellow="\[\033[0;38;5;185m\]"
+  local unokai_blue="\[\033[0;38;5;81m\]"
+  local unokai_magenta="\[\033[0;38;5;141m\]"
+  local unokai_cyan="\[\033[0;38;5;116m\]"
+  local unokai_dark_red="\[\033[0;38;5;125m\]"
+  local unokai_dark_green="\[\033[0;38;5;106m\]"
+  local unokai_dark_yellow="\[\033[0;38;5;208m\]"
+  local unokai_dark_blue="\[\033[0;38;5;73m\]"
+  local unokai_dark_magenta="\[\033[0;38;5;207m\]"
+  local unokai_bg_line="\[\033[48;5;237m\]"
+  local unokai_bg_pmenu="\[\033[48;5;240m\]"
+  local unokai_bg_folded="\[\033[48;5;238m\]"
 
-  # Git branch information
   local git_branch=""
   local current_branch
   current_branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
   if [ "$?" -eq 0 ] && [ "$current_branch" != "HEAD" ]; then
-    git_branch="${local_blue}(${current_branch})${local_reset}"
+    git_branch="${unokai_blue}(${current_branch})${reset}"
   fi
 
-  # Python virtual environment indicator
   local venv_indicator=""
   if [[ -n "$VIRTUAL_ENV" ]]; then
-    # Extract just the name of the virtual environment
     local venv_name
     venv_name=$(basename "$VIRTUAL_ENV")
-    venv_indicator="${local_green}(${venv_name})${local_reset}"
+    venv_indicator="${unokai_green}(${venv_name})${reset}"
   fi
 
-  PS1="${local_yellow}\w ${git_branch} ${venv_indicator}\n${local_blue}\$ ${local_reset}"
+  PS1="${unokai_yellow}\w ${git_branch} ${venv_indicator}\n${unokai_blue}\$ ${reset}"
 }
 
 export PROMPT_COMMAND='__prompt'
